@@ -24,6 +24,8 @@ function App() {
       toastId: prevenDuplicateToast,
     });
   };
+  const [login, setLogin] = useState(null);
+  const [logout, setLogout] = useState(null);
   return (
     <BrowserRouter>
       <Main
@@ -32,6 +34,10 @@ function App() {
         data={data}
         changeData={changeData}
         setChangeData={setChangeData}
+        login={login}
+        setLogin={setLogin}
+        logout={logout}
+        setLogout={setLogout}
       />
       <ToastContainer
         transition={Flip}

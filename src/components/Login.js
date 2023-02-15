@@ -1,15 +1,25 @@
 import { Button, Form, InputGroup } from "react-bootstrap";
 import { React, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "../styles/all.css";
 
-const Login = ({ toastError, toastSuccess }) => {
+const Login = ({
+  toastError,
+  toastSuccess,
+  login,
+  setLogin,
+  changeData,
+  setChangeData,
+  logout,
+  setLogout,
+}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [login, setLogin] = useState(null);
+
   const [token, setToken] = useState("");
 
   const navigate = useNavigate();
-  const tokens = JSON.parse(localStorage.getItem("token"));
+
   const handleLogin = (u, p) => {
     fetch("https://gori-inmobiliaria.vercel.app/user/login", {
       method: "POST",
@@ -24,26 +34,48 @@ const Login = ({ toastError, toastSuccess }) => {
       .then((res) => res.json())
       .then((json) => {
         if (json.token) {
-          setLogin(true);
           setToken(json.token);
-          console.log(json.token);
+          setLogin(true);
         } else {
           setLogin(false);
+
+          setTimeout(() => {
+            setLogin(null);
+          }, 1000);
         }
+        setChangeData(changeData + 1);
       });
   };
 
   useEffect(() => {
     if (login) {
       localStorage.setItem("token", JSON.stringify(token));
-      navigate("/admingori/main");
+      setTimeout(() => {
+        navigate("/admingori/main");
+      }, 1000);
     } else if (login === false) {
       toastError("no se pudo iniciar sesion");
+    } else if (logout) {
+      toastSuccess("sesion cerrada correctamente");
+      setLogout(null);
     }
-  }, [login]);
+  }, [changeData]);
+
+  window.addEventListener("keydown", (e) => {
+    if (e.code === "Enter") {
+      document.getElementById("btn-login").classList.add("btn-danger");
+    }
+  });
+  window.addEventListener("keyup", (e) => {
+    if (e.code === "Enter") {
+      document.getElementById("btn-login").classList.remove("btn-danger");
+      document.getElementById("btn-login").click();
+    }
+  });
   return (
     <>
       <Form className="d-flex flex-column align-items-center">
+        <h2 className="mb-4">Iniciar sesion</h2>
         <Form.Group
           className="mb-2 d-flex flex-column align-items-start"
           controlId="mailUserLogin"
@@ -75,12 +107,13 @@ const Login = ({ toastError, toastSuccess }) => {
           </InputGroup>
         </Form.Group>
         <Button
-          className="mt-3 btn-color fs-5"
+          id="btn-login"
+          className="mt-3 btn-color fs-6 btn"
           onClick={() => {
             handleLogin(username, password);
           }}
         >
-          Iniciar sesión
+          Inicia sesión
         </Button>
       </Form>
     </>

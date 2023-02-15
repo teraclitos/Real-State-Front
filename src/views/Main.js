@@ -12,6 +12,10 @@ const Main = ({
   changeData,
   data,
   setChangeData,
+  login,
+  setLogin,
+  logout,
+  setLogout,
 }) => {
   return (
     <Container className="d-flex  flex-column min-vh-100 px-0 align-items-center justify-content-between ">
@@ -27,6 +31,10 @@ const Main = ({
               data={data}
               changeData={changeData}
               setChangeData={setChangeData}
+              login={login}
+              setLogin={setLogin}
+              logout={logout}
+              setLogout={setLogout}
             />
           }
         />
@@ -39,6 +47,10 @@ const Main = ({
               data={data}
               changeData={changeData}
               setChangeData={setChangeData}
+              login={login}
+              setLogin={setLogin}
+              logout={logout}
+              setLogout={setLogout}
             />
           }
         />
