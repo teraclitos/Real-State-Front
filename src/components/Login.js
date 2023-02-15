@@ -23,11 +23,13 @@ const Login = ({ toastError, toastSuccess }) => {
     })
       .then((res) => res.json())
       .then((json) => {
-        setLogin(true);
-        setToken(json.token);
-      })
-      .catch((error) => {
-        setLogin(false);
+        if (json.token) {
+          setLogin(true);
+          setToken(json.token);
+          console.log(json.token);
+        } else {
+          setLogin(false);
+        }
       });
   };
 
