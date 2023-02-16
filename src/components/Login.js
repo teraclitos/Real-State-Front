@@ -61,17 +61,17 @@ const Login = ({
     }
   }, [changeData]);
 
-  window.addEventListener("keydown", (e) => {
-    if (e.code === "Enter") {
-      document.getElementById("btn-login").classList.add("btn-danger");
-    }
-  });
-  window.addEventListener("keyup", (e) => {
-    if (e.code === "Enter") {
-      document.getElementById("btn-login").classList.remove("btn-danger");
-      document.getElementById("btn-login").click();
-    }
-  });
+  // window.addEventListener("keydown", (e) => {
+  //   if (e.code === "Enter") {
+  //     document.getElementById("btn-login").classList.add(`btn-danger`);
+  //   }
+  // });
+  // window.addEventListener("keyup", (e) => {
+  //   if (e.code === "Enter") {
+  //     document.getElementById("btn-login").classList.remove(`btn-danger`);
+  //     document.getElementById("btn-login").click();
+  //   }
+  // });
   return (
     <>
       <Form className="d-flex flex-column align-items-center">
