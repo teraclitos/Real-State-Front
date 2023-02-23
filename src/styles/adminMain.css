@@ -1,0 +1,9 @@
+.btn-logout {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.input-description {
+  height: 10rem;
+}
