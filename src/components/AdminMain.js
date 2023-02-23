@@ -60,9 +60,9 @@ const AdminMain = ({
   const handlePost = async (e) => {
     e.preventDefault();
 
-    if (!editImages) {
-      return toastError(`Debe cargar al menos una imagen`);
-    }
+    // if (!editImages) {
+    //   return toastError(`Debe cargar al menos una imagen`);
+    // }
 
     const formData = new FormData();
 
@@ -78,18 +78,31 @@ const AdminMain = ({
     formData.append(`name`, editName);
     formData.append(`state`, editState);
 
-    const result = await axios
-      .post(
-        "https://gori-inmobiliaria.vercel.app/properties/create",
-        formData,
-        {
-          headers: {
-            "Content-type": "multipart/form-data",
+    // const result = await axios
+    //   .post(
+    //     "https://gori-inmobiliaria.vercel.app/properties/create",
+    //     formData,
+    //     {
+    //       headers: {
+    //         "Content-type": "multipart/form-data",
 
-            Authorization: `${token}`,
-          },
-        }
-      )
+    //         Authorization: `${token}`,
+    //       },
+    //     }
+    //   )
+
+    fetch("https://gori-inmobiliaria.vercel.app/properties/create", {
+      method: "POST",
+      // mode: `no-cors`,
+      headers: {
+        // "Content-type": "multipart/form-data boundary=&--",
+        "Content-type": "application/json",
+        Authorization: `${token}`,
+      },
+      body: {
+        description: editDescription,
+      },
+    })
       .then((res) => {
         setPost(true);
         console.log(res);
@@ -100,7 +113,7 @@ const AdminMain = ({
         setPost(false);
       });
 
-    console.log(result);
+    // console.log(result);
   };
   useEffect(() => {
     if (post === true) {
@@ -125,7 +138,7 @@ const AdminMain = ({
       </Button>
       <h2 className="d-flex justify-content-center mt-4 ">Crear Propiedad</h2>
 
-      <Form className="mt-4 w-75" onSubmit={handlePost}>
+      <Form className="mt-4 w-75">
         <Row>
           <Col>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -276,9 +289,12 @@ const AdminMain = ({
         <Row>
           <Form.Group className="d-flex justify-content-center">
             <Button
-              type="submit"
+              type="button"
               id="edit-Buttom"
               className="btn-detail px-3"
+              onClick={(e) => {
+                handlePost(e);
+              }}
 
               // if (highlightFilter() === true) {
               //   handleSubmit(e);
