@@ -57,7 +57,9 @@ const AdminMain = ({
       });
   };
 
-  const handlePost = () => {
+  const handlePost = async (e) => {
+    e.preventDefault();
+
     if (!editImages) {
       return toastError(`Debe cargar al menos una imagen`);
     }
@@ -65,27 +67,40 @@ const AdminMain = ({
     const formData = new FormData();
 
     formData.append(`images`, editImages);
-    console.log(formData);
+    formData.append(`description`, editDescription);
+    formData.append(`antiquity`, editAntiquity);
+    formData.append(`adress`, editAdress);
+    formData.append(`location`, editLocation);
+    formData.append(`price`, editPrice);
+    formData.append(`totalSurface`, editTotalSurface);
+    formData.append(`landSurface`, editLandSurface);
+    formData.append(`type`, editType);
+    formData.append(`name`, editName);
+    formData.append(`state`, editState);
 
-    fetch("https://gori-inmobiliaria.vercel.app/properties/create", {
-      method: "POST",
-      headers: {
-        // "Content-type": "multipart/form-data",
+    const result = await axios
+      .post(
+        "https://gori-inmobiliaria.vercel.app/properties/create",
+        formData,
+        {
+          headers: {
+            "Content-type": "multipart/form-data",
 
-        Authorization: `${token}`,
-      },
-
-      body: formData,
-    })
-      .then((err) => {
+            Authorization: `${token}`,
+          },
+        }
+      )
+      .then((res) => {
         setPost(true);
-        console.log(err);
+        console.log(res);
       })
 
       .catch((error) => {
         console.log(error);
         setPost(false);
       });
+
+    console.log(result);
   };
   useEffect(() => {
     if (post === true) {
@@ -110,12 +125,7 @@ const AdminMain = ({
       </Button>
       <h2 className="d-flex justify-content-center mt-4 ">Crear Propiedad</h2>
 
-      <Form
-        action="https://gori-inmobiliaria.vercel.app/properties/create"
-        method="POST"
-        enctype="multipart/form-data"
-        className="mt-4 w-75"
-      >
+      <Form className="mt-4 w-75" onSubmit={handlePost}>
         <Row>
           <Col>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -227,6 +237,7 @@ const AdminMain = ({
                 name="images"
                 maxLength={31}
                 type="file"
+                accept="images/*"
                 multiple
                 placeholder=""
                 onInput={(e) => setEditImages(e.target.files)}
@@ -265,13 +276,10 @@ const AdminMain = ({
         <Row>
           <Form.Group className="d-flex justify-content-center">
             <Button
-              type="buttom"
+              type="submit"
               id="edit-Buttom"
               className="btn-detail px-3"
-              onClick={(e) => {
-                e.preventDefault();
-                handlePost();
-              }}
+
               // if (highlightFilter() === true) {
               //   handleSubmit(e);
               //   setTimeout(() => {
