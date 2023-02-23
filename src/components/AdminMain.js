@@ -29,6 +29,59 @@ const AdminMain = ({
   const [editAntiquity, setEditAntiquity] = useState("");
   const [editState, setEditState] = useState("");
   const [editDescription, setEditDescription] = useState("");
+  const [editHighlight, setEditHighlight] = useState("NO");
+
+  const locations = () => {
+    return (
+      <Form.Select
+        onInput={(e) => setEditLocation(e.target.value)}
+        aria-label="Default select example"
+        name="location"
+      >
+        <option>Localidades</option>
+        <option value="Yerba Buena">Yerba Buena</option>
+        <option value="San Miguel">San Miguel</option>
+        <option value="San Pablo">San Pablo</option>
+        <option value="Tafí Viejo">Tafí Viejo</option>
+        <option value="Lomas de Tafí">Lomas de Tafí</option>
+        <option value="Raco">Raco</option>
+        <option value="Tafí del Valle">Tafí del Valle</option>
+        <option value="San Pedro">San Pedro</option>
+        <option value="San Javier">San Javier</option>
+      </Form.Select>
+    );
+  };
+  const types = () => {
+    return (
+      <Form.Select
+        onInput={(e) => setEditType(e.target.value)}
+        aria-label="Default select example"
+        name="type"
+      >
+        <option>Tipos</option>
+        <option value="Casa">Casa</option>
+        <option value="Departamento">Departamento</option>
+        <option value="Duplex">Duplex</option>
+        <option value=" Terrenos y Loc.comercial/oficinas ">
+          Terrenos y Loc.comercial/oficinas
+        </option>
+      </Form.Select>
+    );
+  };
+  const highlight = () => {
+    return (
+      <Form.Select
+        onInput={(e) => setEditHighlight(e.target.value)}
+        aria-label="Default select example"
+        name="highlight"
+        className="w-25"
+      >
+        <option>destacar</option>
+        <option value="YES">sí</option>
+        <option value="NO">no</option>
+      </Form.Select>
+    );
+  };
 
   useEffect(() => {
     if (token) {
@@ -80,6 +133,7 @@ const AdminMain = ({
     formData.append(`type`, editType);
     formData.append(`name`, editName);
     formData.append(`state`, editState);
+    formData.append(`highlight`, editHighlight);
 
     await axios
       .post(
@@ -101,8 +155,6 @@ const AdminMain = ({
         console.log(error);
         setPost(false);
       });
-
-    // console.log(result);
   };
   useEffect(() => {
     if (post === true) {
@@ -143,13 +195,7 @@ const AdminMain = ({
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="style-crud">Tipo</Form.Label>
-              <Form.Control
-                maxLength={31}
-                type="text"
-                onInput={(e) => setEditType(e.target.value)}
-                autoFocus
-                name="type"
-              />
+              {types()}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -166,14 +212,7 @@ const AdminMain = ({
 
             <Form.Group className="mb-3">
               <Form.Label className="style-crud">localidad</Form.Label>
-              <Form.Control
-                maxLength={31}
-                type="text"
-                placeholder=""
-                onChange={(e) => setEditLocation(e.target.value)}
-                autoFocus
-                name="location"
-              />
+              {locations()}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -234,7 +273,7 @@ const AdminMain = ({
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label className="style-crud">Imagenes</Form.Label>
+              <Form.Label className="style-crud">Imágenes</Form.Label>
               <Form.Control
                 name="images"
                 maxLength={31}
@@ -249,7 +288,7 @@ const AdminMain = ({
         </Row>
         <Row>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label className="style-crud">Descripcion</Form.Label>
+            <Form.Label className="style-crud">Descripción</Form.Label>
             <Form.Control
               as="textarea"
               className="input-description"
@@ -264,14 +303,7 @@ const AdminMain = ({
 
         <Row className="mb-3">
           <Form.Group className=" btn-detail d-flex justify-content-center ">
-            <Form.Check
-              type="checkbox"
-              label="Destacar"
-              // onClick={() => {
-              //   addHighlight();
-              // }}
-              // checked={editHighlight}
-            />
+            {highlight()}
           </Form.Group>
         </Row>
         <Row>
