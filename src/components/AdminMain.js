@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Form, Row, Col } from "react-bootstrap";
 import "../styles/all.css";
-import axios from "axios";
+import axios, { Axios } from "axios";
 
 const AdminMain = ({
   toastError,
@@ -60,13 +60,16 @@ const AdminMain = ({
   const handlePost = async (e) => {
     e.preventDefault();
 
-    // if (!editImages) {
-    //   return toastError(`Debe cargar al menos una imagen`);
-    // }
+    if (!editImages) {
+      return toastError(`Debe cargar al menos una imagen`);
+    }
 
     const formData = new FormData();
 
-    formData.append(`images`, editImages);
+    for (const e of editImages) {
+      formData.append(`images`, e, e.name);
+    }
+
     formData.append(`description`, editDescription);
     formData.append(`antiquity`, editAntiquity);
     formData.append(`adress`, editAdress);
@@ -78,34 +81,20 @@ const AdminMain = ({
     formData.append(`name`, editName);
     formData.append(`state`, editState);
 
-    // const result = await axios
-    //   .post(
-    //     "https://gori-inmobiliaria.vercel.app/properties/create",
-    //     formData,
-    //     {
-    //       headers: {
-    //         "Content-type": "multipart/form-data",
-
-    //         Authorization: `${token}`,
-    //       },
-    //     }
-    //   )
-
-    fetch("https://gori-inmobiliaria.vercel.app/properties/create", {
-      method: "POST",
-      // mode: `no-cors`,
-      headers: {
-        // "Content-type": "multipart/form-data boundary=&--",
-        "Content-type": "application/json",
-        Authorization: `${token}`,
-      },
-      body: {
-        description: editDescription,
-      },
-    })
+    await axios
+      .post(
+        "https://gori-inmobiliaria.vercel.app/properties/create",
+        formData,
+        {
+          headers: {
+            "Content-type": "multipart/form-data;  ",
+            Authorization: `${token}`,
+          },
+        }
+      )
       .then((res) => {
         setPost(true);
-        console.log(res);
+        console.log(res.msj);
       })
 
       .catch((error) => {
@@ -250,7 +239,6 @@ const AdminMain = ({
                 name="images"
                 maxLength={31}
                 type="file"
-                accept="images/*"
                 multiple
                 placeholder=""
                 onInput={(e) => setEditImages(e.target.files)}
@@ -295,18 +283,6 @@ const AdminMain = ({
               onClick={(e) => {
                 handlePost(e);
               }}
-
-              // if (highlightFilter() === true) {
-              //   handleSubmit(e);
-              //   setTimeout(() => {
-              //     setChangeData(changeData + 1);
-              //   }, 1000);
-              //   handleClose();
-              // } else {
-              //   toastError("Sólo puede haber tres destacados");
-              // }
-              // setRender(true);
-              // }}
             >
               Crear
             </Button>
