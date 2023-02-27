@@ -8,11 +8,22 @@ import { useEffect, useState } from "react";
 function App() {
   const [data, setData] = useState([]);
   const [changeData, setChangeData] = useState(1);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState("");
+  const [loader, setLoader] = useState(true);
   useEffect(() => {
-    fetch("https://gori-inmobiliaria.vercel.app/properties/show")
+    fetch(
+      `https://gori-inmobiliaria.vercel.app/properties/show?page=${page}&limit=9`
+    )
       .then((res) => res.json())
-      .then((json) => setData(json));
-  }, [changeData]);
+      .then((json) => {
+        setData(json.docs);
+        setTotalPages(json.totalPages);
+      })
+      .finally(() => {
+        setLoader(false);
+      });
+  }, [changeData, page]);
   const prevenDuplicateToast = "custom-id-yes";
   const toastError = (writte) => {
     toast.error(writte, {
@@ -38,6 +49,10 @@ function App() {
         setLogin={setLogin}
         logout={logout}
         setLogout={setLogout}
+        page={page}
+        setPage={setPage}
+        totalPages={totalPages}
+        loader={loader}
       />
       <ToastContainer
         transition={Flip}
