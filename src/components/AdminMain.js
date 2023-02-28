@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Button, Form, Row, Col } from "react-bootstrap";
+import { Button, Form, Row, Col, Container } from "react-bootstrap";
 import "../styles/all.css";
 import axios, { Axios } from "axios";
 
@@ -168,7 +168,7 @@ const AdminMain = ({
     }
   }, [post]);
   return (
-    <>
+    <Container className="d-flex flex-column align-items-center justify-content-center ">
       <Button
         className="btn-logout btn-danger"
         onClick={() => {
@@ -321,7 +321,7 @@ const AdminMain = ({
           </Form.Group>
         </Row>
       </Form>
-    </>
+    </Container>
   );
 };
 
