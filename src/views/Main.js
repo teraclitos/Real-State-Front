@@ -6,7 +6,9 @@ import Footer from "../components/Footer";
 import Admin from "../components/Admin";
 import AdminMain from "../components/AdminMain";
 import ContainerMainCard from "../components/ContainerMainCard";
-
+import Hero from "../components/Hero";
+import Slider from "../components/Slider";
+import "../styles/all.css";
 const Main = ({
   toastError,
   toastSuccess,
@@ -21,37 +23,18 @@ const Main = ({
   setPage,
   totalPages,
   loader,
+  setLoader,
 }) => {
   return (
     <>
       <NavbarC />
-      <Container className="d-flex  flex-column min-vh-100  px-0 align-items-center justify-content-between">
-        <Routes>
-          <Route
-            path="/propiedades"
-            element={
-              <ContainerMainCard
-                toastError={toastError}
-                toastSuccess={toastSuccess}
-                data={data}
-                page={page}
-                setPage={setPage}
-                totalPages={totalPages}
-                loader={loader}
 
-                // changeData={changeData}
-                // setChangeData={setChangeData}
-                // login={login}
-                // setLogin={setLogin}
-                // logout={logout}
-                // setLogout={setLogout}
-              />
-            }
-          />
-          <Route
-            path="/admingori"
-            element={
-              <Admin
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero
                 toastError={toastError}
                 toastSuccess={toastSuccess}
                 data={data}
@@ -62,12 +45,7 @@ const Main = ({
                 logout={logout}
                 setLogout={setLogout}
               />
-            }
-          />
-          <Route
-            path="/admingori/main"
-            element={
-              <AdminMain
+              <Slider
                 toastError={toastError}
                 toastSuccess={toastSuccess}
                 data={data}
@@ -78,10 +56,66 @@ const Main = ({
                 logout={logout}
                 setLogout={setLogout}
               />
-            }
-          />
-        </Routes>
-      </Container>
+            </>
+          }
+        />
+
+        <Route
+          path="/propiedades"
+          element={
+            <ContainerMainCard
+              toastError={toastError}
+              toastSuccess={toastSuccess}
+              data={data}
+              page={page}
+              setPage={setPage}
+              totalPages={totalPages}
+              loader={loader}
+              setLoader={setLoader}
+
+              // changeData={changeData}
+              // setChangeData={setChangeData}
+              // login={login}
+              // setLogin={setLogin}
+              // logout={logout}
+              // setLogout={setLogout}
+            />
+          }
+        />
+        <Route
+          path="/admingori"
+          element={
+            <Admin
+              toastError={toastError}
+              toastSuccess={toastSuccess}
+              data={data}
+              changeData={changeData}
+              setChangeData={setChangeData}
+              login={login}
+              setLogin={setLogin}
+              logout={logout}
+              setLogout={setLogout}
+            />
+          }
+        />
+        <Route
+          path="/admingori/main"
+          element={
+            <AdminMain
+              toastError={toastError}
+              toastSuccess={toastSuccess}
+              data={data}
+              changeData={changeData}
+              setChangeData={setChangeData}
+              login={login}
+              setLogin={setLogin}
+              logout={logout}
+              setLogout={setLogout}
+            />
+          }
+        />
+      </Routes>
+
       <Footer />
     </>
   );

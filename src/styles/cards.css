@@ -1,0 +1,9 @@
+.img-card {
+  width: 300px;
+  height: 300px;
+}
+.card-container {
+  width: 300px;
+  background-color: #e0e0e0 !important;
+  border: 0 !important;
+}

@@ -53,6 +53,7 @@ function App() {
         setPage={setPage}
         totalPages={totalPages}
         loader={loader}
+        setLoader={setLoader}
       />
       <ToastContainer
         transition={Flip}
