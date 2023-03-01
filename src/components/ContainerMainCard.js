@@ -3,6 +3,7 @@ import { Row, Col, Container } from "react-bootstrap";
 import MainCard from "./MainCard";
 import PaginationC from "./PaginationC";
 import Loader from "./Loader";
+import "../styles/all.css";
 
 const ContainerMainCard = ({
   data,
@@ -15,7 +16,7 @@ const ContainerMainCard = ({
   return (
     <>
       {!loader ? (
-        <Container className="mt-5">
+        <Container className="mt-5 ">
           <Row className="g-5">
             {data.map((d, i) => (
               <Col className="mb-2 " lg={4}>

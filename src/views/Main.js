@@ -26,15 +26,66 @@ const Main = ({
   setLoader,
 }) => {
   return (
-    <>
+    <div className="total-body">
       <NavbarC />
+      <Container fluid className="body-container p-0">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero
+                  toastError={toastError}
+                  toastSuccess={toastSuccess}
+                  data={data}
+                  changeData={changeData}
+                  setChangeData={setChangeData}
+                  login={login}
+                  setLogin={setLogin}
+                  logout={logout}
+                  setLogout={setLogout}
+                />
+                <Slider
+                  toastError={toastError}
+                  toastSuccess={toastSuccess}
+                  data={data}
+                  changeData={changeData}
+                  setChangeData={setChangeData}
+                  login={login}
+                  setLogin={setLogin}
+                  logout={logout}
+                  setLogout={setLogout}
+                />
+              </>
+            }
+          />
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero
+          <Route
+            path="/propiedades"
+            element={
+              <ContainerMainCard
+                toastError={toastError}
+                toastSuccess={toastSuccess}
+                data={data}
+                page={page}
+                setPage={setPage}
+                totalPages={totalPages}
+                loader={loader}
+                setLoader={setLoader}
+
+                // changeData={changeData}
+                // setChangeData={setChangeData}
+                // login={login}
+                // setLogin={setLogin}
+                // logout={logout}
+                // setLogout={setLogout}
+              />
+            }
+          />
+          <Route
+            path="/admingori"
+            element={
+              <Admin
                 toastError={toastError}
                 toastSuccess={toastSuccess}
                 data={data}
@@ -45,7 +96,12 @@ const Main = ({
                 logout={logout}
                 setLogout={setLogout}
               />
-              <Slider
+            }
+          />
+          <Route
+            path="/admingori/main"
+            element={
+              <AdminMain
                 toastError={toastError}
                 toastSuccess={toastSuccess}
                 data={data}
@@ -56,68 +112,13 @@ const Main = ({
                 logout={logout}
                 setLogout={setLogout}
               />
-            </>
-          }
-        />
-
-        <Route
-          path="/propiedades"
-          element={
-            <ContainerMainCard
-              toastError={toastError}
-              toastSuccess={toastSuccess}
-              data={data}
-              page={page}
-              setPage={setPage}
-              totalPages={totalPages}
-              loader={loader}
-              setLoader={setLoader}
-
-              // changeData={changeData}
-              // setChangeData={setChangeData}
-              // login={login}
-              // setLogin={setLogin}
-              // logout={logout}
-              // setLogout={setLogout}
-            />
-          }
-        />
-        <Route
-          path="/admingori"
-          element={
-            <Admin
-              toastError={toastError}
-              toastSuccess={toastSuccess}
-              data={data}
-              changeData={changeData}
-              setChangeData={setChangeData}
-              login={login}
-              setLogin={setLogin}
-              logout={logout}
-              setLogout={setLogout}
-            />
-          }
-        />
-        <Route
-          path="/admingori/main"
-          element={
-            <AdminMain
-              toastError={toastError}
-              toastSuccess={toastSuccess}
-              data={data}
-              changeData={changeData}
-              setChangeData={setChangeData}
-              login={login}
-              setLogin={setLogin}
-              logout={logout}
-              setLogout={setLogout}
-            />
-          }
-        />
-      </Routes>
+            }
+          />
+        </Routes>
+      </Container>
 
       <Footer />
-    </>
+    </div>
   );
 };
 

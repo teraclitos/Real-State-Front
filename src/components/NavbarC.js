@@ -1,25 +1,23 @@
 import React from "react";
 import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import "../styles/all.css";
-import NavbarSup from "./NavbarSup";
 
 const NavbarC = () => {
   return (
     <>
-      <NavbarSup />
       <Navbar
-        variant="dark"
+        // variant="dark"
         className=" nav-bar "
         collapseOnSelect
         expand="lg"
         sticky="top"
       >
-        <Container className="">
+        <Container className="nav-bar-container">
           <Navbar.Brand href="/">
             <img
-              className="../../public/imagenes/logo-gori-ok.png"
-              src=""
-              alt=""
+              className=""
+              src="../../public/imagenes/logo-gori-ok.png"
+              alt="logo"
             />
           </Navbar.Brand>
 
@@ -27,14 +25,14 @@ const NavbarC = () => {
 
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="d-flex ms-auto align-items-center">
-              <Nav.Link className="me-lg-5" href="/">
-                Inicio
+              <Nav.Link className="me-lg-5 nav-bar-link" href="/">
+                <span className="nav-bar-link">Inicio</span>
               </Nav.Link>
-              <Nav.Link className="me-lg-5" href="/propiedades">
-                Propiedades
+              <Nav.Link className="me-lg-5 " href="/propiedades">
+                <span className="nav-bar-link">Propiedades</span>
               </Nav.Link>
               <Nav.Link href="#pricing">
-                <Button> Contáctame</Button>
+                <button className="btn-g size-btn-nav-bar"> Contáctame</button>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

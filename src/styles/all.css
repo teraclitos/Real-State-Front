@@ -6,9 +6,17 @@ dorado:#ffec00 */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url(./login.css);
 @import url(./adminMain.css);
 @import url(./navbar.css);
 @import url(./loader.css);
 @import url(./hero.css);
 @import url(./cards.css);
+@import url(./main.css);
+@import url(./pagination.css);
+
+.total-body {
+  font-family: "Montserrat", sans-serif;
+}

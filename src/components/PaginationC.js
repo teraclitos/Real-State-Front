@@ -1,21 +1,26 @@
 import React from "react";
 import Pagination from "react-bootstrap/Pagination";
 
-const PaginationC = ({ page, setPage, totalPages,setLoader }) => {
-  let active = page;
+const PaginationC = ({ page, setPage, totalPages, setLoader }) => {
   let items = [];
+  let active = page;
+  let pagClass = "";
   for (let number = 1; number <= totalPages; number++) {
+    if (active !== number) {
+      pagClass = "pagination-item";
+    } else {
+      pagClass = "pagination-item  pagination-active-item";
+    }
     items.push(
-      <Pagination.Item
+      <div
+        className={pagClass}
         onClick={() => {
           setPage(number);
-          setLoader(true)
+          setLoader(true);
         }}
-        key={number}
-        active={number === active}
       >
         {number}
-      </Pagination.Item>
+      </div>
     );
   }
 
