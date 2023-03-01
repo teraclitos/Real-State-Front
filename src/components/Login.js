@@ -82,7 +82,6 @@ const Login = ({
         >
           <Form.Label></Form.Label>
           <InputGroup className="mb-3">
-            <InputGroup.Text className="color-login"></InputGroup.Text>
             <Form.Control
               maxLength={31}
               type="text"
@@ -97,7 +96,6 @@ const Login = ({
         >
           <Form.Label></Form.Label>
           <InputGroup className="mb-3">
-            <InputGroup.Text className="color-login"></InputGroup.Text>
             <Form.Control
               maxLength={31}
               type="password"
