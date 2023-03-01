@@ -41,7 +41,7 @@ const NavbarC = ({
           <Navbar.Toggle className="" aria-controls="responsive-navbar-nav" />
 
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="d-flex ms-auto align-items-center">
+            <Nav className="d-flex ms-auto align-items-center  py-3 py-lg-0">
               <Nav.Link className="me-lg-5 nav-bar-link" href="/">
                 <span className="nav-bar-link">Inicio</span>
               </Nav.Link>
