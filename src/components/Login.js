@@ -55,10 +55,7 @@ const Login = ({
       }, 1000);
     } else if (login === false) {
       toastError("no se pudo iniciar sesion");
-    } else if (logout) {
-      toastSuccess("sesion cerrada correctamente");
-      setLogout(null);
-    }
+    } 
   }, [changeData]);
 
   // window.addEventListener("keydown", (e) => {
@@ -104,15 +101,17 @@ const Login = ({
             />
           </InputGroup>
         </Form.Group>
-        <Button
+
+        <button
           id="btn-login"
-          className="mt-3 btn-color fs-6 btn"
-          onClick={() => {
+          className="mt-3 btn-g"
+          onClick={(e) => {
+            e.preventDefault();
             handleLogin(username, password);
           }}
         >
           Inicia sesión
-        </Button>
+        </button>
       </Form>
     </>
   );

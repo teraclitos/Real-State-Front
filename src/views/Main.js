@@ -27,7 +27,15 @@ const Main = ({
 }) => {
   return (
     <div className="total-body">
-      <NavbarC />
+      <NavbarC
+        data={data}
+        changeData={changeData}
+        setChangeData={setChangeData}
+        login={login}
+        setLogin={setLogin}
+        logout={logout}
+        setLogout={setLogout}
+      />
       <Container fluid className="body-container p-0">
         <Routes>
           <Route
@@ -37,11 +45,8 @@ const Main = ({
                 <Hero
                   toastError={toastError}
                   toastSuccess={toastSuccess}
-                  data={data}
                   changeData={changeData}
                   setChangeData={setChangeData}
-                  login={login}
-                  setLogin={setLogin}
                   logout={logout}
                   setLogout={setLogout}
                 />

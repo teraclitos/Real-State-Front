@@ -10,9 +10,6 @@ const AdminMain = ({
   login,
   setLogin,
   changeData,
-  setChangeData,
-  logout,
-  setLogout,
 }) => {
   const token = JSON.parse(localStorage.getItem("token"));
   const navigate = useNavigate();
@@ -90,25 +87,10 @@ const AdminMain = ({
       }
       setLogin(true);
     } else {
-      navigate("/admingori");
+      navigate("/");
     }
+    console.log(login);
   }, [changeData]);
-
-  const handleLogout = () => {
-    fetch("https://gori-inmobiliaria.vercel.app/user/logout", {
-      method: "GET",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `${token}`,
-      },
-    })
-      .then(() => localStorage.setItem("token", JSON.stringify("")))
-      .then(() => {
-        setLogin(null);
-        setLogout(true);
-        setChangeData(changeData + 1);
-      });
-  };
 
   const handlePost = async (e) => {
     e.preventDefault();
@@ -169,14 +151,6 @@ const AdminMain = ({
   }, [post]);
   return (
     <Container className="d-flex flex-column align-items-center justify-content-center my-5 ">
-      <Button
-        className="btn-logout btn-danger"
-        onClick={() => {
-          handleLogout();
-        }}
-      >
-        logout
-      </Button>
       <h2 className="d-flex justify-content-center mt-4 ">Crear Propiedad</h2>
 
       <Form className="mt-4 w-75">
@@ -301,23 +275,23 @@ const AdminMain = ({
           </Form.Group>
         </Row>
 
-        <Row className="mb-3">
+        <Row className="mb-3 mt-4">
           <Form.Group className=" btn-detail d-flex justify-content-center ">
             {highlight()}
           </Form.Group>
         </Row>
         <Row>
           <Form.Group className="d-flex justify-content-center">
-            <Button
+            <button
               type="button"
               id="edit-Buttom"
-              className="btn-detail px-3"
+              className="btn-g mt-3"
               onClick={(e) => {
                 handlePost(e);
               }}
             >
               Crear
-            </Button>
+            </button>
           </Form.Group>
         </Row>
       </Form>

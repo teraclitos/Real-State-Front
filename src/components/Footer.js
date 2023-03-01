@@ -8,8 +8,8 @@ const Footer = () => {
   return (
     <Container fluid className="py-5 footer-container">
       <Row>
-        <Col className="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center ">
-          <ul>
+        <Col className="mb-5 mb-md-0 col-12 col-md-4 d-flex flex-column align-items-center justify-content-center ">
+          <ul className="p-0">
             <Link to="/" className="link-footer ">
               <li className="">Inicio</li>
             </Link>
@@ -21,7 +21,7 @@ const Footer = () => {
             </Link>
           </ul>
         </Col>
-        <Col className="col-12 col-md-4 d-flex justify-content-center align-items-center">
+        <Col className="mb-5 mb-md-0 col-12 col-md-4 d-flex justify-content-center align-items-center">
           <Link to="/highlights" className="link-footer ">
             <FontAwesomeIcon className="social-icon  me-4" icon={faFacebook} />
           </Link>

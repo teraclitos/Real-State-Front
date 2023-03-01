@@ -5,12 +5,5 @@
 }
 
 .input-description {
-  height: 10rem;
-}
-.invisible-input {
-  width: 0;
-  height: 0;
-  border: white !important;
-  pointer-events: none;
-  color: white !important;
+  height: 10em;
 }

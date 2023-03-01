@@ -1,9 +1,26 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import "../styles/all.css";
 import ContactBtn from "./ContactBtn";
+import Logout from "./Logout";
+import { Link, useNavigate } from "react-router-dom";
 
-const NavbarC = () => {
+const NavbarC = ({
+  login,
+  setLogin,
+  logout,
+  setLogout,
+  changeData,
+  setChangeData,
+}) => {
+  const token = JSON.parse(localStorage.getItem("token"));
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (logout) {
+      navigate("/");
+    }
+    console.log(login);
+  }, [changeData]);
   return (
     <>
       <Navbar
@@ -32,10 +49,21 @@ const NavbarC = () => {
               <Nav.Link className="me-lg-5 " href="/propiedades">
                 <span className="nav-bar-link">Propiedades</span>
               </Nav.Link>
-              <Nav.Link href="#pricing">
-                <ContactBtn/>
-                
-              </Nav.Link>
+
+              {token ? (
+                <Logout
+                  login={login}
+                  setLogin={setLogin}
+                  logout={logout}
+                  setLogout={setLogout}
+                  changeData={changeData}
+                  setChangeData={setChangeData}
+                />
+              ) : (
+                <Nav.Link href="#pricing">
+                  <ContactBtn />
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -19,6 +19,7 @@
 }
 
 .btn-g {
+  font-weight: 600;
   align-items: center;
   background: #ffffff;
   background: -webkit-radial-gradient(top left, #ffffff, #e3ede8);
@@ -38,7 +39,6 @@
   user-select: none;
 }
 .size-btn-nav-bar {
-  font-weight: 600;
   font-size: 1.12em;
   border-color: #000;
   color: #000;
