@@ -74,7 +74,7 @@ const Login = ({
   // });
   return (
     <>
-      <Form className="d-flex flex-column align-items-center">
+      <Form className="d-flex flex-column align-items-center my-5">
         <h2 className="mb-4">Iniciar sesion</h2>
         <Form.Group
           className="mb-2 d-flex flex-column align-items-start"

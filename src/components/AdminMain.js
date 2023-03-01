@@ -168,7 +168,7 @@ const AdminMain = ({
     }
   }, [post]);
   return (
-    <Container className="d-flex flex-column align-items-center justify-content-center ">
+    <Container className="d-flex flex-column align-items-center justify-content-center my-5 ">
       <Button
         className="btn-logout btn-danger"
         onClick={() => {
