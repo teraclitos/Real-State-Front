@@ -12,4 +12,5 @@
 }
 .pagination-active-item {
   background-color: #3d3b3b;
+  pointer-events: none;
 }

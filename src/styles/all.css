@@ -16,6 +16,7 @@ dorado:#ffec00 */
 @import url(./cards.css);
 @import url(./main.css);
 @import url(./pagination.css);
+@import url(./footer.css);
 
 .total-body {
   font-family: "Montserrat", sans-serif;

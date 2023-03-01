@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import "../styles/all.css";
+import ContactBtn from "./ContactBtn";
 
 const NavbarC = () => {
   return (
@@ -15,8 +16,8 @@ const NavbarC = () => {
         <Container className="nav-bar-container">
           <Navbar.Brand href="/">
             <img
-              className=""
-              src="../../public/imagenes/logo-gori-ok.png"
+              className="img-logo"
+              src="https://res.cloudinary.com/duuwqmpmn/image/upload/v1677695153/gori-inmobiliaria/logo-gori-removebg-preview_1_ulsalf.png"
               alt="logo"
             />
           </Navbar.Brand>
@@ -32,7 +33,8 @@ const NavbarC = () => {
                 <span className="nav-bar-link">Propiedades</span>
               </Nav.Link>
               <Nav.Link href="#pricing">
-                <button className="btn-g size-btn-nav-bar"> Contáctame</button>
+                <ContactBtn/>
+                
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

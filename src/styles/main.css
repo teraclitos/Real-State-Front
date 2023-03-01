@@ -1,4 +1,18 @@
-.body-container{
-background-color: #000;
-
+.body-container {
+  /* Created with https://www.css-gradient.com */
+  /* background: #010101;
+  background: -webkit-radial-gradient(top left, #010101, #707f6f);
+  background: -moz-radial-gradient(top left, #010101, #707f6f);
+  background: radial-gradient(to bottom right, #010101, #707f6f); */
+  background: linear-gradient(
+    to bottom,
+    #ffffff,
+    #f1eded,
+    #f1eded,
+    #f1eded,
+    #f1eded,
+    #ffffff
+  );
+  /* background: linear-gradient(to bottom right, #ffffff, #ccc1c1, #ffffff); */
+  /* background: linear-gradient(toright, #ffffff, #ccc1c1, #ffffff); */
 }
