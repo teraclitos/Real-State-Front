@@ -4,7 +4,7 @@ import "../styles/all.css";
 const MainCard = ({ d }) => {
   return (
     <>
-      <Card className="card-container">
+      <Card className="card-container ">
         <Card.Img
           className="img-card"
           variant="top"

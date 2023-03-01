@@ -16,10 +16,10 @@ const ContainerMainCard = ({
   return (
     <>
       {!loader ? (
-        <Container className="mt-5 ">
-          <Row className="g-5">
+        <Container className="mt-5  ">
+          <Row className="g-5 ">
             {data.map((d, i) => (
-              <Col className="mb-2 " lg={4}>
+              <Col className="mb-2 col-12 col-md-6 col-lg-4 d-flex justify-content-center ">
                 <MainCard d={d} />
               </Col>
             ))}
