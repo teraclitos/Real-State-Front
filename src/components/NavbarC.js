@@ -19,7 +19,6 @@ const NavbarC = ({
     if (logout) {
       navigate("/");
     }
-    console.log(login);
   }, [changeData]);
   return (
     <>

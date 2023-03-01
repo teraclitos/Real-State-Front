@@ -24,6 +24,7 @@ function App() {
         setLoader(false);
       });
   }, [changeData, page]);
+
   const prevenDuplicateToast = "custom-id-yes";
   const toastError = (writte) => {
     toast.error(writte, {
