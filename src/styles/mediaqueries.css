@@ -13,19 +13,34 @@
   }
 }
 @media (max-width: 576px) {
-  .cube-container {
-    font-size: 8px;
-  }
   .slogan-cube-container {
     font-size: 8px;
   }
 }
 @media (max-width: 400px) {
   .img-card {
-    width: 250px;
-    height: 250px;
+    width: 280px;
+    height: 280px;
   }
   .card-container {
-    width: 250px;
+    width: 280px;
+  }
+}
+
+@media (max-width: 350px) {
+  .cube-container {
+    font-size: 10px;
+  }
+}
+@media (max-width: 300px) {
+  .cube-container {
+    font-size: 8px;
+  }
+  .img-card {
+    width: 200px;
+    height: 200px;
+  }
+  .card-container {
+    width: 200px;
   }
 }

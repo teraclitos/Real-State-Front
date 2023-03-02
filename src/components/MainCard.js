@@ -10,14 +10,14 @@ const MainCard = ({ d }) => {
           variant="top"
           src={d.images_URL[0].url}
         />
-        <Card.Body>
+        <Card.Body className="py-3">
           <Card.Title>{d.name}</Card.Title>
         </Card.Body>
-        <Card.Footer className="d-flex justify-content-between align-items-end p-0 pt-3 card-footer">
+        <Card.Footer className="d-flex justify-content-between align-items-end p-0  card-footer">
           <span className="d-flex price-box justify-content-center algin-items center">
             US$ {d.price}
           </span>
-          <button className="btn-g btn-card">Ver Propiedad</button>
+          <button className="btn-g btn-black btn-card">Ver Propiedad</button>
         </Card.Footer>
       </Card>
     </>
