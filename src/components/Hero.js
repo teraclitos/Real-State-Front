@@ -16,10 +16,10 @@ const Hero = ({ logout, setLogout, changeData, toastSuccess }) => {
       <div className="hero-container ">
         <div className="slogan-container "></div>
         <div className="slogan-cube-container">
-          <h2 className="slogan mb-5">
+          <h2 className="slogan ">
             Tenemos la casa que buscas, no pierdas tiempo
           </h2>
-          <Slider />
+          {/* <Slider /> */}
         </div>
       </div>
     </>

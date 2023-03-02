@@ -7,6 +7,7 @@ import Admin from "../components/Admin";
 import AdminMain from "../components/AdminMain";
 import ContainerMainCard from "../components/ContainerMainCard";
 import Hero from "../components/Hero";
+import Slider from "../components/Slider";
 
 import "../styles/all.css";
 const Main = ({
@@ -51,6 +52,7 @@ const Main = ({
                     logout={logout}
                     setLogout={setLogout}
                   />
+                  <Slider />
                 </>
               }
             />

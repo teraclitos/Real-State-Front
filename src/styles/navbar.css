@@ -1,6 +1,6 @@
 .img-logo {
-  width: 3em;
-  height: 3em;
+  width: 3rem;
+  height: 3rem;
 }
 
 .nav-bar {
@@ -13,7 +13,7 @@
 .nav-bar-link {
   color: #696969;
   font-weight: 400;
-  font-size: 1.05em;
+  font-size: 1.05rem;
 }
 .nav-bar-link:hover {
   color: #191919;
@@ -26,30 +26,34 @@
   background: -webkit-radial-gradient(top left, #ffffff, #e3ede8);
   background: -moz-radial-gradient(top left, #ffffff, #e3ede8);
   background: radial-gradient(to bottom right, #ffffff, #e3ede8);
-  border: 0.0625em solid #696969;
-  border-radius: 0.375em;
+  border: 0.0625rem solid #696969;
+  border-radius: 0.375rem;
   box-shadow: none;
   box-sizing: border-box;
   color: #696969;
   cursor: pointer;
   display: flex;
-  height: 2.5em;
+  height: 2.5rem;
   justify-content: center;
-  padding: calc(0.5em - 1px) 1em;
+  padding: calc(0.5rem - 1px) 1rem;
   text-align: center;
   user-select: none;
+  font-size: 1.05rem;
 }
 .size-btn-nav-bar {
-  font-size: 1.12em;
+  font-size: 1.12rem;
   border-color: #191919;
   color: #191919;
 }
 
 .btn-g:active {
-  box-shadow: rgba(72, 95, 199, 0.25) 0 0 0 0.125em;
+  box-shadow: rgba(72, 95, 199, 0.25) 0 0 0 0.125rem;
 }
 
 .btn-g:hover {
   border-color: #191919;
   color: #191919;
+}
+.link-nav-container {
+  padding: 2rem 0;
 }

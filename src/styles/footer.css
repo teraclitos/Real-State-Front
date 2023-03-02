@@ -8,7 +8,7 @@
 
 .social-icon {
   text-decoration: none;
-  font-size: 2.5em;
+  font-size: 2.5rem;
   color: #6b6363;
 }
 
@@ -20,13 +20,13 @@
   text-decoration: none;
   color: #6b6363;
   list-style: none;
-  font-size: 1.05em;
+  font-size: 1.05rem;
 }
 
 .link-footer:hover {
   color: #191919;
 }
 .img-logo-footer {
-  width: 5em;
-  height: 5em;
+  width: 5rem;
+  height: 5rem;
 }

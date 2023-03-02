@@ -1,6 +1,6 @@
 .swiper {
-  width: 300px;
-  height: 300px;
+  width: 18.75em;
+  height: 18.75em;
 }
 
 .swiper-slide {
@@ -20,11 +20,24 @@
 }
 .swiper-button-prev,
 .swiper-rtl .swiper-button-next {
-  left: var(--swiper-navigation-sides-offset, -40px) !important;
+  left: var(--swiper-navigation-sides-offset, -5em) !important;
   right: auto;
 }
 .swiper-button-next,
 .swiper-rtl .swiper-button-prev {
-  right: var(--swiper-navigation-sides-offset, -40px) !important;
+  right: var(--swiper-navigation-sides-offset, -5em) !important;
   left: auto;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 2.75em !important;
+}
+.cube-title {
+  color: #dfdfdf;
+  font-family: "Playfair Display", serif;
+  font-size: 1.8em;
+  margin-bottom: 1em;
+}
+.cube-container {
+  padding: 5em 0 7em 0;
 }

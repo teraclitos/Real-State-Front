@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Container } from "react-bootstrap";
 
 // Import Swiper styles
 import "swiper/css";
@@ -14,8 +15,8 @@ import "../styles/all.css";
 
 const Slider = () => {
   return (
-    <>
-      <h3 className="mb-1 d-flex justify-content-center cube-title">
+    <Container className=" d-flex justify-content-center cube-container flex-column">
+      <h3 className=" d-flex justify-content-center cube-title">
         Oportunidades
       </h3>
       <Swiper
@@ -46,7 +47,7 @@ const Slider = () => {
           <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
         </SwiperSlide>
       </Swiper>
-    </>
+    </Container>
   );
 };
 

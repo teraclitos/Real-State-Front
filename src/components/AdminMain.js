@@ -157,7 +157,7 @@ const AdminMain = ({
         <Row>
           <Col className="col-lg-6 col-12">
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label className="style-crud">Nombre</Form.Label>
+              <Form.Label className="fs-6 style-crud">Nombre</Form.Label>
               <Form.Control
                 maxLength={31}
                 type="text"
@@ -168,12 +168,12 @@ const AdminMain = ({
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label className="style-crud">Tipo</Form.Label>
+              <Form.Label className="fs-6 style-crud">Tipo</Form.Label>
               {types()}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label className="style-crud">Precio</Form.Label>
+              <Form.Label className="fs-6 style-crud">Precio</Form.Label>
               <Form.Control
                 maxLength={31}
                 type="number"
@@ -185,12 +185,12 @@ const AdminMain = ({
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label className="style-crud">localidad</Form.Label>
+              <Form.Label className="fs-6 style-crud">localidad</Form.Label>
               {locations()}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label className="style-crud">Dirección</Form.Label>
+              <Form.Label className="fs-6 style-crud">Dirección</Form.Label>
               <Form.Control
                 type="text"
                 onInput={(e) => setEditAdress(e.target.value)}
@@ -201,7 +201,7 @@ const AdminMain = ({
           </Col>
           <Col className="col-lg-6 col-12">
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label className="style-crud">Antiguedad</Form.Label>
+              <Form.Label className="fs-6 style-crud">Antiguedad</Form.Label>
               <Form.Control
                 type="number"
                 onInput={(e) => setEditAntiquity(e.target.value)}
@@ -211,7 +211,7 @@ const AdminMain = ({
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label className="style-crud">Estado</Form.Label>
+              <Form.Label className="fs-6 style-crud">Estado</Form.Label>
               <Form.Control
                 maxLength={31}
                 type="text"
@@ -223,7 +223,9 @@ const AdminMain = ({
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label className="style-crud">Superficie total</Form.Label>
+              <Form.Label className="fs-6 style-crud">
+                Superficie total
+              </Form.Label>
               <Form.Control
                 type="number"
                 placeholder=""
@@ -234,7 +236,7 @@ const AdminMain = ({
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label className="style-crud">
+              <Form.Label className="fs-6 style-crud">
                 Superficie del terreno
               </Form.Label>
               <Form.Control
@@ -247,7 +249,7 @@ const AdminMain = ({
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label className="style-crud">Imágenes</Form.Label>
+              <Form.Label className="fs-6 style-crud">Imágenes</Form.Label>
               <Form.Control
                 name="images"
                 maxLength={31}
@@ -262,7 +264,7 @@ const AdminMain = ({
         </Row>
         <Row>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label className="style-crud">Descripción</Form.Label>
+            <Form.Label className="fs-6 style-crud">Descripción</Form.Label>
             <Form.Control
               as="textarea"
               className="input-description"
