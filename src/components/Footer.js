@@ -24,7 +24,7 @@ const Footer = () => {
         <Col className="mb-5 mb-md-0 col-12 col-md-4 d-flex justify-content-center align-items-center">
           <Link
             target={"_blank"}
-            to="https://www.facebook.com/marketplace/110000195689236/search/?query=gonzalo%20de%20la%20vega"
+            to="https://www.facebook.com/marketplace/profile/100021849893616"
             className="link-footer "
           >
             <FontAwesomeIcon className="social-icon  me-4" icon={faFacebook} />
