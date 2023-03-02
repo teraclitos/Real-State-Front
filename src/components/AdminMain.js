@@ -71,7 +71,7 @@ const AdminMain = ({
         onInput={(e) => setEditHighlight(e.target.value)}
         aria-label="Default select example"
         name="highlight"
-        className="w-25"
+        className="highlight"
       >
         <option>destacar</option>
         <option value="YES">sí</option>
@@ -155,7 +155,7 @@ const AdminMain = ({
 
       <Form className="mt-4 w-75">
         <Row>
-          <Col>
+          <Col className="col-lg-6 col-12">
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="style-crud">Nombre</Form.Label>
               <Form.Control
@@ -199,7 +199,7 @@ const AdminMain = ({
               />
             </Form.Group>
           </Col>
-          <Col>
+          <Col className="col-lg-6 col-12">
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="style-crud">Antiguedad</Form.Label>
               <Form.Control

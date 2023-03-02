@@ -10,3 +10,7 @@
 .admin-main-container {
   color: #dfdfdf;
 }
+.highlight {
+  width: 25% !important;
+  min-width: 10em !important;
+}
