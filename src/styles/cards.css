@@ -5,6 +5,20 @@
 .card-container {
   width: 300px;
 
-  background-color: #e0e0e0 !important;
-  border: 0 !important;
+  background-color: #ffffff !important;
+
+  color: #696969;
+}
+.price-box {
+  height: 2.5em;
+  padding: calc(0.5em - 1px) 1em;
+}
+.btn-card {
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: 0;
+  border-right: 0;
+}
+.card-footer {
+  background-color: #ffffff !important;
 }

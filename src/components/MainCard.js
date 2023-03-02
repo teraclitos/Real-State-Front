@@ -4,7 +4,7 @@ import "../styles/all.css";
 const MainCard = ({ d }) => {
   return (
     <>
-      <Card className="card-container ">
+      <Card className="card-container border-0 ">
         <Card.Img
           className="img-card"
           variant="top"
@@ -12,9 +12,13 @@ const MainCard = ({ d }) => {
         />
         <Card.Body>
           <Card.Title>{d.name}</Card.Title>
-
-          <Button variant="primary">Ver Propiedad</Button>
         </Card.Body>
+        <Card.Footer className="d-flex justify-content-between align-items-end p-0 pt-3 card-footer">
+          <span className="d-flex price-box justify-content-center algin-items center">
+            US$ {d.price}
+          </span>
+          <button className="btn-g btn-card">Ver Propiedad</button>
+        </Card.Footer>
       </Card>
     </>
   );
