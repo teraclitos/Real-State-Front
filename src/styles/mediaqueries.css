@@ -13,11 +13,11 @@
   }
 }
 @media (max-width: 576px) {
-  .cube-conteiner {
+  .cube-container {
     font-size: 8px;
   }
   .slogan-cube-container {
-    font-size: 8spx;
+    font-size: 8px;
   }
 }
 @media (max-width: 400px) {
