@@ -17,7 +17,7 @@ const Hero = ({ logout, setLogout, changeData, toastSuccess }) => {
         <div className="slogan-container "></div>
         <div className="slogan-cube-container">
           <h2 className="slogan ">
-            Tenemos la casa que buscas, no pierdas tiempo
+            Tenemos el inmueble que buscas, no pierdas tiempo
           </h2>
           {/* <Slider /> */}
         </div>
