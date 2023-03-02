@@ -1,10 +1,22 @@
 @media (max-width: 768px) {
-  .total-body {
+  .cube-container {
     font-size: 12px;
+  }
+  .slogan-cube-container {
+    font-size: 12px;
+  }
+  .nav-bar {
+    font-size: 14px;
+  }
+  .footer-container {
+    font-size: 14px;
   }
 }
 @media (max-width: 576px) {
-  .total-body {
+  .cube-conteiner {
     font-size: 8px;
+  }
+  .slogan-cube-container {
+    font-size: 8spx;
   }
 }

@@ -1,16 +1,16 @@
 .btn-logout {
   position: absolute;
-  bottom: 1rem;
-  right: 1rem;
+  bottom: 1em;
+  right: 1em;
 }
 
 .input-description {
-  height: 10rem;
+  height: 10em;
 }
 .admin-main-container {
   color: #dfdfdf;
 }
 .highlight {
   width: 25% !important;
-  min-width: 10rem !important;
+  min-width: 10em !important;
 }
