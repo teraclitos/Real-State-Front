@@ -16,7 +16,7 @@ const ContainerMainCard = ({
   return (
     <>
       {!loader ? (
-        <Container className="mt-5  ">
+        <Container className="pt-5  ">
           <Row className="g-5 ">
             {data.map((d, i) => (
               <Col className="mb-2 col-12 col-md-6 col-lg-4 d-flex justify-content-center ">
@@ -28,7 +28,7 @@ const ContainerMainCard = ({
       ) : (
         <Loader />
       )}
-      <Container className="mt-4 d-flex justify-content-center">
+      <Container className="mt-5 pb-5 d-flex justify-content-center">
         <PaginationC
           totalPages={totalPages}
           page={page}

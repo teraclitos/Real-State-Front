@@ -1,6 +1,6 @@
 .pagination-item {
-  background-color: #999494;
-  color: #fff;
+  background-color: #dfdfdf;
+  color: #191919;
   width: 2.2em;
   height: 2.2em;
   display: flex;
@@ -11,6 +11,7 @@
   border-radius: 3px;
 }
 .pagination-active-item {
-  background-color: #3d3b3b;
+  background-color: #696969;
   pointer-events: none;
+  color: #ffffff;
 }

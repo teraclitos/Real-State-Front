@@ -150,7 +150,7 @@ const AdminMain = ({
     }
   }, [post]);
   return (
-    <Container className="d-flex flex-column align-items-center justify-content-center my-5 ">
+    <Container className="d-flex flex-column align-items-center justify-content-center py-5 admin-main-container ">
       <h2 className="d-flex justify-content-center mt-4 ">Crear Propiedad</h2>
 
       <Form className="mt-4 w-75">
@@ -285,7 +285,7 @@ const AdminMain = ({
             <button
               type="button"
               id="edit-Buttom"
-              className="btn-g mt-3"
+              className="btn-g btn-black mt-3"
               onClick={(e) => {
                 handlePost(e);
               }}

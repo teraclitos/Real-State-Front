@@ -55,7 +55,7 @@ const Login = ({
       }, 1000);
     } else if (login === false) {
       toastError("no se pudo iniciar sesion");
-    } 
+    }
   }, [changeData]);
 
   // window.addEventListener("keydown", (e) => {
@@ -71,8 +71,8 @@ const Login = ({
   // });
   return (
     <>
-      <Form className="d-flex flex-column align-items-center my-5">
-        <h2 className="mb-4">Iniciar sesion</h2>
+      <Form className="d-flex flex-column align-items-center justify-content-center  login-container">
+        <h2 className="mb-4 ">Iniciar sesion</h2>
         <Form.Group
           className="mb-2 d-flex flex-column align-items-start"
           controlId="mailUserLogin"
@@ -104,7 +104,7 @@ const Login = ({
 
         <button
           id="btn-login"
-          className="mt-3 btn-g"
+          className="mt-3 btn-g btn-black"
           onClick={(e) => {
             e.preventDefault();
             handleLogin(username, password);
