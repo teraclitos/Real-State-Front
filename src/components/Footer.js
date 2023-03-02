@@ -22,10 +22,18 @@ const Footer = () => {
           </ul>
         </Col>
         <Col className="mb-5 mb-md-0 col-12 col-md-4 d-flex justify-content-center align-items-center">
-          <Link to="/highlights" className="link-footer ">
+          <Link
+            target={"_blank"}
+            to="https://www.facebook.com/marketplace/110000195689236/search/?query=gonzalo%20de%20la%20vega"
+            className="link-footer "
+          >
             <FontAwesomeIcon className="social-icon  me-4" icon={faFacebook} />
           </Link>
-          <Link to="/highlights" className="link-footer ">
+          <Link
+            target={"_blank"}
+            to="https://wa.me/543816293327?text=Hola,%20c%C3%B3mo%20est%C3%A1s?%F0%9F%98%83%0AUsted%20se%20encuentra%20en%20contacto%20con%20Gonzalo%20de%20la%20Vega,%20asesor%20comercial%20inmobiliario%20%F0%9F%8F%A1%0AEstoy%20a%20su%20servicio,%20en%20qu%C3%A9%20puedo%20ayudarlo"
+            className="link-footer "
+          >
             <FontAwesomeIcon className="social-icon" icon={faWhatsapp} />
           </Link>
         </Col>
