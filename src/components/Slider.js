@@ -1,24 +1,52 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Container } from "react-bootstrap";
+
+// Import Swiper styles
 import "swiper/css";
+import "swiper/css/effect-cube";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { EffectCube, Pagination, Navigation } from "swiper";
+import "../styles/all.css";
 
 const Slider = () => {
   return (
-    <Container>
+    <>
+      <h3 className="mb-1 d-flex justify-content-center cube-title">
+        Oportunidades
+      </h3>
       <Swiper
-        spaceBetween={50}
-        slidesPerView={1}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        loop={true}
+        effect={"cube"}
+        grabCursor={false}
+        cubeEffect={{
+          shadow: true,
+          slideShadows: true,
+          shadowOffset: 20,
+          shadowScale: 0.94,
+        }}
+        pagination={false}
+        navigation={true}
+        modules={[EffectCube, Pagination, Navigation]}
+        className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        ...
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+        </SwiperSlide>
       </Swiper>
-    </Container>
+    </>
   );
 };
 

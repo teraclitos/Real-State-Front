@@ -4,7 +4,6 @@ import "../styles/all.css";
 import Slider from "./Slider";
 
 const Hero = ({ logout, setLogout, changeData, toastSuccess }) => {
- 
   useEffect(() => {
     if (logout) {
       toastSuccess("sesion cerrada correctamente");
@@ -13,10 +12,17 @@ const Hero = ({ logout, setLogout, changeData, toastSuccess }) => {
     }
   }, [changeData]);
   return (
-    <div className="hero-container ">
-      <div className="slogan-container "></div>
-      <h2 className="slogan">Tenemos la casa que buscas, no pierdas tiempo</h2>
-    </div>
+    <>
+      <div className="hero-container ">
+        <div className="slogan-container "></div>
+        <div className="slogan-cube-container">
+          <h2 className="slogan mb-5">
+            Tenemos la casa que buscas, no pierdas tiempo
+          </h2>
+          <Slider />
+        </div>
+      </div>
+    </>
   );
 };
 
