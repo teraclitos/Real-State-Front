@@ -19,15 +19,22 @@
 }
 @media (max-width: 400px) {
   .img-card {
-    width: 280px;
-    height: 280px;
+    width: 330px;
+    height: 330px;
   }
   .card-container {
-    width: 280px;
+    width: 330px;
   }
 }
 
 @media (max-width: 350px) {
+  .img-card {
+    width: 290px;
+    height: 290px;
+  }
+  .card-container {
+    width: 290px;
+  }
   .cube-container {
     font-size: 10px;
   }

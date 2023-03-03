@@ -1,18 +1,15 @@
 .img-card {
-  width: 300px;
-  height: 300px;
+  width: 360px;
+  height: 360px;
 }
 .card-container {
-  width: 300px;
+  width: 360px;
 
   background-color: #ffffff !important;
 
   color: #696969;
 }
-.price-box {
-  height: 2.5em;
-  padding: calc(0.5em - 1px) 1em;
-}
+
 .btn-card {
   border: 0;
   border-top-left-radius: 0;

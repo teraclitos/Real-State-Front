@@ -48,6 +48,11 @@ const NavbarC = ({
               <Nav.Link className="me-lg-5 " href="/propiedades">
                 <span className="nav-bar-link">Propiedades</span>
               </Nav.Link>
+              {token && (
+                <Nav.Link className="me-lg-5 " href="/admingori/main">
+                  <span className="nav-bar-link">Crear propiedades</span>
+                </Nav.Link>
+              )}
 
               {token ? (
                 <div className="mt-2 mt-lg-0">
