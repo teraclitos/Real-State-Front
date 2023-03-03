@@ -14,8 +14,8 @@ const MainCard = ({ d }) => {
           <Card.Title>{d.name}</Card.Title>
         </Card.Body>
         <Card.Footer className="d-flex justify-content-between align-items-end p-0  card-footer">
-          <div className="ps-2 pb-2">US$ {d.price}</div>
-          <button className="btn-g btn-black btn-card">Ver Propiedad</button>
+          <div className="ps-2  align-self-center">US$ {d.price}</div>
+          <button className="  btn-g btn-black btn-card">Ver Propiedad</button>
         </Card.Footer>
       </Card>
     </>
