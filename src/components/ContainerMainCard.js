@@ -16,7 +16,7 @@ const ContainerMainCard = ({
   return (
     <>
       {!loader ? (
-        <Container className="pt-5  ">
+        <Container className="pt-0  ">
           <Row className="g-5  m-0 ">
             {data.map((d, i) => (
               <Col className="mb-2 col-12 col-md-6 col-lg-4 d-flex justify-content-center ">
