@@ -1,10 +1,4 @@
-.img-card {
-  width: 360px;
-  height: 360px;
-}
 .card-container {
-  width: 360px;
-
   background-color: #ffffff !important;
 
   color: #696969;
@@ -16,7 +10,11 @@
   border-bottom-left-radius: 0;
   border-top-right-radius: 0;
   padding: calc(1.6em - 1px) 1em;
+  max-width: 50%;
 }
 .card-footer {
   background-color: #ffffff !important;
+}
+.price-box {
+  max-width: 50%;
 }

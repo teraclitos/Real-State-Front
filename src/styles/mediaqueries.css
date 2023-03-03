@@ -18,23 +18,9 @@
   }
 }
 @media (max-width: 400px) {
-  .img-card {
-    width: 330px;
-    height: 330px;
-  }
-  .card-container {
-    width: 330px;
-  }
 }
 
 @media (max-width: 350px) {
-  .img-card {
-    width: 290px;
-    height: 290px;
-  }
-  .card-container {
-    width: 290px;
-  }
   .cube-container {
     font-size: 10px;
   }
@@ -43,11 +29,10 @@
   .cube-container {
     font-size: 8px;
   }
-  .img-card {
-    width: 200px;
-    height: 200px;
+  .card-footer {
+    font-size: 0.7em;
   }
-  .card-container {
-    width: 200px;
+  .card-body {
+    font-size: 0.7em;
   }
 }
