@@ -13,7 +13,7 @@
 .nav-bar-link {
   color: #696969;
   font-weight: 400;
-  font-size: 1.05em;
+  font-size: 0.95em;
 }
 .nav-bar-link:hover {
   color: #191919;
@@ -41,7 +41,7 @@
   font-size: 1.05em;
 }
 .size-btn-nav-bar {
-  font-size: 1.12em;
+  font-size: 1.02em;
   border-color: #191919;
   color: #191919;
 }
