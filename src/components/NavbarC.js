@@ -15,20 +15,31 @@ const NavbarC = ({
 }) => {
   const token = JSON.parse(localStorage.getItem("token"));
   const navigate = useNavigate();
+
+  const togler = document.querySelector(".navbar-toggler-icon");
+
+  const [open, setOpen] = useState(null);
+
+  const handleTogler = () => {
+    setOpen(!open);
+  };
+
   useEffect(() => {
     if (logout) {
       navigate("/");
     }
   }, [changeData]);
+
+  useEffect(() => {
+    if (open) {
+      togler.classList.add("icon-togler");
+    } else if (open === false) {
+      togler.classList.remove("icon-togler");
+    }
+  }, [open]);
   return (
     <>
-      <Navbar
-        // variant="dark"
-        className=" nav-bar "
-        collapseOnSelect
-        expand="lg"
-        sticky="top"
-      >
+      <Navbar className=" nav-bar " collapseOnSelect expand="lg" sticky="top">
         <Container className="nav-bar-container">
           <Navbar.Brand href="/">
             <img
@@ -37,8 +48,12 @@ const NavbarC = ({
               alt="logo"
             />
           </Navbar.Brand>
-
-          <Navbar.Toggle className="" aria-controls="responsive-navbar-nav" />
+          <Navbar.Toggle
+            onClick={() => {
+              handleTogler();
+            }}
+            aria-controls="responsive-navbar-nav"
+          />
 
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="d-flex ms-auto align-items-center link-nav-container  py-lg-0">

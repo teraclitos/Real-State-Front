@@ -61,3 +61,10 @@
   border: 0 !important;
   color: rgb(255, 255, 255) !important;
 }
+.navbar-toggler-icon {
+  transition: 0.15s !important;
+}
+.icon-togler {
+  transition: 0.15s;
+  background-image: url("../../public/imagenes/close-imagen.png") !important;
+}
