@@ -66,5 +66,5 @@
 }
 .icon-togler {
   transition: 0.15s;
-  background-image: url("../../public/imagenes/close-imagen.png") !important;
+  background-image: url("../../public/imagenes/imagen-cerrar.png") !important;
 }
