@@ -59,14 +59,16 @@ const ContainerMainCard = ({
       ) : (
         <Loader />
       )}
-      <Container className="mt-5 pb-5 d-flex justify-content-center">
-        <PaginationC
-          totalPages={totalPages}
-          page={page}
-          setPage={setPage}
-          setLoader={setLoader}
-        />
-      </Container>
+      {data.length !== 0 && (
+        <Container className="mt-5 pb-5 d-flex justify-content-center">
+          <PaginationC
+            totalPages={totalPages}
+            page={page}
+            setPage={setPage}
+            setLoader={setLoader}
+          />
+        </Container>
+      )}
     </>
   );
 };

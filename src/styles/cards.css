@@ -20,7 +20,8 @@
 }
 .no-result {
   color: #dfdfdf;
-  min-height: 60vh;
+  min-height: 70vh;
+  text-align: center;
 }
 .searcher-container {
   color: #dfdfdf;
