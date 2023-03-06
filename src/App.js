@@ -8,12 +8,25 @@ import { useEffect, useState } from "react";
 function App() {
   const [data, setData] = useState([]);
   const [changeData, setChangeData] = useState(1);
+  const [changeLog, setChangeLog] = useState(1);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState("");
   const [location, setLocation] = useState("");
   const [type, setType] = useState("");
   const [inf, setInf] = useState("");
   const [sup, setSup] = useState("");
+  const [editName, setEditName] = useState("");
+  const [editType, setEditType] = useState("");
+  const [editPrice, setEditPrice] = useState("");
+  const [editImages, setEditImages] = useState("");
+  const [editTotalSurface, setEditTotalSurface] = useState("");
+  const [editLandSurface, setEditLandSurface] = useState("");
+  const [editLocation, setEditLocation] = useState("");
+  const [editAdress, setEditAdress] = useState("");
+  const [editAntiquity, setEditAntiquity] = useState("");
+  const [editState, setEditState] = useState("");
+  const [editDescription, setEditDescription] = useState("");
+  const [editHighlight, setEditHighlight] = useState("NO");
 
   const [loader, setLoader] = useState(true);
   useEffect(() => {
@@ -68,6 +81,32 @@ function App() {
         setInf={setInf}
         sup={sup}
         setSup={setSup}
+        editName={editName}
+        editType={editType}
+        editPrice={editPrice}
+        editImages={editImages}
+        editTotalSurface={editTotalSurface}
+        editLandSurface={editLandSurface}
+        editLocation={editLocation}
+        editAdress={editAdress}
+        editAntiquity={editAntiquity}
+        editState={editState}
+        editDescription={editDescription}
+        editHighlight={editHighlight}
+        setEditName={setEditName}
+        setEditType={setEditType}
+        setEditPrice={setEditPrice}
+        setEditImages={setEditImages}
+        setEditTotalSurface={setEditTotalSurface}
+        setEditLandSurface={setEditLandSurface}
+        setEditLocation={setEditLocation}
+        setEditAdress={setEditAdress}
+        setEditAntiquity={setEditAntiquity}
+        setEditState={setEditState}
+        setEditDescription={setEditDescription}
+        setEditHighlight={setEditHighlight}
+        changeLog={changeLog}
+        setChangeLog={setChangeLog}
       />
       <ToastContainer
         transition={Flip}

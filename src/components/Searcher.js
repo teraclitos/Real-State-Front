@@ -12,21 +12,6 @@ const Searcher = ({
   setChangeData,
   type,
 }) => {
-  const typeSearcher = (e) => {
-    if (e.target.value === "Tipos") {
-      setType("");
-    } else {
-      setType(e.target.value);
-    }
-  };
-  const locationSearcher = (e) => {
-    if (e.target.value === "Localidades") {
-      setLocation("");
-    } else {
-      setLocation(e.target.value);
-    }
-  };
-
   return (
     <Container className="pt-5 searcher-container">
       <Form className="d-flex flex-column flex-lg-row justify-content-center  align-items-center ">
@@ -37,10 +22,10 @@ const Searcher = ({
           <Form.Label className="fs-6 style-crud w-100">Tipo</Form.Label>
           <Form.Select
             onInput={(e) => {
-              typeSearcher(e);
+              setType(e.target.value);
             }}
           >
-            <option>Tipos</option>
+            <option value=""></option>
             <option value="Casa">Casa</option>
             <option value="Departamento">Departamento</option>
             <option value="Duplex">Duplex</option>
@@ -56,10 +41,10 @@ const Searcher = ({
           <Form.Label className="fs-6 style-crud">Localidad</Form.Label>
           <Form.Select
             onInput={(e) => {
-              locationSearcher(e);
+              setLocation(e.target.value);
             }}
           >
-            <option>Localidades</option>
+            <option value=""></option>
             <option value="Yerba Buena">Yerba Buena</option>
             <option value="San Miguel">San Miguel</option>
             <option value="San Pablo">San Pablo</option>

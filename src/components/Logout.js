@@ -6,8 +6,8 @@ const Logout = ({
   setLogin,
   logout,
   setLogout,
-  changeData,
-  setChangeData,
+  changeLog,
+  setChangeLog,
 }) => {
   const token = JSON.parse(localStorage.getItem("token"));
   const handleLogout = () => {
@@ -22,7 +22,7 @@ const Logout = ({
         localStorage.setItem("token", JSON.stringify(""));
         setLogin(null);
         setLogout(true);
-        setChangeData(changeData + 1);
+        setChangeLog(changeLog + 1);
       })
 
       .catch((error) => {

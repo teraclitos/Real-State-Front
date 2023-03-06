@@ -33,6 +33,32 @@ const Main = ({
   setInf,
   sup,
   setSup,
+  editName,
+  editType,
+  editPrice,
+  editImages,
+  editTotalSurface,
+  editLandSurface,
+  editLocation,
+  editAdress,
+  editAntiquity,
+  editState,
+  editDescription,
+  editHighlight,
+  setEditName,
+  setEditType,
+  setEditPrice,
+  setEditImages,
+  setEditTotalSurface,
+  setEditLandSurface,
+  setEditLocation,
+  setEditAdress,
+  setEditAntiquity,
+  setEditState,
+  setEditDescription,
+  setEditHighlight,
+  changeLog,
+  setChangeLog,
 }) => {
   return (
     <>
@@ -45,6 +71,8 @@ const Main = ({
           setLogin={setLogin}
           logout={logout}
           setLogout={setLogout}
+          changeLog={changeLog}
+          setChangeLog={setChangeLog}
         />
         <Container fluid className="body-container p-0">
           <Routes>
@@ -110,6 +138,8 @@ const Main = ({
                   setLogin={setLogin}
                   logout={logout}
                   setLogout={setLogout}
+                  changeLog={changeLog}
+                  setChangeLog={setChangeLog}
                 />
               }
             />
@@ -126,6 +156,32 @@ const Main = ({
                   setLogin={setLogin}
                   logout={logout}
                   setLogout={setLogout}
+                  editName={editName}
+                  editType={editType}
+                  editPrice={editPrice}
+                  editImages={editImages}
+                  editTotalSurface={editTotalSurface}
+                  editLandSurface={editLandSurface}
+                  editLocation={editLocation}
+                  editAdress={editAdress}
+                  editAntiquity={editAntiquity}
+                  editState={editState}
+                  editDescription={editDescription}
+                  editHighlight={editHighlight}
+                  setEditName={setEditName}
+                  setEditType={setEditType}
+                  setEditPrice={setEditPrice}
+                  setEditImages={setEditImages}
+                  setEditTotalSurface={setEditTotalSurface}
+                  setEditLandSurface={setEditLandSurface}
+                  setEditLocation={setEditLocation}
+                  setEditAdress={setEditAdress}
+                  setEditAntiquity={setEditAntiquity}
+                  setEditState={setEditState}
+                  setEditDescription={setEditDescription}
+                  setEditHighlight={setEditHighlight}
+                  changeLog={changeLog}
+                  setChangeLog={setChangeLog}
                 />
               }
             />

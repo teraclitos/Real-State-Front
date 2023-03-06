@@ -12,6 +12,8 @@ const Login = ({
   setChangeData,
   logout,
   setLogout,
+  changeLog,
+  setChangeLog,
 }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -43,7 +45,7 @@ const Login = ({
             setLogin(null);
           }, 1000);
         }
-        setChangeData(changeData + 1);
+        setChangeLog(changeLog + 1);
       });
   };
 
@@ -56,7 +58,7 @@ const Login = ({
     } else if (login === false) {
       toastError("no se pudo iniciar sesion");
     }
-  }, [changeData]);
+  }, [changeLog]);
 
   // window.addEventListener("keydown", (e) => {
   //   if (e.code === "Enter") {

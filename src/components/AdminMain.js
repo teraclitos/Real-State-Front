@@ -9,24 +9,43 @@ const AdminMain = ({
   toastSuccess,
   login,
   setLogin,
-  changeData,
+  editName,
+  editType,
+  editPrice,
+  editImages,
+  editTotalSurface,
+  editLandSurface,
+  editLocation,
+  editAdress,
+  editAntiquity,
+  editState,
+  editDescription,
+  editHighlight,
+  setEditName,
+  setEditType,
+  setEditPrice,
+  setEditImages,
+  setEditTotalSurface,
+  setEditLandSurface,
+  setEditLocation,
+  setEditAdress,
+  setEditAntiquity,
+  setEditState,
+  setEditDescription,
+  setEditHighlight,
+  changeLog,
+  setChangeLog,
 }) => {
   const token = JSON.parse(localStorage.getItem("token"));
   const navigate = useNavigate();
+  const inputsPost = document.querySelectorAll(".input-post");
+  const resetInputs = () => {
+    inputsPost.forEach((element) => {
+      element.value = "";
+    });
+  };
 
   const [post, setPost] = useState(null);
-  const [editName, setEditName] = useState("");
-  const [editType, setEditType] = useState("");
-  const [editPrice, setEditPrice] = useState("");
-  const [editImages, setEditImages] = useState("");
-  const [editTotalSurface, setEditTotalSurface] = useState("");
-  const [editLandSurface, setEditLandSurface] = useState("");
-  const [editLocation, setEditLocation] = useState("");
-  const [editAdress, setEditAdress] = useState("");
-  const [editAntiquity, setEditAntiquity] = useState("");
-  const [editState, setEditState] = useState("");
-  const [editDescription, setEditDescription] = useState("");
-  const [editHighlight, setEditHighlight] = useState("NO");
 
   const locations = () => {
     return (
@@ -34,8 +53,9 @@ const AdminMain = ({
         onInput={(e) => setEditLocation(e.target.value)}
         aria-label="Default select example"
         name="location"
+        className="input-post"
       >
-        <option>Localidades</option>
+        <option value=""></option>
         <option value="Yerba Buena">Yerba Buena</option>
         <option value="San Miguel">San Miguel</option>
         <option value="San Pablo">San Pablo</option>
@@ -54,8 +74,9 @@ const AdminMain = ({
         onInput={(e) => setEditType(e.target.value)}
         aria-label="Default select example"
         name="type"
+        className="input-post"
       >
-        <option>Tipos</option>
+        <option value=""></option>
         <option value="Casa">Casa</option>
         <option value="Departamento">Departamento</option>
         <option value="Duplex">Duplex</option>
@@ -71,9 +92,9 @@ const AdminMain = ({
         onInput={(e) => setEditHighlight(e.target.value)}
         aria-label="Default select example"
         name="highlight"
-        className="highlight"
+        className="highlight input-post"
       >
-        <option>destacar</option>
+        <option value=""></option>
         <option value="YES">sí</option>
         <option value="NO">no</option>
       </Form.Select>
@@ -89,8 +110,7 @@ const AdminMain = ({
     } else {
       navigate("/");
     }
-    console.log(login);
-  }, [changeData]);
+  }, [changeLog]);
 
   const handlePost = async (e) => {
     e.preventDefault();
@@ -130,11 +150,9 @@ const AdminMain = ({
       )
       .then((res) => {
         setPost(true);
-        console.log(res.msj);
       })
 
       .catch((error) => {
-        console.log(error);
         setPost(false);
       });
   };
@@ -142,6 +160,7 @@ const AdminMain = ({
     if (post === true) {
       toastSuccess("propiedad creada correctamente");
       setPost(null);
+      resetInputs();
     }
 
     if (post === false) {
@@ -164,6 +183,7 @@ const AdminMain = ({
                 onInput={(e) => setEditName(e.target.value)}
                 autoFocus
                 name="name"
+                className="input-post"
               />
             </Form.Group>
 
@@ -181,6 +201,7 @@ const AdminMain = ({
                 onInput={(e) => setEditPrice(e.target.value)}
                 autoFocus
                 name="price"
+                className="input-post"
               />
             </Form.Group>
 
@@ -196,6 +217,7 @@ const AdminMain = ({
                 onInput={(e) => setEditAdress(e.target.value)}
                 autoFocus
                 name="adress"
+                className="input-post"
               />
             </Form.Group>
           </Col>
@@ -207,6 +229,7 @@ const AdminMain = ({
                 onInput={(e) => setEditAntiquity(e.target.value)}
                 autoFocus
                 name="antiquity"
+                className="input-post"
               />
             </Form.Group>
 
@@ -219,6 +242,7 @@ const AdminMain = ({
                 onInput={(e) => setEditState(e.target.value)}
                 autoFocus
                 name="state"
+                className="input-post"
               />
             </Form.Group>
 
@@ -232,6 +256,7 @@ const AdminMain = ({
                 onInput={(e) => setEditTotalSurface(e.target.value)}
                 autoFocus
                 name="totalSurface"
+                className="input-post"
               />
             </Form.Group>
 
@@ -245,6 +270,7 @@ const AdminMain = ({
                 onInput={(e) => setEditLandSurface(e.target.value)}
                 autoFocus
                 name="landSurface"
+                className="input-post"
               />
             </Form.Group>
 
@@ -258,6 +284,7 @@ const AdminMain = ({
                 placeholder=""
                 onInput={(e) => setEditImages(e.target.files)}
                 autoFocus
+                className="input-post"
               />
             </Form.Group>
           </Col>
@@ -267,7 +294,7 @@ const AdminMain = ({
             <Form.Label className="fs-6 style-crud">Descripción</Form.Label>
             <Form.Control
               as="textarea"
-              className="input-description"
+              className="input-description input-post"
               type="text"
               placeholder=""
               onInput={(e) => setEditDescription(e.target.value)}
@@ -278,7 +305,10 @@ const AdminMain = ({
         </Row>
 
         <Row className="mb-3 mt-4">
-          <Form.Group className=" btn-detail d-flex justify-content-center ">
+          <Form.Label className="fs-6 style-crud text-center">
+            Destacar
+          </Form.Label>
+          <Form.Group className=" btn-detail d-flex justify-content-center  ">
             {highlight()}
           </Form.Group>
         </Row>

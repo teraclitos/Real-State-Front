@@ -11,6 +11,8 @@ const Admin = ({
   setChangeData,
   logout,
   setLogout,
+  changeLog,
+  setChangeLog,
 }) => {
   return (
     <>
@@ -23,6 +25,8 @@ const Admin = ({
         setChangeData={setChangeData}
         logout={logout}
         setLogout={setLogout}
+        changeLog={changeLog}
+        setChangeLog={setChangeLog}
       />
     </>
   );
