@@ -18,3 +18,13 @@
 .price-box {
   max-width: 50%;
 }
+.no-result {
+  color: #dfdfdf;
+  min-height: 60vh;
+}
+.searcher-container {
+  color: #dfdfdf;
+}
+.input-price {
+  width: 7em !important;
+}

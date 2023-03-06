@@ -10,10 +10,15 @@ function App() {
   const [changeData, setChangeData] = useState(1);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState("");
+  const [location, setLocation] = useState("");
+  const [type, setType] = useState("");
+  const [inf, setInf] = useState("");
+  const [sup, setSup] = useState("");
+
   const [loader, setLoader] = useState(true);
   useEffect(() => {
     fetch(
-      `https://gori-inmobiliaria.vercel.app/properties/show?page=${page}&limit=9`
+      `https://gori-inmobiliaria.vercel.app/properties/show?page=${page}&limit=9&location=${location}&type=${type}&inf=${inf}&sup=${sup}`
     )
       .then((res) => res.json())
       .then((json) => {
@@ -55,6 +60,14 @@ function App() {
         totalPages={totalPages}
         loader={loader}
         setLoader={setLoader}
+        location={location}
+        setLocation={setLocation}
+        type={type}
+        setType={setType}
+        inf={inf}
+        setInf={setInf}
+        sup={sup}
+        setSup={setSup}
       />
       <ToastContainer
         transition={Flip}

@@ -25,6 +25,14 @@ const Main = ({
   totalPages,
   loader,
   setLoader,
+  location,
+  setLocation,
+  type,
+  setType,
+  inf,
+  setInf,
+  sup,
+  setSup,
 }) => {
   return (
     <>
@@ -64,11 +72,21 @@ const Main = ({
                   toastError={toastError}
                   toastSuccess={toastSuccess}
                   data={data}
+                  changeData={changeData}
+                  setChangeData={setChangeData}
                   page={page}
                   setPage={setPage}
                   totalPages={totalPages}
                   loader={loader}
                   setLoader={setLoader}
+                  location={location}
+                  setLocation={setLocation}
+                  type={type}
+                  setType={setType}
+                  inf={inf}
+                  setInf={setInf}
+                  sup={sup}
+                  setSup={setSup}
 
                   // changeData={changeData}
                   // setChangeData={setChangeData}
