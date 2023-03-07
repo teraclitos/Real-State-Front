@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Form, Row, Col, Container } from "react-bootstrap";
 import "../styles/all.css";
+import ModalDelete from "./ModalDelete";
 
 const ModifyDelete = ({
   toastError,
@@ -34,8 +35,16 @@ const ModifyDelete = ({
   setChangeData,
   dataDetails,
   setDataDetails,
+  setLoader,
+  setPage,
 }) => {
+  const navigate = useNavigate();
+  const [deleteP, setDeleteP] = useState(null);
+  const [showModalDelete, setShowModalDelete] = useState(false);
+  const handleCloseModalDelete = () => setShowModalDelete(false);
+  const handleShowModalDelete = () => setShowModalDelete(true);
   const [modify, setModify] = useState(null);
+
   const token = JSON.parse(localStorage.getItem("token"));
   const handleModify = (e) => {
     e.preventDefault();
@@ -91,10 +100,21 @@ const ModifyDelete = ({
     if (modify) {
       toastSuccess("Se ha modificado la propiedad con exito");
     }
-    if (!modify) {
+    if (modify === false) {
       toastError("Ha ocurrido un error");
     }
   }, [modify]);
+  useEffect(() => {
+    if (deleteP) {
+      toastSuccess("Se ha eliminado la propiedad con exito");
+      setPage(1);
+      navigate("/propiedades");
+      setLoader(true);
+    }
+    if (modify === false) {
+      toastError("Ha ocurrido un error");
+    }
+  }, [deleteP]);
   const locations = () => {
     return (
       <Form.Select
@@ -297,18 +317,39 @@ const ModifyDelete = ({
         <Row>
           <Form.Group className="d-flex justify-content-center">
             <button
-              type="array"
+              type="button"
               id="edit-Buttom"
-              className="btn-g btn-black mt-3"
+              className="btn-g btn-black mt-3 me-3"
               onClick={(e) => {
                 handleModify(e);
               }}
             >
               Modificar
             </button>
+            <button
+              type="button"
+              className="btn-g btn-black mt-3"
+              onClick={(e) => {
+                e.preventDefault();
+                handleShowModalDelete();
+              }}
+            >
+              Eliminar
+            </button>
           </Form.Group>
         </Row>
       </Form>
+      <ModalDelete
+        handleCloseModalDelete={handleCloseModalDelete}
+        setShowModalDelete={setShowModalDelete}
+        showModalDelete={showModalDelete}
+        dataDetails={dataDetails}
+        deleteP={deleteP}
+        setDeleteP={setDeleteP}
+        changeData={changeData}
+        setChangeData={setChangeData}
+        setLoader={setLoader}
+      />
     </Container>
   );
 };

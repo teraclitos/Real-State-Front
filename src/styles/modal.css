@@ -1,0 +1,8 @@
+.modal-body {
+  background-color: #ffffff;
+  color: #191919;
+}
+.modal-body-rounded {
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+}

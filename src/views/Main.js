@@ -221,6 +221,7 @@ const Main = ({
                   setEditHighlight={setEditHighlight}
                   loader={loader}
                   setLoader={setLoader}
+                  setPage={setPage}
                 />
               }
             />

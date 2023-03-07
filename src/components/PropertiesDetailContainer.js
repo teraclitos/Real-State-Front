@@ -34,6 +34,7 @@ const PropertiesDetailContainer = ({
   setChangeData,
   loader,
   setLoader,
+  setPage,
 }) => {
   const params = useParams();
 
@@ -82,6 +83,8 @@ const PropertiesDetailContainer = ({
           setEditHighlight={setEditHighlight}
           dataDetails={dataDetails}
           setDataDetails={setDataDetails}
+          setLoader={setLoader}
+          setPage={setPage}
         />
       ) : (
         <Loader />
