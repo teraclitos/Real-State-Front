@@ -10,6 +10,8 @@
   border-bottom-left-radius: 0;
   border-top-right-radius: 0;
   padding: calc(1.6em - 1px) 1em;
+}
+.btn-card-link {
   max-width: 50%;
 }
 .card-footer {

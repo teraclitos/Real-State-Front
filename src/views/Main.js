@@ -10,6 +10,7 @@ import Hero from "../components/Hero";
 import Slider from "../components/Slider";
 
 import "../styles/all.css";
+import PropertiesDetailContainer from "../components/PropertiesDetailContainer";
 const Main = ({
   toastError,
   toastSuccess,
@@ -182,6 +183,44 @@ const Main = ({
                   setEditHighlight={setEditHighlight}
                   changeLog={changeLog}
                   setChangeLog={setChangeLog}
+                />
+              }
+            />
+            <Route
+              path="/propiedades/:id"
+              element={
+                <PropertiesDetailContainer
+                  toastError={toastError}
+                  toastSuccess={toastSuccess}
+                  data={data}
+                  changeData={changeData}
+                  setChangeData={setChangeData}
+                  editName={editName}
+                  editType={editType}
+                  editPrice={editPrice}
+                  editImages={editImages}
+                  editTotalSurface={editTotalSurface}
+                  editLandSurface={editLandSurface}
+                  editLocation={editLocation}
+                  editAdress={editAdress}
+                  editAntiquity={editAntiquity}
+                  editState={editState}
+                  editDescription={editDescription}
+                  editHighlight={editHighlight}
+                  setEditName={setEditName}
+                  setEditType={setEditType}
+                  setEditPrice={setEditPrice}
+                  setEditImages={setEditImages}
+                  setEditTotalSurface={setEditTotalSurface}
+                  setEditLandSurface={setEditLandSurface}
+                  setEditLocation={setEditLocation}
+                  setEditAdress={setEditAdress}
+                  setEditAntiquity={setEditAntiquity}
+                  setEditState={setEditState}
+                  setEditDescription={setEditDescription}
+                  setEditHighlight={setEditHighlight}
+                  loader={loader}
+                  setLoader={setLoader}
                 />
               }
             />

@@ -4,7 +4,7 @@ import "../styles/all.css";
 const Loader = () => {
   return (
     <div className="loader-container">
-      <Spinner animation="border " />
+      <Spinner className="spinner" animation="border " />
     </div>
   );
 };

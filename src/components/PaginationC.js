@@ -13,6 +13,7 @@ const PaginationC = ({ page, setPage, totalPages, setLoader }) => {
     }
     items.push(
       <div
+        key={"page" + number}
         className={pagClass}
         onClick={() => {
           setPage(number);

@@ -7,13 +7,8 @@
   justify-content: center;
   top: 0;
 
-  background: linear-gradient(
-    to bottom,
-    #ffffff,
-    #ffffff,
-    #fdfdfd,
-    #fdfdfd,
-    #ffffff,
-    #ffffff
-  );
+  background-color: #191919;
+}
+.spinner {
+  color: #dfdfdf;
 }

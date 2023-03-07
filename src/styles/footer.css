@@ -16,6 +16,9 @@
   color: #191919;
 }
 
+.link {
+  text-decoration: none;
+}
 .link-footer {
   text-decoration: none;
   color: #6b6363;

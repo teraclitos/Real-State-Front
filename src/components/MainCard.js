@@ -1,7 +1,8 @@
 import { React, useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import "../styles/all.css";
-const MainCard = ({ d, i }) => {
+const MainCard = ({ d, i, setLoader }) => {
   const [width, setWidth] = useState(window.innerWidth);
   const imgheigthF = () => {
     let imgHeight = document.getElementById("img-card0").clientWidth;
@@ -32,7 +33,17 @@ const MainCard = ({ d, i }) => {
         </Card.Body>
         <Card.Footer className="d-flex justify-content-between align-items-end p-0  card-footer">
           <div className="ps-2 price-box align-self-center">US$ {d.price}</div>
-          <button className="  btn-g btn-black btn-card">Ver Propiedad</button>
+          <Link
+            onClick={() => {
+              setLoader(true);
+            }}
+            to={`/propiedades/${d._id}`}
+            className="link btm-card-link  "
+          >
+            <button className="  btn-g btn-black btn-card  ">
+              Ver Propiedad
+            </button>
+          </Link>
         </Card.Footer>
       </Card>
     </>

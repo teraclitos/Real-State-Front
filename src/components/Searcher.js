@@ -61,7 +61,7 @@ const Searcher = ({
             className="input-price me-3 me-lg-1"
             controlId="inf-searcher"
           >
-            <Form.Label className="fs-6 style-crud">Desde</Form.Label>
+            <Form.Label className="fs-6 style-crud">Desde US$</Form.Label>
             <Form.Control
               className=""
               type="number"
@@ -69,7 +69,7 @@ const Searcher = ({
             />
           </Form.Group>
           <Form.Group className="input-price" controlId="sup-searcher">
-            <Form.Label className="fs-6 style-crud">Hasta</Form.Label>
+            <Form.Label className="fs-6 style-crud">Hasta US$</Form.Label>
             <Form.Control
               className=""
               type="number"

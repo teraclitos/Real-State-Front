@@ -45,8 +45,11 @@ const ContainerMainCard = ({
           {data.length !== 0 ? (
             <Row className="g-5  m-0 ">
               {data.map((d, i) => (
-                <Col className="mb-2 col-12 col-md-6 col-lg-4 d-flex justify-content-center ">
-                  <MainCard i={i} d={d} />
+                <Col
+                  key={"property" + i}
+                  className="mb-2 col-12 col-md-6 col-lg-4 d-flex justify-content-center "
+                >
+                  <MainCard i={i} d={d} setLoader={setLoader} />
                 </Col>
               ))}
             </Row>

@@ -3,7 +3,7 @@ import { toast, ToastContainer } from "react-toastify";
 import Main from "./views/Main";
 import "react-toastify/dist/ReactToastify.css";
 import { Flip } from "react-toastify";
-import { useEffect, useState } from "react";
+import { React, useEffect, useState } from "react";
 
 function App() {
   const [data, setData] = useState([]);
