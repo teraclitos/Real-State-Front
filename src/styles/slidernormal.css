@@ -5,7 +5,7 @@
 
 .swiper-slide-normal {
   text-align: center !important;
-  font-size: 16px !important;
+  font-size: inherit !important;
   background: #191919 !important;
 
   /* Center slide text vertically */
@@ -16,9 +16,9 @@
 
 .swiper-slide-img-normal {
   display: block !important;
-  width: 45em !important;
+  width: 100% !important;
   height: 26em !important;
-  object-fit: cover !important;
+  object-fit: contain !important;
 }
 .next-normal {
   right: var(--swiper-navigation-sides-offset, 0em) !important;

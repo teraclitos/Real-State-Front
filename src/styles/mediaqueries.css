@@ -5,6 +5,9 @@
   .input-price-container {
     width: 100%;
   }
+  /* .slider-normal-container {
+    font-size: 12px;
+  } */
 }
 @media (max-width: 768px) {
   .cube-container {
@@ -19,13 +22,22 @@
   .footer-container {
     font-size: 14px;
   }
+  /* .slider-normal-container {
+    font-size: 10px;
+  } */
 }
 @media (max-width: 576px) {
   .slogan-cube-container {
     font-size: 10px;
   }
+  /* .slider-normal-container {
+    font-size: 8px;
+  } */
 }
 @media (max-width: 400px) {
+  /* .slider-normal-container {
+    font-size: 5px;
+  } */
 }
 
 @media (max-width: 350px) {

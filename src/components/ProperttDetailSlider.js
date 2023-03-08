@@ -18,22 +18,24 @@ const ProperttDetailSlider = ({ dataDetails }) => {
     nextSlider.classList.add("next-normal");
   }, []);
   return (
-    <Swiper
-      pagination={true}
-      loop={true}
-      navigation={true}
-      modules={[Navigation, Pagination]}
-      className="mySwiper swiper-normal py-5"
-    >
-      {dataDetails.images_URL.map((d, i) => (
-        <SwiperSlide
-          key={"slidenorma" + i}
-          className="mb-2 col-12 col-md-6 col-lg-4 d-flex justify-content-center "
-        >
-          <img className="swiper-slide-img-normal" src={d.url} alt="" />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className="slider-normal-container">
+      <Swiper
+        pagination={true}
+        loop={true}
+        navigation={true}
+        modules={[Navigation, Pagination]}
+        className="mySwiper swiper-normal py-5"
+      >
+        {dataDetails.images_URL.map((d, i) => (
+          <SwiperSlide
+            key={"slidenorma" + i}
+            className="mb-2 col-12 col-md-6 col-lg-4 d-flex justify-content-center "
+          >
+            <img className="swiper-slide-img-normal" src={d.url} alt="" />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
 
