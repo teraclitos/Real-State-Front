@@ -56,12 +56,6 @@
   /* .slider-normal-container {
     font-size: 5px;
   } */
-  .prev-normal {
-    font-size: 8px !important;
-  }
-  .next-normal {
-    font-size: 8px !important ;
-  }
 }
 
 @media (max-width: 350px) {
