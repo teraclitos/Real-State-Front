@@ -2,6 +2,8 @@ import { React, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ModifyDelete from "./ModifyDelete";
 import Loader from "./Loader";
+import { Container } from "react-bootstrap";
+import ProperttDetailSlider from "./ProperttDetailSlider";
 
 const PropertiesDetailContainer = ({
   toastError,
@@ -37,6 +39,7 @@ const PropertiesDetailContainer = ({
   setPage,
 }) => {
   const params = useParams();
+  const token = JSON.parse(localStorage.getItem("token"));
 
   const [dataDetails, setDataDetails] = useState({ name: "hola" });
 
@@ -52,40 +55,48 @@ const PropertiesDetailContainer = ({
   return (
     <>
       {!loader ? (
-        <ModifyDelete
-          toastError={toastError}
-          toastSuccess={toastSuccess}
-          changeData={changeData}
-          setChangeData={setChangeData}
-          editName={editName}
-          editType={editType}
-          editPrice={editPrice}
-          editImages={editImages}
-          editTotalSurface={editTotalSurface}
-          editLandSurface={editLandSurface}
-          editLocation={editLocation}
-          editAdress={editAdress}
-          editAntiquity={editAntiquity}
-          editState={editState}
-          editDescription={editDescription}
-          editHighlight={editHighlight}
-          setEditName={setEditName}
-          setEditType={setEditType}
-          setEditPrice={setEditPrice}
-          setEditImages={setEditImages}
-          setEditTotalSurface={setEditTotalSurface}
-          setEditLandSurface={setEditLandSurface}
-          setEditLocation={setEditLocation}
-          setEditAdress={setEditAdress}
-          setEditAntiquity={setEditAntiquity}
-          setEditState={setEditState}
-          setEditDescription={setEditDescription}
-          setEditHighlight={setEditHighlight}
-          dataDetails={dataDetails}
-          setDataDetails={setDataDetails}
-          setLoader={setLoader}
-          setPage={setPage}
-        />
+        <>
+          {token ? (
+            <ModifyDelete
+              toastError={toastError}
+              toastSuccess={toastSuccess}
+              changeData={changeData}
+              setChangeData={setChangeData}
+              editName={editName}
+              editType={editType}
+              editPrice={editPrice}
+              editImages={editImages}
+              editTotalSurface={editTotalSurface}
+              editLandSurface={editLandSurface}
+              editLocation={editLocation}
+              editAdress={editAdress}
+              editAntiquity={editAntiquity}
+              editState={editState}
+              editDescription={editDescription}
+              editHighlight={editHighlight}
+              setEditName={setEditName}
+              setEditType={setEditType}
+              setEditPrice={setEditPrice}
+              setEditImages={setEditImages}
+              setEditTotalSurface={setEditTotalSurface}
+              setEditLandSurface={setEditLandSurface}
+              setEditLocation={setEditLocation}
+              setEditAdress={setEditAdress}
+              setEditAntiquity={setEditAntiquity}
+              setEditState={setEditState}
+              setEditDescription={setEditDescription}
+              setEditHighlight={setEditHighlight}
+              dataDetails={dataDetails}
+              setDataDetails={setDataDetails}
+              setLoader={setLoader}
+              setPage={setPage}
+            />
+          ) : (
+            <Container>
+              <ProperttDetailSlider dataDetails={dataDetails} />
+            </Container>
+          )}
+        </>
       ) : (
         <Loader />
       )}

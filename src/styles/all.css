@@ -21,6 +21,7 @@ dorado:#ffec00 */
 @import url(./slidercube.css);
 @import url(./mediaqueries.css);
 @import url(./modal.css);
+@import url(./slidernormal.css);
 .total-body {
   font-family: "Montserrat", sans-serif;
 }
