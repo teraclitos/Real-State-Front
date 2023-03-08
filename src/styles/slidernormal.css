@@ -21,12 +21,12 @@
   object-fit: contain !important;
 }
 .next-normal {
-  right: var(--swiper-navigation-sides-offset, 0em) !important;
+  right: var(--swiper-navigation-sides-offset, 10px) !important;
   left: auto;
 }
 
 .prev-normal {
-  left: var(--swiper-navigation-sides-offset, 0em) !important;
+  left: var(--swiper-navigation-sides-offset, 10px) !important;
   right: auto;
 }
 .swiper-pagination-bullet {
