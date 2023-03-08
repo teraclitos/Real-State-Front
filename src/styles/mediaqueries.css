@@ -8,6 +8,12 @@
   /* .slider-normal-container {
     font-size: 12px;
   } */
+  .prev-normal {
+    font-size: 14px !important;
+  }
+  .next-normal {
+    font-size: 14px !important ;
+  }
 }
 @media (max-width: 768px) {
   .cube-container {
@@ -25,6 +31,12 @@
   /* .slider-normal-container {
     font-size: 10px;
   } */
+  .prev-normal {
+    font-size: 12px !important;
+  }
+  .next-normal {
+    font-size: 12px !important ;
+  }
 }
 @media (max-width: 576px) {
   .slogan-cube-container {
@@ -33,11 +45,23 @@
   /* .slider-normal-container {
     font-size: 8px;
   } */
+  .prev-normal {
+    font-size: 10px !important;
+  }
+  .next-normal {
+    font-size: 10px !important ;
+  }
 }
 @media (max-width: 400px) {
   /* .slider-normal-container {
     font-size: 5px;
   } */
+  .prev-normal {
+    font-size: 8px !important;
+  }
+  .next-normal {
+    font-size: 8px !important ;
+  }
 }
 
 @media (max-width: 350px) {
