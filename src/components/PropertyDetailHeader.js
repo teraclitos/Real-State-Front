@@ -7,13 +7,17 @@ const PropertyDetailHeader = ({ dataDetails }) => {
   return (
     <Row className=" py-3 header-detail-container black">
       <Col className="d-flex justify-content-center col-md-4 col-12">
-        <h5 className="py-md-0 my-2 ">{dataDetails.name}</h5>
+        <h5 className="py-md-0 my-2 letter-size-header ">{dataDetails.name}</h5>
       </Col>
       <Col className=" col-md-4 d-flex justify-content-center col-12r ">
-        <h5 className="py-md-0 my-2 ">US$ {dataDetails.price}</h5>
+        <h5 className="py-md-0 my-2 letter-size-header ">
+          US$ {dataDetails.price}
+        </h5>
       </Col>
       <Col className=" col-md-4 d-flex justify-content-center col-12 ">
-        <h5 className="py-md-0 my-2">{dataDetails.location}</h5>
+        <h5 className="py-md-0 my-2 letter-size-header">
+          {dataDetails.location}
+        </h5>
       </Col>
     </Row>
   );
