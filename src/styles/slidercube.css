@@ -10,7 +10,9 @@
 
 .swiper-slide img {
   display: block;
-  width: 100%;
+  width: 18.75em;
+  height: 18.75em;
+  object-fit: contain;
 }
 .swiper-button-next {
   color: #dfdfdf !important;

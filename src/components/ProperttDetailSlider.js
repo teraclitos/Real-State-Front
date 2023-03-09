@@ -28,7 +28,7 @@ const ProperttDetailSlider = ({ dataDetails }) => {
       >
         {dataDetails.images_URL.map((d, i) => (
           <SwiperSlide
-            key={"slidenorma" + i}
+            key={"slidenormal" + i}
             className="mb-2 col-12 col-md-6 col-lg-4 d-flex justify-content-center "
           >
             <img className="swiper-slide-img-normal" src={d.url} alt="" />

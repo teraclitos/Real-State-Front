@@ -13,7 +13,7 @@ import "swiper/css/navigation";
 import { EffectCube, Pagination, Navigation } from "swiper";
 import "../styles/all.css";
 
-const Slider = () => {
+const Slider = ({ highlight }) => {
   return (
     <Container className=" d-flex justify-content-center cube-container flex-column">
       <h3 className=" d-flex justify-content-center cube-title">
@@ -34,18 +34,11 @@ const Slider = () => {
         modules={[EffectCube, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
+        {highlight.map((element, i) => (
+          <SwiperSlide key={"slidercube" + i}>
+            <img src={element.images_URL[0].url} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Container>
   );

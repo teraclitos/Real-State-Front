@@ -28,6 +28,8 @@ function App() {
   const [editDescription, setEditDescription] = useState("");
   const [editHighlight, setEditHighlight] = useState("NO");
 
+  const [highlight, setHighlight] = useState();
+
   const [loader, setLoader] = useState(true);
   useEffect(() => {
     fetch(
@@ -42,6 +44,18 @@ function App() {
         setLoader(false);
       });
   }, [changeData, page]);
+  useEffect(() => {
+    fetch(
+      `https://gori-inmobiliaria.vercel.app/properties/show?&limit=1000&highlight=YES`
+    )
+      .then((res) => res.json())
+      .then((json) => {
+        setHighlight(json.docs);
+      })
+      .finally(() => {
+        setLoader(false);
+      });
+  }, []);
 
   const prevenDuplicateToast = "custom-id-yes";
   const toastError = (writte) => {
@@ -107,6 +121,7 @@ function App() {
         setEditHighlight={setEditHighlight}
         changeLog={changeLog}
         setChangeLog={setChangeLog}
+        highlight={highlight}
       />
       <ToastContainer
         transition={Flip}

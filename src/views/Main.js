@@ -8,6 +8,7 @@ import AdminMain from "../components/AdminMain";
 import ContainerMainCard from "../components/ContainerMainCard";
 import Hero from "../components/Hero";
 import Slider from "../components/Slider";
+import Loader from "../components/Loader";
 
 import "../styles/all.css";
 import PropertiesDetailContainer from "../components/PropertiesDetailContainer";
@@ -60,6 +61,7 @@ const Main = ({
   setEditHighlight,
   changeLog,
   setChangeLog,
+  highlight,
 }) => {
   return (
     <>
@@ -81,15 +83,21 @@ const Main = ({
               path="/"
               element={
                 <>
-                  <Hero
-                    toastError={toastError}
-                    toastSuccess={toastSuccess}
-                    changeData={changeData}
-                    setChangeData={setChangeData}
-                    logout={logout}
-                    setLogout={setLogout}
-                  />
-                  <Slider />
+                  {!loader ? (
+                    <>
+                      <Hero
+                        toastError={toastError}
+                        toastSuccess={toastSuccess}
+                        changeData={changeData}
+                        setChangeData={setChangeData}
+                        logout={logout}
+                        setLogout={setLogout}
+                      />
+                      <Slider highlight={highlight} />
+                    </>
+                  ) : (
+                    <Loader />
+                  )}
                 </>
               }
             />
