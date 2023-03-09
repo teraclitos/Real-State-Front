@@ -11,3 +11,6 @@
 .letter-size-header {
   font-size: 1.05em;
 }
+.description {
+  white-space: pre;
+}
