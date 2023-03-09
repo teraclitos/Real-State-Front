@@ -51,11 +51,23 @@
   .next-normal {
     font-size: 10px !important ;
   }
+  .font-size-detail {
+    font-size: 14px;
+  }
+  .font-size-detail-title {
+    font-size: 17.5px;
+  }
 }
 @media (max-width: 400px) {
   /* .slider-normal-container {
     font-size: 5px;
   } */
+  .font-size-detail {
+    font-size: 12px;
+  }
+  .font-size-detail-title {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 350px) {
@@ -72,5 +84,11 @@
   }
   .card-body {
     font-size: 0.7em;
+  }
+  .font-size-detail {
+    font-size: 8px;
+  }
+  .font-size-detail-title {
+    font-size: 10px;
   }
 }

@@ -24,7 +24,7 @@ const ProperttDetailSlider = ({ dataDetails }) => {
         loop={true}
         navigation={true}
         modules={[Navigation, Pagination]}
-        className="mySwiper swiper-normal py-5"
+        className="mySwiper swiper-normal pb-5 pt-0 pt-md-5 "
       >
         {dataDetails.images_URL.map((d, i) => (
           <SwiperSlide
