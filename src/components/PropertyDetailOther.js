@@ -3,7 +3,7 @@ import { Row, Col } from "react-bootstrap";
 
 const PropertyDetailOther = ({ dataDetails }) => {
   return (
-    <div className="pt-2 ps-3 bg-light-grey container ">
+    <div className="py-2 ps-3 bg-light-grey container ">
       <h5 className="title black mb-2">Detalles de la propiedad</h5>
 
       <Row className="px-3">
