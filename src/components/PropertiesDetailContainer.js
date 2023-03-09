@@ -4,6 +4,10 @@ import ModifyDelete from "./ModifyDelete";
 import Loader from "./Loader";
 import { Container } from "react-bootstrap";
 import ProperttDetailSlider from "./ProperttDetailSlider";
+import PropertyDetailHeader from "./PropertyDetailHeader";
+import PropertyDetailDescription from "./PropertyDetailDescription";
+import PropertyDetailOther from "./PropertyDetailOther";
+import "../styles/all.css";
 
 const PropertiesDetailContainer = ({
   toastError,
@@ -92,8 +96,11 @@ const PropertiesDetailContainer = ({
               setPage={setPage}
             />
           ) : (
-            <Container>
+            <Container fluid className="color-detail pb-5  ">
+              <PropertyDetailHeader dataDetails={dataDetails} />
               <ProperttDetailSlider dataDetails={dataDetails} />
+              <PropertyDetailDescription dataDetails={dataDetails} />
+              <PropertyDetailOther dataDetails={dataDetails} />
             </Container>
           )}
         </>

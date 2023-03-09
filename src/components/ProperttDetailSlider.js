@@ -18,7 +18,7 @@ const ProperttDetailSlider = ({ dataDetails }) => {
     nextSlider.classList.add("next-normal");
   }, []);
   return (
-    <div className="slider-normal-container">
+    <div className="slider-normal-container container">
       <Swiper
         pagination={true}
         loop={true}

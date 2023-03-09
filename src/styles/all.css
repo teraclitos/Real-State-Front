@@ -22,6 +22,32 @@ dorado:#ffec00 */
 @import url(./mediaqueries.css);
 @import url(./modal.css);
 @import url(./slidernormal.css);
+@import url(./propertydetail.css);
 .total-body {
   font-family: "Montserrat", sans-serif;
+}
+.title {
+  font-family: "Playfair Display", serif;
+}
+
+.gross-letter {
+  font-weight: 600;
+}
+.black {
+  color: #191919;
+}
+.grey {
+  color: #696969;
+}
+.light-grey {
+  color: #dfdfdf;
+}
+.bg-black {
+  background-color: #191919;
+}
+.bg-grey {
+  background-color: #696969;
+}
+.bg-light-grey {
+  background-color: #dfdfdf;
 }

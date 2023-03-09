@@ -1,0 +1,10 @@
+.header-detail-container {
+  background-color: #dfdfdf;
+}
+
+.description-container {
+  width: 100%;
+  min-height: 10em;
+  background-color: #dfdfdf;
+  color: #696969;
+}
