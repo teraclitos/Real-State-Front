@@ -4,7 +4,7 @@ import { Row, Col } from "react-bootstrap";
 const PropertyDetailOther = ({ dataDetails }) => {
   return (
     <div className="py-2 ps-3 bg-light-grey container ">
-      <h5 className="title black mb-2">Detalles de la propiedad</h5>
+      <h5 className="title black mb-4">Detalles de la propiedad</h5>
 
       <Row className="px-3">
         <Col className="col-12  col-lg-6">
@@ -32,7 +32,7 @@ const PropertyDetailOther = ({ dataDetails }) => {
           </div>
         </Col>
       </Row>
-      <Row className="ps-3">
+      <Row className="px-3">
         <Col className="col-12  col-lg-6">
           <div className="d-flex justify-content-between grey">
             <h6>Precio</h6>
