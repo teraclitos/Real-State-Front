@@ -32,17 +32,19 @@ function App() {
 
   const [loader, setLoader] = useState(true);
   useEffect(() => {
-    fetch(
-      `https://gori-inmobiliaria.vercel.app/properties/show?page=${page}&limit=9&location=${location}&type=${type}&inf=${inf}&sup=${sup}`
-    )
-      .then((res) => res.json())
-      .then((json) => {
-        setData(json.docs);
-        setTotalPages(json.totalPages);
-      })
-      .finally(() => {
-        setLoader(false);
-      });
+    setTimeout(() => {
+      fetch(
+        `https://gori-inmobiliaria.vercel.app/properties/show?page=${page}&limit=9&location=${location}&type=${type}&inf=${inf}&sup=${sup}`
+      )
+        .then((res) => res.json())
+        .then((json) => {
+          setData(json.docs);
+          setTotalPages(json.totalPages);
+        })
+        .finally(() => {
+          setLoader(false);
+        });
+    }, 10);
   }, [changeData, page]);
   useEffect(() => {
     fetch(
@@ -51,9 +53,6 @@ function App() {
       .then((res) => res.json())
       .then((json) => {
         setHighlight(json.docs);
-      })
-      .finally(() => {
-        setLoader(false);
       });
   }, []);
 
@@ -122,6 +121,7 @@ function App() {
         changeLog={changeLog}
         setChangeLog={setChangeLog}
         highlight={highlight}
+        setHighlight={setHighlight}
       />
       <ToastContainer
         transition={Flip}

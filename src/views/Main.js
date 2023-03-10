@@ -62,6 +62,7 @@ const Main = ({
   changeLog,
   setChangeLog,
   highlight,
+  setHighlight,
 }) => {
   return (
     <>
@@ -93,7 +94,11 @@ const Main = ({
                         logout={logout}
                         setLogout={setLogout}
                       />
-                      <Slider highlight={highlight} />
+                      <Slider
+                        highlight={highlight}
+                        setHighlight={setHighlight}
+                        setLoader={setLoader}
+                      />
                     </>
                   ) : (
                     <Loader />
