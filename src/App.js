@@ -40,10 +40,22 @@ function App() {
         setData(json.docs);
         setTotalPages(json.totalPages);
       })
+      .then(async () => {
+        await fetch(
+          `  https://gori-inmobiliaria.vercel.app/properties/show/highlight?highlight=YES`
+        )
+          .then((res) => res.json())
+          .then((json) => {
+            setHighlight(json);
+          });
+      })
       .finally(() => {
         setLoader(false);
       });
   }, [changeData, page]);
+  // useEffect(() => {
+
+  // }, [data]);
 
   const prevenDuplicateToast = "custom-id-yes";
   const toastError = (writte) => {
