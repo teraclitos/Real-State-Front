@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Button, Form, Row, Col, Container } from "react-bootstrap";
+import { Button, Form, Row, Col, Container, Spinner } from "react-bootstrap";
 import "../styles/all.css";
 import ModalDelete from "./ModalDelete";
 
@@ -37,6 +37,9 @@ const ModifyDelete = ({
   setDataDetails,
   setLoader,
   setPage,
+  loaderLog,
+  setLoaderLog,
+  highlight,
 }) => {
   const navigate = useNavigate();
   const [deleteP, setDeleteP] = useState(null);
@@ -48,6 +51,16 @@ const ModifyDelete = ({
   const token = JSON.parse(localStorage.getItem("token"));
   const handleModify = (e) => {
     e.preventDefault();
+
+    if (
+      highlight.length === 4 &&
+      editHighlight === "YES" &&
+      dataDetails.highlight === "NO"
+    ) {
+      setLoaderLog(false);
+
+      return toastError("Solo puede haber 4 propiedades destacadas");
+    }
     fetch(
       `https://gori-inmobiliaria.vercel.app/properties/modify${dataDetails._id}`,
       {
@@ -74,10 +87,19 @@ const ModifyDelete = ({
     )
       .then((res) => res.json())
       .then((json) => {
-        setModify(true);
-        setChangeData(changeData + 1);
+        if (!json.errors) {
+          setLoaderLog(false);
+          setModify(true);
+          setChangeData(changeData + 1);
+        } else {
+          setLoaderLog(false);
+          setModify(false);
+        }
       })
-      .catch((error) => setModify(false));
+      .catch((error) => {
+        setLoaderLog(false);
+        setModify(false);
+      });
   };
   useEffect(() => {
     if (dataDetails.highlight === "YES") {
@@ -99,9 +121,11 @@ const ModifyDelete = ({
   useEffect(() => {
     if (modify) {
       toastSuccess("Se ha modificado la propiedad con exito");
+      setModify(null);
     }
     if (modify === false) {
       toastError("Ha ocurrido un error");
+      setModify(null);
     }
   }, [modify]);
   useEffect(() => {
@@ -154,7 +178,7 @@ const ModifyDelete = ({
       </Form.Select>
     );
   };
-  const highlight = () => {
+  const highlightF = () => {
     return (
       <Form.Select
         onInput={(e) => setEditHighlight(e.target.value)}
@@ -311,7 +335,7 @@ const ModifyDelete = ({
             controlId="exampleForm.ControlInput11"
             className=" btn-detail d-flex justify-content-center  "
           >
-            {highlight()}
+            {highlightF()}
           </Form.Group>
         </Row>
         <Row>
@@ -321,16 +345,22 @@ const ModifyDelete = ({
               id="edit-Buttom"
               className="btn-g btn-black mt-3 me-3"
               onClick={(e) => {
+                setLoaderLog(true);
                 handleModify(e);
               }}
             >
-              Modificar
+              {!loaderLog ? (
+                "Modificar"
+              ) : (
+                <Spinner className="grey my-1 mx-3" />
+              )}
             </button>
             <button
               type="button"
               className="btn-g btn-black mt-3"
               onClick={(e) => {
                 e.preventDefault();
+
                 handleShowModalDelete();
               }}
             >

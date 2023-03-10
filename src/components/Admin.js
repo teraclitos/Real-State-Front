@@ -13,6 +13,8 @@ const Admin = ({
   setLogout,
   changeLog,
   setChangeLog,
+  loaderLog,
+  setLoaderLog,
 }) => {
   return (
     <>
@@ -27,6 +29,8 @@ const Admin = ({
         setLogout={setLogout}
         changeLog={changeLog}
         setChangeLog={setChangeLog}
+        loaderLog={loaderLog}
+        setLoaderLog={setLoaderLog}
       />
     </>
   );

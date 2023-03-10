@@ -8,6 +8,7 @@ const Logout = ({
   setLogout,
   changeLog,
   setChangeLog,
+  setLoaderLog,
 }) => {
   const token = JSON.parse(localStorage.getItem("token"));
   const handleLogout = () => {
@@ -21,6 +22,7 @@ const Logout = ({
       .then(() => {
         localStorage.setItem("token", JSON.stringify(""));
         setLogin(null);
+
         setLogout(true);
         setChangeLog(changeLog + 1);
       })
@@ -33,6 +35,7 @@ const Logout = ({
   return (
     <button
       onClick={(e) => {
+        setLoaderLog(true);
         handleLogout();
       }}
       className="btn-g"

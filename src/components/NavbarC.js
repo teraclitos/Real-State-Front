@@ -14,6 +14,7 @@ const NavbarC = ({
   setChangeData,
   changeLog,
   setChangeLog,
+  setLoaderLog,
 }) => {
   const token = JSON.parse(localStorage.getItem("token"));
   const navigate = useNavigate();
@@ -29,6 +30,10 @@ const NavbarC = ({
   useEffect(() => {
     if (logout) {
       navigate("/");
+
+      setTimeout(() => {
+        setLoaderLog(false);
+      }, 1000);
     }
   }, [changeLog]);
 
@@ -80,6 +85,7 @@ const NavbarC = ({
                     setLogout={setLogout}
                     changeLog={changeLog}
                     setChangeLog={setChangeLog}
+                    setLoaderLog={setLoaderLog}
                   />
                 </div>
               ) : (

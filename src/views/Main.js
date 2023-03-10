@@ -64,6 +64,8 @@ const Main = ({
   highlight,
   setHighlight,
   loaderMain,
+  loaderLog,
+  setLoaderLog,
 }) => {
   return (
     <>
@@ -78,6 +80,7 @@ const Main = ({
           setLogout={setLogout}
           changeLog={changeLog}
           setChangeLog={setChangeLog}
+          setLoaderLog={setLoaderLog}
         />
         <Container fluid className="body-container p-0">
           <Routes>
@@ -85,7 +88,7 @@ const Main = ({
               path="/"
               element={
                 <>
-                  {!loaderMain ? (
+                  {!loaderMain && !loaderLog ? (
                     <>
                       <Hero
                         toastError={toastError}
@@ -156,6 +159,8 @@ const Main = ({
                   setLogout={setLogout}
                   changeLog={changeLog}
                   setChangeLog={setChangeLog}
+                  loaderLog={loaderLog}
+                  setLoaderLog={setLoaderLog}
                 />
               }
             />
@@ -198,6 +203,8 @@ const Main = ({
                   setEditHighlight={setEditHighlight}
                   changeLog={changeLog}
                   setChangeLog={setChangeLog}
+                  loaderLog={loaderLog}
+                  setLoaderLog={setLoaderLog}
                 />
               }
             />
@@ -237,6 +244,9 @@ const Main = ({
                   loader={loader}
                   setLoader={setLoader}
                   setPage={setPage}
+                  loaderLog={loaderLog}
+                  setLoaderLog={setLoaderLog}
+                  highlight={highlight}
                 />
               }
             />

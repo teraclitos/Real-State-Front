@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Button, Form, Row, Col, Container } from "react-bootstrap";
+import { Button, Form, Row, Col, Container, Spinner } from "react-bootstrap";
 import "../styles/all.css";
 import axios, { Axios } from "axios";
 
@@ -35,6 +35,8 @@ const AdminMain = ({
   setEditHighlight,
   changeLog,
   setChangeLog,
+  loaderLog,
+  setLoaderLog,
 }) => {
   const token = JSON.parse(localStorage.getItem("token"));
   const navigate = useNavigate();
@@ -116,6 +118,7 @@ const AdminMain = ({
     e.preventDefault();
 
     if (!editImages) {
+      setLoaderLog(false);
       return toastError(`Debe cargar al menos una imagen`);
     }
 
@@ -149,10 +152,12 @@ const AdminMain = ({
         }
       )
       .then((res) => {
+        setLoaderLog(false);
         setPost(true);
       })
 
       .catch((error) => {
+        setLoaderLog(false);
         setPost(false);
       });
   };
@@ -319,10 +324,15 @@ const AdminMain = ({
               id="edit-Buttom"
               className="btn-g btn-black mt-3"
               onClick={(e) => {
+                setLoaderLog(true);
                 handlePost(e);
               }}
             >
-              Crear
+              {!loaderLog ? (
+                "Crear"
+              ) : (
+                <Spinner className="grey fs-6 mx-2 my-1" />
+              )}
             </button>
           </Form.Group>
         </Row>

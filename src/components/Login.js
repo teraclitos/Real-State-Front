@@ -2,6 +2,7 @@ import { Button, Form, InputGroup } from "react-bootstrap";
 import { React, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/all.css";
+import Spinner from "react-bootstrap/Spinner";
 
 const Login = ({
   toastError,
@@ -14,6 +15,8 @@ const Login = ({
   setLogout,
   changeLog,
   setChangeLog,
+  loaderLog,
+  setLoaderLog,
 }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -37,14 +40,19 @@ const Login = ({
       .then((json) => {
         if (json.token) {
           setToken(json.token);
+          setLoaderLog(false);
           setLogin(true);
         } else {
+          setLoaderLog(false);
           setLogin(false);
-
-          setTimeout(() => {
-            setLogin(null);
-          }, 1000);
         }
+      })
+      .catch((error) => {
+        setLoaderLog(false);
+        setLogin(false);
+      })
+
+      .finally(() => {
         setChangeLog(changeLog + 1);
       });
   };
@@ -52,11 +60,10 @@ const Login = ({
   useEffect(() => {
     if (login) {
       localStorage.setItem("token", JSON.stringify(token));
-      setTimeout(() => {
-        navigate("/admingori/main");
-      }, 1000);
+      navigate("/admingori/main");
     } else if (login === false) {
       toastError("no se pudo iniciar sesion");
+      setLogin(null);
     }
   }, [changeLog]);
 
@@ -109,10 +116,15 @@ const Login = ({
           className="mt-3 btn-g btn-black"
           onClick={(e) => {
             e.preventDefault();
+            setLoaderLog(true);
             handleLogin(username, password);
           }}
         >
-          Inicia sesión
+          {!loaderLog ? (
+            "Inicia sesión"
+          ) : (
+            <Spinner className="grey fs-6 mx-4 my-1" />
+          )}
         </button>
       </Form>
     </>
