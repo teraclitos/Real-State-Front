@@ -254,7 +254,11 @@ const Main = ({
           </Routes>
         </Container>
 
-        <Footer />
+        <Footer
+          setLoader={setLoader}
+          setChangeData={setChangeData}
+          changeData={changeData}
+        />
       </div>
     </>
   );

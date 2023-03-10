@@ -4,16 +4,30 @@ import { Row, Col, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
-const Footer = () => {
+const Footer = ({ setLoader, setChangeData, changeData }) => {
   return (
     <Container fluid className="py-5 footer-container">
       <Row>
         <Col className="mb-5 mb-md-0 col-12 col-md-4 d-flex flex-column align-items-center justify-content-center ">
           <ul className="p-0">
-            <Link to="/" className="link-footer ">
+            <Link
+              onClick={() => {
+                setLoader(true);
+                setChangeData(changeData + 1);
+              }}
+              to="/"
+              className="link-footer "
+            >
               <li className="">Inicio</li>
             </Link>
-            <Link to="/propiedades" className="link-footer ">
+            <Link
+              onClick={() => {
+                setLoader(true);
+                setChangeData(changeData + 1);
+              }}
+              to="/propiedades"
+              className="link-footer "
+            >
               <li className=" mt-3">Propiedades</li>
             </Link>
             <Link to="/contacto" className="link-footer ">
@@ -38,7 +52,14 @@ const Footer = () => {
           </Link>
         </Col>
         <Col className=" col-12 col-md-4 d-flex justify-content-center align-items-center">
-          <Link to="/" className="link-footer ">
+          <Link
+            onClick={() => {
+              setLoader(true);
+              setChangeData(changeData + 1);
+            }}
+            to="/"
+            className="link-footer "
+          >
             <img
               className="img-logo-footer"
               src="https://res.cloudinary.com/duuwqmpmn/image/upload/v1677695153/gori-inmobiliaria/logo-gori-removebg-preview_1_ulsalf.png"
