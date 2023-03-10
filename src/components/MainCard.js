@@ -21,13 +21,21 @@ const MainCard = ({ d, i, setLoader }) => {
   return (
     <>
       <Card className="card-container border-0 w-100 ">
-        <Card.Img
-          style={{ height: `${stateHeight}px` }}
-          id={`img-card${i}`}
-          className="img-card"
-          variant="top"
-          src={d.images_URL[0].url}
-        />
+        <Link
+          onClick={() => {
+            setLoader(true);
+          }}
+          to={`/propiedades/${d._id}`}
+          className="link   "
+        >
+          <Card.Img
+            style={{ height: `${stateHeight}px` }}
+            id={`img-card${i}`}
+            className="img-card"
+            variant="top"
+            src={d.images_URL[0].url}
+          />
+        </Link>
         <Card.Body className="py-4 ps-2 fs-6 card-body">
           <Card.Title>{d.name}</Card.Title>
         </Card.Body>
