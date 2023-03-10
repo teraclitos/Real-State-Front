@@ -183,10 +183,10 @@ const AdminMain = ({
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="fs-6 style-crud">Nombre</Form.Label>
               <Form.Control
+                autoFocus
                 maxLength={31}
                 type="text"
                 onInput={(e) => setEditName(e.target.value)}
-                autoFocus
                 name="name"
                 className="input-post"
               />
@@ -204,7 +204,6 @@ const AdminMain = ({
                 type="number"
                 min={0}
                 onInput={(e) => setEditPrice(e.target.value)}
-                autoFocus
                 name="price"
                 className="input-post"
               />
@@ -220,7 +219,6 @@ const AdminMain = ({
               <Form.Control
                 type="text"
                 onInput={(e) => setEditAdress(e.target.value)}
-                autoFocus
                 name="adress"
                 className="input-post"
               />
@@ -232,7 +230,6 @@ const AdminMain = ({
               <Form.Control
                 type="number"
                 onInput={(e) => setEditAntiquity(e.target.value)}
-                autoFocus
                 name="antiquity"
                 className="input-post"
               />
@@ -245,7 +242,6 @@ const AdminMain = ({
                 type="text"
                 placeholder=""
                 onInput={(e) => setEditState(e.target.value)}
-                autoFocus
                 name="state"
                 className="input-post"
               />
@@ -259,7 +255,6 @@ const AdminMain = ({
                 type="number"
                 placeholder=""
                 onInput={(e) => setEditTotalSurface(e.target.value)}
-                autoFocus
                 name="totalSurface"
                 className="input-post"
               />
@@ -273,7 +268,6 @@ const AdminMain = ({
                 type="number"
                 placeholder=""
                 onInput={(e) => setEditLandSurface(e.target.value)}
-                autoFocus
                 name="landSurface"
                 className="input-post"
               />
@@ -288,7 +282,6 @@ const AdminMain = ({
                 multiple
                 placeholder=""
                 onInput={(e) => setEditImages(e.target.files)}
-                autoFocus
                 className="input-post"
               />
             </Form.Group>
@@ -303,7 +296,6 @@ const AdminMain = ({
               type="text"
               placeholder=""
               onInput={(e) => setEditDescription(e.target.value)}
-              autoFocus
               name="description"
             />
           </Form.Group>

@@ -15,6 +15,7 @@ const NavbarC = ({
   changeLog,
   setChangeLog,
   setLoaderLog,
+  setLoader,
 }) => {
   const token = JSON.parse(localStorage.getItem("token"));
   const navigate = useNavigate();
@@ -48,13 +49,22 @@ const NavbarC = ({
     <>
       <Navbar className=" nav-bar " collapseOnSelect expand="lg" sticky="top">
         <Container className="nav-bar-container">
-          <Navbar.Brand href="/">
-            <img
-              className="img-logo"
-              src="https://res.cloudinary.com/duuwqmpmn/image/upload/v1677695153/gori-inmobiliaria/logo-gori-removebg-preview_1_ulsalf.png"
-              alt="logo"
-            />
-          </Navbar.Brand>
+          <Link
+            onClick={() => {
+              setLoader(true);
+              setChangeData(changeData + 1);
+            }}
+            to={`/`}
+            className="link   "
+          >
+            <Navbar.Brand>
+              <img
+                className="img-logo"
+                src="https://res.cloudinary.com/duuwqmpmn/image/upload/v1677695153/gori-inmobiliaria/logo-gori-removebg-preview_1_ulsalf.png"
+                alt="logo"
+              />
+            </Navbar.Brand>
+          </Link>
           <Navbar.Toggle
             onClick={() => {
               handleTogler();
@@ -64,16 +74,32 @@ const NavbarC = ({
 
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="d-flex ms-auto align-items-center link-nav-container  py-lg-0">
-              <Nav.Link className="me-lg-5 nav-bar-link" href="/">
+              <Link
+                onClick={() => {
+                  setLoader(true);
+                  setChangeData(changeData + 1);
+                }}
+                to={`/`}
+                className="link me-lg-5 mb-2 mb-lg-0 nav-bar-link"
+              >
                 <span className="nav-bar-link">Inicio</span>
-              </Nav.Link>
-              <Nav.Link className="me-lg-5 " href="/propiedades">
-                <span className="nav-bar-link">Propiedades</span>
-              </Nav.Link>
+              </Link>
+
+              <Link
+                onClick={() => {
+                  setLoader(true);
+                  setChangeData(changeData + 1);
+                }}
+                to={`/propiedades`}
+                className="link  me-lg-5 mb-2 mb-lg-0    "
+              >
+                <span className="nav-bar-link">Propiedades</span>{" "}
+              </Link>
+
               {token && (
-                <Nav.Link className="me-lg-5 " href="/admingori/main">
+                <Link to={`/admingori/main`} className="link me-lg-5   ">
                   <span className="nav-bar-link">Crear propiedad</span>
-                </Nav.Link>
+                </Link>
               )}
 
               {token ? (
@@ -89,9 +115,16 @@ const NavbarC = ({
                   />
                 </div>
               ) : (
-                <Nav.Link className="mt-1 mt-lg-0" href="#pricing">
+                <Link
+                  onClick={() => {
+                    setLoader(true);
+                    setChangeData(changeData + 1);
+                  }}
+                  to={`/contacto`}
+                  className="link mt-1 mt-lg-0  "
+                >
                   <ContactBtn />
-                </Nav.Link>
+                </Link>
               )}
             </Nav>
           </Navbar.Collapse>

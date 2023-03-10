@@ -90,6 +90,7 @@ const Login = ({
           <InputGroup className="mb-3">
             <Form.Control
               maxLength={31}
+              autoFocus
               type="text"
               placeholder="usuario"
               onInput={(e) => setUsername(e.target.value)}

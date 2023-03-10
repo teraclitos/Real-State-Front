@@ -209,10 +209,10 @@ const ModifyDelete = ({
                 maxLength={31}
                 type="text"
                 onInput={(e) => setEditName(e.target.value)}
-                autoFocus
                 name="name"
                 className="input-post"
                 value={editName}
+                autoFocus
               />
             </Form.Group>
 
@@ -228,7 +228,6 @@ const ModifyDelete = ({
                 type="number"
                 min={0}
                 onInput={(e) => setEditPrice(e.target.value)}
-                autoFocus
                 name="price"
                 className="input-post"
                 value={editPrice}
@@ -246,7 +245,6 @@ const ModifyDelete = ({
               <Form.Control
                 type="number"
                 onInput={(e) => setEditAntiquity(e.target.value)}
-                autoFocus
                 name="antiquity"
                 className="input-post"
                 value={editAntiquity}
@@ -260,7 +258,6 @@ const ModifyDelete = ({
                 type="text"
                 placeholder=""
                 onInput={(e) => setEditState(e.target.value)}
-                autoFocus
                 name="state"
                 className="input-post"
                 value={editState}
@@ -275,7 +272,6 @@ const ModifyDelete = ({
                 type="number"
                 placeholder=""
                 onInput={(e) => setEditTotalSurface(e.target.value)}
-                autoFocus
                 name="totalSurface"
                 className="input-post"
                 value={editTotalSurface}
@@ -290,7 +286,6 @@ const ModifyDelete = ({
                 type="number"
                 placeholder=""
                 onInput={(e) => setEditLandSurface(e.target.value)}
-                autoFocus
                 name="landSurface"
                 className="input-post"
                 value={editLandSurface}
@@ -303,7 +298,6 @@ const ModifyDelete = ({
               <Form.Control
                 type="text"
                 onInput={(e) => setEditAdress(e.target.value)}
-                autoFocus
                 name="adress"
                 className="input-post"
                 value={editAdress}
@@ -320,7 +314,6 @@ const ModifyDelete = ({
               type="text"
               placeholder=""
               onInput={(e) => setEditDescription(e.target.value)}
-              autoFocus
               name="description"
               value={editDescription}
             />

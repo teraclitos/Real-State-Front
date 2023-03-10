@@ -1,8 +1,15 @@
 import { React, useState, useEffect } from "react";
 
 import "../styles/all.css";
-
-const Hero = ({ logout, setLogout, changeData, toastSuccess }) => {
+import { Link } from "react-router-dom";
+const Hero = ({
+  logout,
+  setLogout,
+  changeData,
+  toastSuccess,
+  setLoader,
+  setChangeData,
+}) => {
   useEffect(() => {
     if (logout) {
       toastSuccess("sesion cerrada correctamente");
@@ -14,11 +21,22 @@ const Hero = ({ logout, setLogout, changeData, toastSuccess }) => {
     <>
       <div className="hero-container ">
         <div className="slogan-container "></div>
-        <div className="slogan-cube-container">
-          <h2 className="slogan px-1 px-sm-0 ">
+        <div className="slogan-cube-container d-flex align-items-center justify-content-center ">
+          <h2 className="slogan px-1 px-sm-0 mb-5 ">
             Tenemos el inmueble que buscas, no pierdas tiempo
           </h2>
-          {/* <Slider /> */}
+          <Link
+            onClick={() => {
+              setLoader(true);
+              setChangeData(changeData + 1);
+            }}
+            to={`/propiedades`}
+            className="link   "
+          >
+            <button className="btn-g btn-hero bg-light-grey">
+              Ver propiedades
+            </button>
+          </Link>
         </div>
       </div>
     </>

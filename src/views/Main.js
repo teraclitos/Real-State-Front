@@ -97,6 +97,7 @@ const Main = ({
                         setChangeData={setChangeData}
                         logout={logout}
                         setLogout={setLogout}
+                        setLoader={setLoader}
                       />
                       <Slider
                         highlight={highlight}
