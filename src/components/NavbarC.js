@@ -80,7 +80,7 @@ const NavbarC = ({
                   setChangeData(changeData + 1);
                 }}
                 to={`/`}
-                className="link me-lg-5 mb-2 mb-lg-0 nav-bar-link"
+                className="link me-lg-5 mb-3 mb-lg-0 nav-bar-link"
               >
                 <span className="nav-bar-link">Inicio</span>
               </Link>
@@ -91,7 +91,7 @@ const NavbarC = ({
                   setChangeData(changeData + 1);
                 }}
                 to={`/propiedades`}
-                className="link  me-lg-5 mb-2 mb-lg-0    "
+                className="link  me-lg-5 mb-3 mb-lg-0    "
               >
                 <span className="nav-bar-link">Propiedades</span>{" "}
               </Link>
@@ -103,7 +103,7 @@ const NavbarC = ({
               )}
 
               {token ? (
-                <div className="mt-2 mt-lg-0">
+                <div className="mt-3 mt-lg-0">
                   <Logout
                     login={login}
                     setLogin={setLogin}
@@ -121,7 +121,7 @@ const NavbarC = ({
                     setChangeData(changeData + 1);
                   }}
                   to={`/contacto`}
-                  className="link mt-1 mt-lg-0  "
+                  className="link mt-2 mt-lg-0  "
                 >
                   <ContactBtn />
                 </Link>
