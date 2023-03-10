@@ -98,6 +98,7 @@ const Main = ({
                         highlight={highlight}
                         setHighlight={setHighlight}
                         setLoader={setLoader}
+                        data={data}
                       />
                     </>
                   ) : (

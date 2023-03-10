@@ -32,29 +32,18 @@ function App() {
 
   const [loader, setLoader] = useState(true);
   useEffect(() => {
-    setTimeout(() => {
-      fetch(
-        `https://gori-inmobiliaria.vercel.app/properties/show?page=${page}&limit=9&location=${location}&type=${type}&inf=${inf}&sup=${sup}`
-      )
-        .then((res) => res.json())
-        .then((json) => {
-          setData(json.docs);
-          setTotalPages(json.totalPages);
-        })
-        .finally(() => {
-          setLoader(false);
-        });
-    }, 10);
-  }, [changeData, page]);
-  useEffect(() => {
     fetch(
-      `https://gori-inmobiliaria.vercel.app/properties/show?&limit=1000&highlight=YES`
+      `https://gori-inmobiliaria.vercel.app/properties/show?page=${page}&limit=9&location=${location}&type=${type}&inf=${inf}&sup=${sup}`
     )
       .then((res) => res.json())
       .then((json) => {
-        setHighlight(json.docs);
+        setData(json.docs);
+        setTotalPages(json.totalPages);
+      })
+      .finally(() => {
+        setLoader(false);
       });
-  }, []);
+  }, [changeData, page]);
 
   const prevenDuplicateToast = "custom-id-yes";
   const toastError = (writte) => {
