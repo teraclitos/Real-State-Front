@@ -63,6 +63,7 @@ const Main = ({
   setChangeLog,
   highlight,
   setHighlight,
+  loaderMain,
 }) => {
   return (
     <>
@@ -84,7 +85,7 @@ const Main = ({
               path="/"
               element={
                 <>
-                  {!loader ? (
+                  {!loaderMain ? (
                     <>
                       <Hero
                         toastError={toastError}

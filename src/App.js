@@ -31,6 +31,7 @@ function App() {
   const [highlight, setHighlight] = useState();
 
   const [loader, setLoader] = useState(true);
+  const [loaderMain, setLoaderMain] = useState(true);
   useEffect(() => {
     fetch(
       `https://gori-inmobiliaria.vercel.app/properties/show?page=${page}&limit=9&location=${location}&type=${type}&inf=${inf}&sup=${sup}`
@@ -40,22 +41,23 @@ function App() {
         setData(json.docs);
         setTotalPages(json.totalPages);
       })
-      .then(async () => {
-        await fetch(
-          `  https://gori-inmobiliaria.vercel.app/properties/show/highlight?highlight=YES`
-        )
-          .then((res) => res.json())
-          .then((json) => {
-            setHighlight(json);
-          });
-      })
+
       .finally(() => {
         setLoader(false);
       });
   }, [changeData, page]);
-  // useEffect(() => {
-
-  // }, [data]);
+  useEffect(() => {
+    fetch(
+      `  https://gori-inmobiliaria.vercel.app/properties/show/highlight?highlight=YES`
+    )
+      .then((res) => res.json())
+      .then((json) => {
+        setHighlight(json);
+      })
+      .finally(() => {
+        setLoaderMain(false);
+      });
+  }, [data]);
 
   const prevenDuplicateToast = "custom-id-yes";
   const toastError = (writte) => {
@@ -123,6 +125,8 @@ function App() {
         setChangeLog={setChangeLog}
         highlight={highlight}
         setHighlight={setHighlight}
+        loaderMain={loaderMain}
+        setLoaderMain={setLoaderMain}
       />
       <ToastContainer
         transition={Flip}
