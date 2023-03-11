@@ -32,11 +32,9 @@
   text-align: center;
 }
 .btn-hero {
-  padding: 1.5em 2em;
-  font-size: 1.3em;
-
+  padding: 1.3em 1.8em;
+  font-size: 1.5em;
 }
-
 
 .btn-hero:hover {
   background-color: #ffffff;

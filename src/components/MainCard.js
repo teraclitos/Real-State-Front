@@ -26,7 +26,7 @@ const MainCard = ({ d, i, setLoader }) => {
             setLoader(true);
           }}
           to={`/propiedades/${d._id}`}
-          className="link   "
+          className="link container-img   "
         >
           <Card.Img
             style={{ height: `${stateHeight}px` }}
