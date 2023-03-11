@@ -25,11 +25,7 @@ const PaginationC = ({ page, setPage, totalPages, setLoader }) => {
     );
   }
 
-  return (
-    <>
-      <Pagination>{items}</Pagination>
-    </>
-  );
+  return <>{totalPages > 1 && <Pagination>{items}</Pagination>}</>;
 };
 
 export default PaginationC;
