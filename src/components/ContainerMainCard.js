@@ -39,6 +39,7 @@ const ContainerMainCard = ({
         changeData={changeData}
         setChangeData={setChangeData}
         className="my-4"
+        setPage={setPage}
       />
       {!loader ? (
         <Container className="pt-0  ">

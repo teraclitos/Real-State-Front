@@ -8,6 +8,7 @@ const Searcher = ({
   setInf,
   setSup,
   setLoader,
+  setPage,
   changeData,
   setChangeData,
   type,
@@ -83,8 +84,8 @@ const Searcher = ({
             className="btn-g btn-black mt-3"
             onClick={(e) => {
               setLoader(true);
+              setPage(1);
               setChangeData(changeData + 1);
-              console.log(type);
             }}
           >
             Buscar
