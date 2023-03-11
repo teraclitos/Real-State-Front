@@ -39,6 +39,8 @@
   text-align: center;
   user-select: none;
   font-size: 1.05em;
+
+  transition: 0.2s all;
 }
 .size-btn-nav-bar {
   font-size: 1.02em;
@@ -47,7 +49,8 @@
 }
 
 .btn-g:active {
-  box-shadow: rgba(72, 95, 199, 0.25) 0 0 0 0.125em;
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
 .btn-g:hover {
