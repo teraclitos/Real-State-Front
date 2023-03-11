@@ -206,6 +206,7 @@ const Main = ({
                   setChangeLog={setChangeLog}
                   loaderLog={loaderLog}
                   setLoaderLog={setLoaderLog}
+                  highlight={highlight}
                 />
               }
             />

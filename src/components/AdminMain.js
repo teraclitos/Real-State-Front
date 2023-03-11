@@ -37,6 +37,7 @@ const AdminMain = ({
   setChangeLog,
   loaderLog,
   setLoaderLog,
+  highlight,
 }) => {
   const token = JSON.parse(localStorage.getItem("token"));
   const navigate = useNavigate();
@@ -88,7 +89,7 @@ const AdminMain = ({
       </Form.Select>
     );
   };
-  const highlight = () => {
+  const highlightF = () => {
     return (
       <Form.Select
         onInput={(e) => setEditHighlight(e.target.value)}
@@ -116,6 +117,11 @@ const AdminMain = ({
 
   const handlePost = async (e) => {
     e.preventDefault();
+    if (highlight.length === 4 && editHighlight === "YES") {
+      setLoaderLog(false);
+
+      return toastError("Solo puede haber 4 propiedades destacadas");
+    }
 
     if (!editImages) {
       setLoaderLog(false);
@@ -306,7 +312,7 @@ const AdminMain = ({
             Destacar
           </Form.Label>
           <Form.Group className=" btn-detail d-flex justify-content-center  ">
-            {highlight()}
+            {highlightF()}
           </Form.Group>
         </Row>
         <Row>
