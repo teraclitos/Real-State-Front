@@ -23,17 +23,36 @@
 .next-normal {
   right: var(--swiper-navigation-sides-offset, 10px) !important;
   left: auto;
+  transform: translateX(1000px) !important;
+  transition: ease-in-out 0.3s !important;
+}
+.arrow-hover {
+  transform: translateX(0) !important;
+  transition: ease-in-out 0.3s !important;
 }
 
 .prev-normal {
   left: var(--swiper-navigation-sides-offset, 10px) !important;
   right: auto;
+  transform: translateX(-1000px) !important;
+  transition: ease-in-out 0.3s !important;
 }
 .swiper-pagination-bullet {
   background: #ffffff !important;
 }
 .swiper-pagination-bullet-active {
   background: #dfdfdf !important  ;
+}
+.slider-normal-container {
+  cursor: pointer;
+}
+.pagination-slider {
+  transform: translateY(1000px) !important;
+  transition: ease-in-out 0.3s !important;
+}
+.pagination-slider-hover {
+  transform: translateY(0) !important;
+  transition: ease-in-out 0.3s !important;
 }
 /* .next-normal:hover {
   color: #191919 !important;
