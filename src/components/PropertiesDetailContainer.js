@@ -103,7 +103,7 @@ const PropertiesDetailContainer = ({
             />
           ) : (
             <Container fluid className="color-detail pb-5  ">
-              <PropertyDetailHeader dataDetails={dataDetails} />
+              {/* <PropertyDetailHeader dataDetails={dataDetails} /> */}
               <ProperttDetailSlider dataDetails={dataDetails} />
               <PropertyDetailDescription dataDetails={dataDetails} />
               <PropertyDetailOther dataDetails={dataDetails} />

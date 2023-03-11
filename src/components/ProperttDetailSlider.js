@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "../styles/all.css";
+import PropertyDetailHeader from "./PropertyDetailHeader";
 
 import { Navigation, Pagination } from "swiper";
 
@@ -19,6 +20,7 @@ const ProperttDetailSlider = ({ dataDetails }) => {
   }, []);
   return (
     <div className="slider-normal-container container">
+      <PropertyDetailHeader dataDetails={dataDetails} />
       <Swiper
         pagination={true}
         loop={true}
