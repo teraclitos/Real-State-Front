@@ -39,9 +39,8 @@ const ProperttDetailSlider = ({ dataDetails }) => {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     setSizeIMG(imgSize);
-    setTimeout(() => {
-      setContainerSwiperSize(swiperSize);
-    }, 100);
+
+    setContainerSwiperSize(swiperSize);
   }, [width]);
 
   useEffect(() => {
