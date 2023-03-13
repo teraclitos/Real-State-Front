@@ -97,13 +97,16 @@ const NavbarC = ({
               </Link>
 
               {token && (
-                <Link to={`/admingori/main`} className="link me-lg-5   ">
+                <Link
+                  to={`/admingori/main`}
+                  className="link me-lg-5 mb-3 mb-lg-0   "
+                >
                   <span className="nav-bar-link">Crear propiedad</span>
                 </Link>
               )}
 
               {token ? (
-                <div className="mt-2 mt-lg-0">
+                <div className=" mt-lg-0">
                   <Logout
                     login={login}
                     setLogin={setLogin}
@@ -121,7 +124,7 @@ const NavbarC = ({
                     setChangeData(changeData + 1);
                   }}
                   to={`/contacto`}
-                  className="link mt-2 mt-lg-0  "
+                  className="link  mt-lg-0  "
                 >
                   <ContactBtn />
                 </Link>
