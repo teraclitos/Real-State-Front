@@ -14,3 +14,12 @@
 .description {
   white-space: pre;
 }
+.line-container {
+  flex-grow: 5;
+}
+.line {
+  height: 1px;
+  background-color: #ffffff;
+
+  margin-top: 0.55em;
+}
