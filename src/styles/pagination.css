@@ -10,6 +10,7 @@
   margin-right: 1rem;
   border-radius: 3px;
 }
+
 .pagination-active-item {
   background-color: #696969;
   pointer-events: none;

@@ -74,3 +74,7 @@
 .overlayed-letter-cube-hover {
   height: 100%;
 }
+.pagination-cube {
+  position: relative !important;
+  top: 1.2rem !important;
+}

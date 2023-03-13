@@ -65,9 +65,13 @@ const ProperttDetailSlider = ({ dataDetails }) => {
             key={"slidenormal" + i}
             className="mb-2 col-12 col-md-6 col-lg-4 d-flex justify-content-center  swiper-slide-normal"
           >
-            <div className="shadow-left"></div>
-            <div className="shadow-right"></div>
-            <div className="shadow-bottom"></div>
+            {dataDetails.images_URL.length > 1 && (
+              <>
+                <div className="shadow-left"></div>
+                <div className="shadow-right"></div>
+                <div className="shadow-bottom"></div>
+              </>
+            )}
 
             <img
               style={{ height: `${sizeIMG}px`, width: `${sizeIMG}px` }}

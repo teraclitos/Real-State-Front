@@ -14,12 +14,16 @@ import "../styles/all.css";
 
 let cubeBG = [];
 let cubeLetter = [];
+let paginationCube = "";
 
 const Slider = ({ highlight, setLoader }) => {
   useEffect(() => {
     cubeBG = document.querySelectorAll(".overlayed-cube");
 
     cubeLetter = document.querySelectorAll(".overlayed-letter-cube");
+    paginationCube = document.querySelector(".swiper-pagination");
+
+    paginationCube.classList.add("pagination-cube");
   }, []);
 
   return (
@@ -37,7 +41,7 @@ const Slider = ({ highlight, setLoader }) => {
           shadowOffset: 20,
           shadowScale: 0.94,
         }}
-        pagination={false}
+        pagination={true}
         navigation={true}
         modules={[EffectCube, Pagination, Navigation]}
         className="mySwiper"
@@ -61,8 +65,8 @@ const Slider = ({ highlight, setLoader }) => {
             >
               <img src={element.images_URL[0].url} />
             </Link>
-            <div className="overlayed-cube "></div>
-            <div className="d-flex justify-content-center ps-3 fs-5 flex-column gross-letter overlayed-letter-cube">
+            <div className="overlayed-cube d-none d-md-block"></div>
+            <div className="d-flex justify-content-center ps-3 fs-5 flex-column gross-letter overlayed-letter-cube d-none d-md-flex">
               <div className="mb-2">{`Propiedad: ${element.name}`}</div>
               <div className="mb-2">{`Precio: US$ ${element.price}`}</div>
               <div className="">{`Localidad: ${element.location}`}</div>
