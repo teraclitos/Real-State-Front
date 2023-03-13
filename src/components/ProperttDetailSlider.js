@@ -11,32 +11,56 @@ import { Navigation, Pagination } from "swiper";
 const ProperttDetailSlider = ({ dataDetails }) => {
   let prevSlider = "";
   let nextSlider = "";
+
+  // let swiperSlide = "";
+
   // let swiperPagination = "";
-  // const [width, setWidth] = useState(window.innerWidth);
-  // const imgheigthF = () => {
-  //   const arrayImgHeight = document.querySelectorAll(
-  //     ".swiper-slide-img-normal"
-  //   );
-  //   let imgHeight = arrayImgHeight[0].clientHeight;
-  //   return imgHeight;
-  // };
+  const [width, setWidth] = useState(window.innerWidth);
+  const imgSize = () => {
+    if (width > 768) {
+      return 450;
+    } else if (width < 768 && width > 576) {
+      return 400;
+    } else if (width < 576 && width > 400) {
+      return 300;
+    } else if (width < 400 && width > 300) {
+      return 250;
+    } else {
+      return 200;
+    }
+  };
+  const swiperSize = () => {
+    if (width < 768) {
+      return `${sizeIMG}px`;
+    } else {
+      return `${100}%`;
+    }
+  };
 
-  // const handleResize = () => {
-  //   setWidth(window.innerWidth);
-  // };
-  // const [stateHeight, setstateheight] = useState(0);
+  const handleResize = () => {
+    setWidth(window.innerWidth);
+  };
 
-  // useEffect(() => {
-  //   window.addEventListener("resize", handleResize);
-  //   setstateheight(imgheigthF);
-  // }, [width]);
+  const [sizeIMG, setSizeIMG] = useState();
+  const [containerSwiperSize, setContainerSwiperSize] = useState();
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    setSizeIMG(imgSize);
+    setContainerSwiperSize(swiperSize);
+  }, [width]);
 
   useEffect(() => {
     nextSlider = document.querySelector(".swiper-button-next");
     prevSlider = document.querySelector(".swiper-button-prev");
+    // swiperSlide = document.querySelectorAll(".swiper-slide-normal");
     // swiperPagination = document.querySelector(".swiper-pagination");
     prevSlider.classList.add("prev-normal");
     nextSlider.classList.add("next-normal");
+    // swiperSlide.forEach((element) => {
+    //   element.classList.remove("swiper-slide");
+    // });
+
     // swiperPagination.classList.add("pagination-slider");
   }, []);
   return (
@@ -55,26 +79,28 @@ const ProperttDetailSlider = ({ dataDetails }) => {
     >
       <PropertyDetailHeader dataDetails={dataDetails} />
       <Swiper
+        style={{ width: containerSwiperSize, height: containerSwiperSize }}
         pagination={true}
         loop={true}
         navigation={true}
         modules={[Navigation, Pagination]}
-        className="mySwiper swiper-normal pb-5 pt-0 pt-md-5 "
+        className="mySwiper swiper-normal pb-md-5 pb-0 pt-0 pt-md-5 "
       >
         {dataDetails.images_URL.map((d, i) => (
           <SwiperSlide
             key={"slidenormal" + i}
             className="mb-2 col-12 col-md-6 col-lg-4 d-flex justify-content-center  swiper-slide-normal"
           >
-            <div
-              // style={{ height: `${stateHeight}px` }}
-              className="shadow-left"
-            ></div>
-            <div
-              // style={{ height: `${stateHeight}px` }}
-              className="shadow-right"
-            ></div>
-            <img className="swiper-slide-img-normal" src={d.url} alt="" />
+            <div className="shadow-left"></div>
+            <div className="shadow-right"></div>
+            <div className="shadow-bottom"></div>
+
+            <img
+              style={{ height: `${sizeIMG}px`, width: `${sizeIMG}px` }}
+              className="swiper-slide-img-normal"
+              src={d.url}
+              alt=""
+            />
           </SwiperSlide>
         ))}
       </Swiper>
