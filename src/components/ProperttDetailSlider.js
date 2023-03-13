@@ -11,7 +11,7 @@ import { Navigation, Pagination } from "swiper";
 const ProperttDetailSlider = ({ dataDetails }) => {
   let prevSlider = "";
   let nextSlider = "";
-  let swiperPagination = "";
+  // let swiperPagination = "";
   const [width, setWidth] = useState(window.innerWidth);
   const imgSize = () => {
     if (width >= 500) {
@@ -47,10 +47,10 @@ const ProperttDetailSlider = ({ dataDetails }) => {
   useEffect(() => {
     nextSlider = document.querySelector(".swiper-button-next");
     prevSlider = document.querySelector(".swiper-button-prev");
-    swiperPagination = document.querySelector(".swiper-pagination");
+    // swiperPagination = document.querySelector(".swiper-pagination");
     prevSlider.classList.add("prev-normal");
     nextSlider.classList.add("next-normal");
-    swiperPagination.classList.add("pagination-slider");
+    // swiperPagination.classList.add("pagination-slider");
   }, []);
   return (
     <div

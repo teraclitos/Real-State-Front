@@ -103,7 +103,7 @@ const NavbarC = ({
               )}
 
               {token ? (
-                <div className="mt-3 mt-lg-0">
+                <div className="mt-2 mt-lg-0">
                   <Logout
                     login={login}
                     setLogin={setLogin}
