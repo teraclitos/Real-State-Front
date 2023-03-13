@@ -31,17 +31,17 @@
 .swiper-pagination-bullet {
   background: #ffffff !important;
 }
-.swiper-pagination-bullet-active {
+/* .swiper-pagination-bullet-active {
   background: #dfdfdf !important  ;
 }
-/* .slider-normal-container {
+.slider-normal-container {
   cursor: pointer;
-}
-.pagination-slider {
+} */
+/* .pagination-slider {
   transform: translateY(1000px) !important;
   transition: ease-in-out 0.3s !important;
-}
-.pagination-slider-hover {
+} */
+/* .pagination-slider-hover {
   transform: translateY(0) !important;
   transition: ease-in-out 0.3s !important;
 } */
