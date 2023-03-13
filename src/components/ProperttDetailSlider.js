@@ -17,27 +17,17 @@ const ProperttDetailSlider = ({ dataDetails }) => {
   // let swiperPagination = "";
   const [width, setWidth] = useState(window.innerWidth);
   const imgSize = () => {
-    if (width > 768) {
+    if (width >= 500) {
       return 450;
-    } else if (width < 768 && width > 576) {
-      return 400;
-    } else if (width < 576 && width > 400) {
-      return 350;
-    } else if (width < 400 && width > 300) {
-      return 250;
-    } else {
-      return 200;
+    } else if (width < 500) {
+      return width - 50;
     }
   };
   const swiperSize = () => {
-    if (width < 768 && width > 576) {
-      return `${400}px`;
-    } else if (width < 576 && width > 400) {
-      return `${350}px`;
-    } else if (width < 400 && width > 300) {
-      return `${250}px`;
-    } else if (width < 300) {
-      return `${200}px`;
+    if (width < 768 && width >= 500) {
+      return `${450}px`;
+    } else if (width < 500) {
+      return `${width - 50}px`;
     } else {
       return `${100}%`;
     }
