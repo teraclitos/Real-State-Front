@@ -21,7 +21,7 @@ const PropertyDetailOther = ({ dataDetails }) => {
           </div>
         </Col>
         <Col className="col-12  col-lg-6">
-          <div className="d-flex justify-content-between grey">
+          <div className="d-flex  grey">
             <h6 className="font-size-detail">Localidad</h6>
             <div className="px-2 line-container">
               <div className="line"></div>
@@ -31,7 +31,7 @@ const PropertyDetailOther = ({ dataDetails }) => {
           </div>
         </Col>
         <Col className="col-12  col-lg-6">
-          <div className="d-flex justify-content-between grey">
+          <div className="d-flex  grey">
             <h6 className="font-size-detail">Dirección</h6>
             <div className="px-2 line-container">
               <div className="line"></div>
@@ -41,7 +41,7 @@ const PropertyDetailOther = ({ dataDetails }) => {
           </div>
         </Col>
         <Col className="col-12  col-lg-6">
-          <div className="d-flex justify-content-between grey">
+          <div className="d-flex  grey">
             <h6 className="font-size-detail">Estado</h6>
             <div className="px-2 line-container">
               <div className="line"></div>
@@ -53,7 +53,7 @@ const PropertyDetailOther = ({ dataDetails }) => {
       </Row>
       <Row className="px-2 font-size-detail">
         <Col className="col-12  col-lg-6">
-          <div className="d-flex justify-content-between grey">
+          <div className="d-flex  grey">
             <h6 className="font-size-detail">Precio</h6>
             <div className="px-2 line-container">
               <div className="line"></div>
@@ -63,7 +63,7 @@ const PropertyDetailOther = ({ dataDetails }) => {
           </div>
         </Col>
         <Col className="col-12  col-lg-6">
-          <div className="d-flex justify-content-between grey">
+          <div className="d-flex  grey">
             <h6 className="font-size-detail">Antiguedad</h6>
             <div className="px-2 line-container">
               <div className="line"></div>
@@ -73,7 +73,7 @@ const PropertyDetailOther = ({ dataDetails }) => {
           </div>
         </Col>
         <Col className="col-12  col-lg-6">
-          <div className="d-flex justify-content-between grey">
+          <div className="d-flex  grey">
             <h6 className="font-size-detail">Superficie del terreno</h6>
             <div className="px-2 line-container">
               <div className="line"></div>
@@ -83,7 +83,7 @@ const PropertyDetailOther = ({ dataDetails }) => {
           </div>
         </Col>
         <Col className="col-12  col-lg-6">
-          <div className="d-flex justify-content-between grey">
+          <div className="d-flex  grey">
             <h6 className="font-size-detail">Superficie total</h6>
             <div className="px-2 line-container">
               <div className="line"></div>
