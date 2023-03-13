@@ -43,3 +43,34 @@
 .cube-container {
   padding: 5em 0 7em 0;
 }
+
+.overlayed-cube {
+  height: 0;
+  width: 100%;
+  background-color: #191919;
+  position: absolute;
+  top: 0;
+  opacity: 0.7;
+  z-index: 1;
+  pointer-events: none;
+  transition: 0.2s;
+}
+
+.overlayed-letter-cube {
+  height: 0;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  pointer-events: none;
+  transition: 0.2s;
+  overflow: hidden;
+  color: #dfdfdf;
+}
+
+.overlayed-cube-hover {
+  height: 100%;
+}
+.overlayed-letter-cube-hover {
+  height: 100%;
+}

@@ -80,7 +80,7 @@ const NavbarC = ({
                   setChangeData(changeData + 1);
                 }}
                 to={`/`}
-                className="link me-lg-5 mb-3 mb-lg-0 nav-bar-link"
+                className="link me-lg-5 mb-3 mb-lg-0 nav-bar-link-hover"
               >
                 <span className="nav-bar-link">Inicio</span>
               </Link>
@@ -91,7 +91,7 @@ const NavbarC = ({
                   setChangeData(changeData + 1);
                 }}
                 to={`/propiedades`}
-                className="link  me-lg-5 mb-3 mb-lg-0    "
+                className="link  me-lg-5 mb-3 mb-lg-0 nav-bar-link-hover   "
               >
                 <span className="nav-bar-link">Propiedades</span>{" "}
               </Link>
@@ -99,7 +99,7 @@ const NavbarC = ({
               {token && (
                 <Link
                   to={`/admingori/main`}
-                  className="link me-lg-5 mb-3 mb-lg-0   "
+                  className="link me-lg-5 mb-3 mb-lg-0  nav-bar-link-hover  "
                 >
                   <span className="nav-bar-link">Crear propiedad</span>
                 </Link>

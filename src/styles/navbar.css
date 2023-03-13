@@ -10,6 +10,12 @@
   background: radial-gradient(to bottom right, #ffffff, #e3ede8);
   /* background-color: #696969; */
 }
+.nav-bar-link-hover {
+  transition: 0.3s;
+}
+.nav-bar-link-hover:hover {
+  transform: translateY(-3px);
+}
 .nav-bar-link {
   color: #696969;
   font-weight: 400;
