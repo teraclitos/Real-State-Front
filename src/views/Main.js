@@ -9,6 +9,7 @@ import ContainerMainCard from "../components/ContainerMainCard";
 import Hero from "../components/Hero";
 import Slider from "../components/Slider";
 import Loader from "../components/Loader";
+import Contact from "../components/Contact";
 
 import "../styles/all.css";
 import PropertiesDetailContainer from "../components/PropertiesDetailContainer";
@@ -252,6 +253,7 @@ const Main = ({
                 />
               }
             />
+            <Route path="/contacto" element={<Contact />} />
           </Routes>
         </Container>
 

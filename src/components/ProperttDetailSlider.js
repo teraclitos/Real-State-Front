@@ -11,7 +11,7 @@ import { Navigation, Pagination } from "swiper";
 const ProperttDetailSlider = ({ dataDetails }) => {
   let prevSlider = "";
   let nextSlider = "";
-  // let swiperPagination = "";
+
   const [width, setWidth] = useState(window.innerWidth);
   const imgSize = () => {
     if (width >= 500) {
@@ -39,32 +39,18 @@ const ProperttDetailSlider = ({ dataDetails }) => {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     setSizeIMG(imgSize);
-
     setContainerSwiperSize(swiperSize);
   }, [width]);
 
   useEffect(() => {
     nextSlider = document.querySelector(".swiper-button-next");
     prevSlider = document.querySelector(".swiper-button-prev");
-    // swiperPagination = document.querySelector(".swiper-pagination");
+
     prevSlider.classList.add("prev-normal");
     nextSlider.classList.add("next-normal");
-    // swiperPagination.classList.add("pagination-slider");
   }, []);
   return (
-    <div
-      className=" container"
-      // onMouseEnter={() => {
-      //   prevSlider.classList.add("arrow-hover");
-      //   nextSlider.classList.add("arrow-hover");
-      //   swiperPagination.classList.add("pagination-slider-hover");
-      // }}
-      // onMouseLeave={() => {
-      //   prevSlider.classList.remove("arrow-hover");
-      //   nextSlider.classList.remove("arrow-hover");
-      //   swiperPagination.classList.remove("pagination-slider-hover");
-      // }}
-    >
+    <div className=" container">
       <PropertyDetailHeader dataDetails={dataDetails} />
       <Swiper
         style={{ width: containerSwiperSize, height: containerSwiperSize }}

@@ -51,3 +51,12 @@ dorado:#ffec00 */
 .bg-light-grey {
   background-color: #dfdfdf;
 }
+.contact-container {
+  min-height: 60vh;
+}
+.icon-contact {
+  font-size: 12em;
+}
+.icon-contact:hover {
+  color: #696969;
+}
