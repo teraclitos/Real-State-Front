@@ -22,7 +22,7 @@ const ProperttDetailSlider = ({ dataDetails }) => {
     } else if (width < 768 && width > 576) {
       return 400;
     } else if (width < 576 && width > 400) {
-      return 300;
+      return 350;
     } else if (width < 400 && width > 300) {
       return 250;
     } else {
@@ -30,8 +30,14 @@ const ProperttDetailSlider = ({ dataDetails }) => {
     }
   };
   const swiperSize = () => {
-    if (width < 768) {
-      return `${sizeIMG}px`;
+    if (width < 768 && width > 576) {
+      return `${400}px`;
+    } else if (width < 576 && width > 400) {
+      return `${350}px`;
+    } else if (width < 400 && width > 300) {
+      return `${250}px`;
+    } else if (width < 300) {
+      return `${200}px`;
     } else {
       return `${100}%`;
     }
@@ -45,9 +51,10 @@ const ProperttDetailSlider = ({ dataDetails }) => {
   const [containerSwiperSize, setContainerSwiperSize] = useState();
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-
     setSizeIMG(imgSize);
-    setContainerSwiperSize(swiperSize);
+    setTimeout(() => {
+      setContainerSwiperSize(swiperSize);
+    }, 100);
   }, [width]);
 
   useEffect(() => {
