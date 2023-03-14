@@ -55,8 +55,38 @@ dorado:#ffec00 */
   min-height: 60vh;
 }
 .icon-contact {
-  font-size: 12em;
+  font-size: 8em;
+}
+
+.icon-contact-left {
+  animation: slideleft 1.2s;
+}
+
+.icon-contact-right {
+  animation: slideright 1.2s;
 }
 .icon-contact:hover {
   color: #ffffff;
+}
+/* .title-contact {
+  font-size: 3.7em;
+} */
+@keyframes slideleft {
+  from {
+    transform: translateX(-1000px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideright {
+  from {
+    transform: translateX(1000px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }

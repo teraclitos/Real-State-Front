@@ -37,7 +37,7 @@ const MainCard = ({ d, i, setLoader }) => {
           />
         </Link>
         <Card.Body className="py-4 ps-2 fs-6 card-body">
-          <Card.Title>{d.name}</Card.Title>
+          <Card.Title className="gross-letter-title">{d.name}</Card.Title>
         </Card.Body>
         <Card.Footer className="d-flex justify-content-between align-items-end p-0  card-footer">
           <div className="ps-2 price-box align-self-center">US$ {d.price}</div>

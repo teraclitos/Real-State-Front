@@ -80,7 +80,7 @@ const NavbarC = ({
                   setChangeData(changeData + 1);
                 }}
                 to={`/`}
-                className="link me-lg-5 mb-3 mb-lg-0 nav-bar-link-hover"
+                className="link me-lg-5 mb-3 mb-lg-0 nav-bar-link-hover "
               >
                 <span className="nav-bar-link">Inicio</span>
               </Link>

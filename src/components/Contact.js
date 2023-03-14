@@ -8,7 +8,9 @@ import "../styles/all.css";
 const Contact = () => {
   return (
     <Container className="py-5">
-      <h2 className="title fs-1  text-center light-grey">Contáctame</h2>
+      <h2 className="title fs-1 title-contact text-center light-grey">
+        Contáctame
+      </h2>
 
       <div className="d-flex flex-sm-row flex-column  justify-content-center align-items-center contact-container">
         <Link
@@ -17,7 +19,7 @@ const Contact = () => {
           className="link"
         >
           <FontAwesomeIcon
-            className="light-grey me-sm-5 mb-5 mb-sm-0 mt-5 mt-sm-0 icon-contact"
+            className="light-grey me-sm-5 mb-5 mb-sm-0 mt-5 mt-sm-0 icon-contact icon-contact-left"
             icon={faFacebook}
           />
         </Link>
@@ -27,7 +29,7 @@ const Contact = () => {
           className="link"
         >
           <FontAwesomeIcon
-            className="light-grey  me-3 icon-contact"
+            className="light-grey  me-3 icon-contact icon-contact-right"
             icon={faWhatsapp}
           />
         </Link>
