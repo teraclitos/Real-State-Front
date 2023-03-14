@@ -11,7 +11,7 @@ const PropertyDetailOther = ({ dataDetails }) => {
       <Row className="px-2 ">
         <Col className="col-12  col-lg-6">
           <div className="d-flex  flex-grow grey">
-            <h6 className="font-size-detail  ">Tipo</h6>
+            <h6 className="font-size-detail gross-letter ">Tipo</h6>
 
             <div className="px-2 line-container">
               <div className="line"></div>
@@ -22,7 +22,7 @@ const PropertyDetailOther = ({ dataDetails }) => {
         </Col>
         <Col className="col-12  col-lg-6">
           <div className="d-flex  grey">
-            <h6 className="font-size-detail">Localidad</h6>
+            <h6 className="font-size-detail gross-letter">Localidad</h6>
             <div className="px-2 line-container">
               <div className="line"></div>
             </div>
@@ -32,7 +32,7 @@ const PropertyDetailOther = ({ dataDetails }) => {
         </Col>
         <Col className="col-12  col-lg-6">
           <div className="d-flex  grey">
-            <h6 className="font-size-detail">Dirección</h6>
+            <h6 className="font-size-detail gross-letter">Dirección</h6>
             <div className="px-2 line-container">
               <div className="line"></div>
             </div>
@@ -42,7 +42,7 @@ const PropertyDetailOther = ({ dataDetails }) => {
         </Col>
         <Col className="col-12  col-lg-6">
           <div className="d-flex  grey">
-            <h6 className="font-size-detail">Estado</h6>
+            <h6 className="font-size-detail gross-letter">Estado</h6>
             <div className="px-2 line-container">
               <div className="line"></div>
             </div>
@@ -54,7 +54,7 @@ const PropertyDetailOther = ({ dataDetails }) => {
       <Row className="px-2 font-size-detail">
         <Col className="col-12  col-lg-6">
           <div className="d-flex  grey">
-            <h6 className="font-size-detail">Precio</h6>
+            <h6 className="font-size-detail gross-letter">Precio</h6>
             <div className="px-2 line-container">
               <div className="line"></div>
             </div>
@@ -64,17 +64,19 @@ const PropertyDetailOther = ({ dataDetails }) => {
         </Col>
         <Col className="col-12  col-lg-6">
           <div className="d-flex  grey">
-            <h6 className="font-size-detail">Antiguedad</h6>
+            <h6 className="font-size-detail gross-letter">Antiguedad</h6>
             <div className="px-2 line-container">
               <div className="line"></div>
             </div>
 
-            <h6 className="font-size-detail">{dataDetails.antiquity} años</h6>
+            <h6 className="font-size-detail ">{dataDetails.antiquity} años</h6>
           </div>
         </Col>
         <Col className="col-12  col-lg-6">
           <div className="d-flex  grey">
-            <h6 className="font-size-detail">Superficie del terreno</h6>
+            <h6 className="font-size-detail gross-letter">
+              Superficie del terreno
+            </h6>
             <div className="px-2 line-container">
               <div className="line"></div>
             </div>
@@ -84,12 +86,12 @@ const PropertyDetailOther = ({ dataDetails }) => {
         </Col>
         <Col className="col-12  col-lg-6">
           <div className="d-flex  grey">
-            <h6 className="font-size-detail">Superficie total</h6>
+            <h6 className="font-size-detail gross-letter">Superficie total</h6>
             <div className="px-2 line-container">
               <div className="line"></div>
             </div>
 
-            <h6 className="font-size-detail">{dataDetails.totalSurface} m²</h6>
+            <h6 className="font-size-detail ">{dataDetails.totalSurface} m²</h6>
           </div>
         </Col>
       </Row>

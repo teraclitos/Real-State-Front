@@ -79,6 +79,14 @@
   top: 1.2rem !important;
 }
 .highlight-container-responsive-data {
-  font-size: 1.2em;
   background-color: #696969;
+}
+.title-cube-span {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.text-cube-span {
+  font-size: 1em;
+  font-weight: 600;
 }

@@ -49,10 +49,21 @@ const Slider = ({ highlight, setLoader }) => {
       >
         {highlight.map((element, i) => (
           <SwiperSlide key={"slidercube" + i}>
-            <div className="d-flex highlight-container-responsive-data justify-content-center px-3  light-grey flex-column gross-letter  py-3 d-flex d-md-none">
-              <div className="mb-2">{`Propiedad: ${element.name}`}</div>
-              <div className="mb-2">{`Precio: US$ ${element.price}`}</div>
-              <div className="">{`Localidad: ${element.location}`}</div>
+            <div className="d-flex highlight-container-responsive-data justify-content-center px-3  light-grey flex-column title-cube-span  py-3 d-flex d-md-none">
+              <div className="mb-2">
+                <span className="title-cube-span ">Propiedad:</span>
+                <span className="text-cube-span"> {`  ${element.name}`}</span>
+              </div>
+              <div className="mb-2">
+                <span className="title-cube-span ">Precio:</span>
+                <span className="text-cube-span">{`  US$ ${element.price}`}</span>
+              </div>
+              <div className="text-cube-span">
+                <span className="title-cube-span ">Localidad:</span>
+                <span className="text-cube-span">
+                  {`  ${element.location}`}
+                </span>
+              </div>
             </div>
             <Link
               onClick={() => {
@@ -72,10 +83,21 @@ const Slider = ({ highlight, setLoader }) => {
               <img src={element.images_URL[0].url} />
             </Link>
             <div className="overlayed-cube d-none d-md-block"></div>
-            <div className="d-flex justify-content-center ps-3 fs-5 flex-column gross-letter overlayed-letter-cube d-none d-md-flex">
-              <div className="mb-2">{`Propiedad: ${element.name}`}</div>
-              <div className="mb-2">{`Precio: US$ ${element.price}`}</div>
-              <div className="">{`Localidad: ${element.location}`}</div>
+            <div className="d-flex justify-content-center  ps-3 fs-5 flex-column overlayed-letter-cube d-none d-md-flex">
+              <div className="mb-2">
+                <span className="title-cube-span ">Propiedad:</span>
+                <span className="text-cube-span"> {`  ${element.name}`}</span>
+              </div>
+              <div className="mb-2">
+                <span className="title-cube-span ">Precio:</span>
+                <span className="text-cube-span">{`  US$ ${element.price}`}</span>
+              </div>
+              <div className="text-cube-span">
+                <span className="title-cube-span ">Localidad:</span>
+                <span className="text-cube-span">
+                  {`  ${element.location}`}
+                </span>
+              </div>
             </div>
           </SwiperSlide>
         ))}
