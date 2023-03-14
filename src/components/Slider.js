@@ -49,7 +49,7 @@ const Slider = ({ highlight, setLoader }) => {
       >
         {highlight.map((element, i) => (
           <SwiperSlide key={"slidercube" + i}>
-            <div className="d-flex highlight-container-responsive-data justify-content-center ps-3  light-grey flex-column gross-letter  py-3 d-flex d-md-none">
+            <div className="d-flex highlight-container-responsive-data justify-content-center px-3  light-grey flex-column gross-letter  py-3 d-flex d-md-none">
               <div className="mb-2">{`Propiedad: ${element.name}`}</div>
               <div className="mb-2">{`Precio: US$ ${element.price}`}</div>
               <div className="">{`Localidad: ${element.location}`}</div>
