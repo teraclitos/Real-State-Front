@@ -102,11 +102,7 @@ const ModifyDelete = ({
       });
   };
   useEffect(() => {
-    if (dataDetails.highlight === "YES") {
-      setEditHighlight("sí");
-    } else {
-      setEditHighlight("no");
-    }
+    setEditHighlight(dataDetails.highlight);
     setEditType(dataDetails.type);
     setEditLocation(dataDetails.location);
     setEditName(dataDetails.name);
@@ -186,8 +182,8 @@ const ModifyDelete = ({
         name="highlight"
         className="highlight input-post"
       >
-        <option value={editHighlight === "sí" ? "YES" : "NO"}>
-          {editHighlight}
+        <option value={editHighlight}>
+          {editHighlight === "YES" ? "sí" : "no"}
         </option>
         <option value="YES">sí</option>
         <option value="NO">no</option>
@@ -206,7 +202,7 @@ const ModifyDelete = ({
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="fs-6 style-crud">Nombre</Form.Label>
               <Form.Control
-                maxLength={31}
+                maxLength={100}
                 type="text"
                 onInput={(e) => setEditName(e.target.value)}
                 name="name"
@@ -254,7 +250,7 @@ const ModifyDelete = ({
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput6">
               <Form.Label className="fs-6 style-crud">Estado</Form.Label>
               <Form.Control
-                maxLength={31}
+                maxLength={70}
                 type="text"
                 placeholder=""
                 onInput={(e) => setEditState(e.target.value)}

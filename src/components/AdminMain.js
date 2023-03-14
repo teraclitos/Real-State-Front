@@ -190,7 +190,7 @@ const AdminMain = ({
               <Form.Label className="fs-6 style-crud">Nombre</Form.Label>
               <Form.Control
                 autoFocus
-                maxLength={31}
+                maxLength={100}
                 type="text"
                 onInput={(e) => setEditName(e.target.value)}
                 name="name"
@@ -244,7 +244,7 @@ const AdminMain = ({
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="fs-6 style-crud">Estado</Form.Label>
               <Form.Control
-                maxLength={31}
+                maxLength={70}
                 type="text"
                 placeholder=""
                 onInput={(e) => setEditState(e.target.value)}
