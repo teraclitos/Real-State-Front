@@ -1,6 +1,6 @@
 .swiper {
   width: 18.75em;
-  height: 18.75em;
+  height: 100%;
 }
 
 .swiper-slide {
@@ -77,4 +77,8 @@
 .pagination-cube {
   position: relative !important;
   top: 1.2rem !important;
+}
+.highlight-container-responsive-data {
+  font-size: 1.2em;
+  background-color: #696969;
 }

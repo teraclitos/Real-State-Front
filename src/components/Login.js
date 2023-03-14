@@ -30,6 +30,7 @@ const Login = ({
       method: "POST",
       headers: {
         "Content-type": "application/json",
+        token,
       },
       body: JSON.stringify({
         username: u,
