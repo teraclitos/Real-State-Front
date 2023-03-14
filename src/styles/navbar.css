@@ -11,10 +11,10 @@
   /* background-color: #696969; */
 }
 .nav-bar-link-hover {
-  transition: 0.3s;
+  transition: 0.2s;
 }
 .nav-bar-link-hover:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 .nav-bar-link {
   color: #696969;
