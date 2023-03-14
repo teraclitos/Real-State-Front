@@ -64,6 +64,9 @@
   .contact-container {
     font-size: 12px;
   }
+  .container-header-detail {
+    font-size: 12px;
+  }
 }
 @media (max-width: 576px) {
   .slogan-cube-container {

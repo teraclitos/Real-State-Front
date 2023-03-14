@@ -5,8 +5,8 @@ import { Row, Col, Container } from "react-bootstrap";
 
 const PropertyDetailHeader = ({ dataDetails }) => {
   return (
-    <Container className="pt-5">
-      <p className="light-grey fs-5 text-center gross-letter">
+    <Container className="pt-5 pb-3 container-header-detail">
+      <p className="light-grey text-center gross-letter text-header-detail">
         Propiedad {dataDetails.name}, ubicada en {dataDetails.location}, con un
         precio de US$ {dataDetails.price}
       </p>
