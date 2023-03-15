@@ -1,5 +1,5 @@
 .swiper {
-  width: 23em;
+  width: 21em;
   height: 100%;
 }
 
@@ -10,8 +10,8 @@
 
 .swiper-slide img {
   display: block;
-  width: 23em;
-  height: 23em;
+  width: 21em;
+  height: 21em;
   object-fit: contain;
 }
 .swiper-button-next {
