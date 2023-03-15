@@ -6,9 +6,12 @@ import { Row, Col, Container } from "react-bootstrap";
 const PropertyDetailHeader = ({ dataDetails }) => {
   return (
     <Container className="pt-5 pb-3 container-header-detail">
-      <p className="light-grey text-center title text-header-detail">
-        Propiedad {dataDetails.name}, ubicada en {dataDetails.location}, con un
-        precio de US$ {dataDetails.price}
+      <p className="grey text-center title grey-header-detail text-header-detail">
+        Propiedad <span className="light-grey"> {dataDetails.name}</span>,
+        ubicada en
+        <span className="light-grey"> {dataDetails.location}</span>, con un
+        precio de
+        <span className="light-grey"> US$ {dataDetails.price}</span>
       </p>
       {/* <Row className=" pb-5 pt-5 pb-md-0 header-detail-container light-grey ">
         <Col className="d-flex justify-content-center col-md-4 col-12  ">
