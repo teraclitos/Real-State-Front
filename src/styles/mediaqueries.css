@@ -42,6 +42,13 @@
   }
 }
 @media (max-width: 576px) {
+  .swiper {
+    width: 23em;
+  }
+  .swiper-slide img {
+    width: 23em;
+    height: 23em;
+  }
   .slogan-cube-container {
     font-size: 10px;
   }
@@ -93,6 +100,13 @@
   .font-size-detail-title {
     font-size: 15px;
   }
+  .swiper {
+    width: 20.5em;
+  }
+  .swiper-slide img {
+    width: 20.5em;
+    height: 20.5em;
+  }
 }
 
 @media (max-width: 350px) {
@@ -115,5 +129,12 @@
   }
   .font-size-detail-title {
     font-size: 10px;
+  }
+  .swiper {
+    width: 19em;
+  }
+  .swiper-slide img {
+    width: 19em;
+    height: 19em;
   }
 }
