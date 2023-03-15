@@ -14,10 +14,12 @@ const ProperttDetailSlider = ({ dataDetails }) => {
 
   const [width, setWidth] = useState(window.innerWidth);
   const imgSize = () => {
-    if (width >= 500) {
-      return `${450}px`;
+    if (width >= 500 && width < 768) {
+      return `${400}px`;
     } else if (width < 500) {
       return `${width - 50}px`;
+    } else {
+      return `${450}px`;
     }
   };
 
@@ -43,16 +45,11 @@ const ProperttDetailSlider = ({ dataDetails }) => {
     <div className=" container">
       <PropertyDetailHeader dataDetails={dataDetails} />
       <Swiper
-        // style={
-        //   width < 768
-        //     ? { width: imgSize, height: imgSize }
-        //     : { width: `100%`, height: `100%` }
-        // }
         pagination={true}
         loop={true}
         navigation={true}
         modules={[Navigation, Pagination]}
-        className="mySwiper swiper-normal pb-md-5 pb-0 pt-0 pt-md-5 "
+        className="mySwiper swiper-normal pb-sm-5 pb-0 pt-0 pt-sm-5 "
       >
         {dataDetails.images_URL.map((d, i) => (
           <SwiperSlide
