@@ -8,7 +8,6 @@
   background: -webkit-radial-gradient(top left, #ffffff, #e3ede8);
   background: -moz-radial-gradient(top left, #ffffff, #e3ede8);
   background: radial-gradient(to bottom right, #ffffff, #e3ede8);
-  /* background-color: #696969; */
 }
 .nav-bar-link-hover {
   transition: 0.2s;

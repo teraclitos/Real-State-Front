@@ -19,7 +19,7 @@ const ProperttDetailSlider = ({ dataDetails }) => {
     } else if (width < 500) {
       return `${width - 50}px`;
     } else {
-      return `${450}px`;
+      return `${500}px`;
     }
   };
 
