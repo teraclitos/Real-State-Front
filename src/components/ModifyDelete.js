@@ -171,6 +171,7 @@ const ModifyDelete = ({
         <option value=" Terrenos y Loc.comercial/oficinas ">
           Terrenos y Loc.comercial/oficinas
         </option>
+        <option value=" Campos ">Campos</option>
       </Form.Select>
     );
   };

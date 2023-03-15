@@ -16,6 +16,11 @@
   }
 }
 @media (max-width: 768px) {
+  .img-logo {
+    width: 3em;
+    height: 3em;
+  }
+
   .cube-container {
     font-size: 12px;
   }
