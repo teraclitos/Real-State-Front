@@ -6,7 +6,10 @@
   justify-content: center !important;
   align-items: center !important;
 }
-
+.swiper-normal {
+  width: 100% !important;
+  height: 100% !important;
+}
 .swiper-slide-img-normal {
   display: block !important;
 }

@@ -43,11 +43,11 @@ const ProperttDetailSlider = ({ dataDetails }) => {
     <div className=" container">
       <PropertyDetailHeader dataDetails={dataDetails} />
       <Swiper
-        style={
-          width < 768
-            ? { width: imgSize, height: imgSize }
-            : { width: `100%`, height: `100%` }
-        }
+        // style={
+        //   width < 768
+        //     ? { width: imgSize, height: imgSize }
+        //     : { width: `100%`, height: `100%` }
+        // }
         pagination={true}
         loop={true}
         navigation={true}
