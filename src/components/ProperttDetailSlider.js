@@ -15,18 +15,9 @@ const ProperttDetailSlider = ({ dataDetails }) => {
   const [width, setWidth] = useState(window.innerWidth);
   const imgSize = () => {
     if (width >= 500) {
-      return 450;
-    } else if (width < 500) {
-      return width - 50;
-    }
-  };
-  const swiperSize = () => {
-    if (width < 768 && width >= 500) {
       return `${450}px`;
     } else if (width < 500) {
       return `${width - 50}px`;
-    } else {
-      return `${100}%`;
     }
   };
 
@@ -35,11 +26,10 @@ const ProperttDetailSlider = ({ dataDetails }) => {
   };
 
   const [sizeIMG, setSizeIMG] = useState();
-  const [containerSwiperSize, setContainerSwiperSize] = useState();
+
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     setSizeIMG(imgSize);
-    setContainerSwiperSize(swiperSize);
   }, [width]);
 
   useEffect(() => {
@@ -53,7 +43,11 @@ const ProperttDetailSlider = ({ dataDetails }) => {
     <div className=" container">
       <PropertyDetailHeader dataDetails={dataDetails} />
       <Swiper
-        style={{ width: containerSwiperSize, height: containerSwiperSize }}
+        style={
+          width < 768
+            ? { width: imgSize, height: imgSize }
+            : { width: `100%`, height: `100%` }
+        }
         pagination={true}
         loop={true}
         navigation={true}
@@ -74,7 +68,7 @@ const ProperttDetailSlider = ({ dataDetails }) => {
             )}
 
             <img
-              style={{ height: `${sizeIMG}px`, width: `${sizeIMG}px` }}
+              style={{ height: sizeIMG, width: sizeIMG }}
               className="swiper-slide-img-normal"
               src={d.url}
               alt=""

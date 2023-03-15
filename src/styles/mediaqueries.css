@@ -5,9 +5,7 @@
   .input-price-container {
     width: 100%;
   }
-  /* .slider-normal-container {
-    font-size: 12px;
-  } */
+
   .prev-normal {
     font-size: 14px !important;
   }
@@ -16,11 +14,6 @@
   }
 }
 @media (max-width: 768px) {
-  .img-logo {
-    width: 3em;
-    height: 3em;
-  }
-
   .cube-container {
     font-size: 12px;
   }
@@ -33,9 +26,7 @@
   .footer-container {
     font-size: 14px;
   }
-  /* .slider-normal-container {
-    font-size: 10px;
-  } */
+
   .prev-normal {
     font-size: 12px !important;
   }
@@ -77,9 +68,7 @@
   .slogan-cube-container {
     font-size: 10px;
   }
-  /* .slider-normal-container {
-    font-size: 8px;
-  } */
+
   .prev-normal {
     font-size: 10px !important;
   }
@@ -94,9 +83,6 @@
   }
 }
 @media (max-width: 400px) {
-  /* .slider-normal-container {
-    font-size: 5px;
-  } */
   .font-size-detail {
     font-size: 12px;
   }
