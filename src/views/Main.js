@@ -67,6 +67,8 @@ const Main = ({
   loaderMain,
   loaderLog,
   setLoaderLog,
+  errors,
+  setErrors,
 }) => {
   return (
     <>
@@ -208,6 +210,8 @@ const Main = ({
                   loaderLog={loaderLog}
                   setLoaderLog={setLoaderLog}
                   highlight={highlight}
+                  errors={errors}
+                  setErrors={setErrors}
                 />
               }
             />
@@ -250,6 +254,8 @@ const Main = ({
                   loaderLog={loaderLog}
                   setLoaderLog={setLoaderLog}
                   highlight={highlight}
+                  errors={errors}
+                  setErrors={setErrors}
                 />
               }
             />

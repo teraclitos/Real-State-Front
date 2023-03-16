@@ -40,6 +40,8 @@ const ModifyDelete = ({
   loaderLog,
   setLoaderLog,
   highlight,
+  errors,
+  setErrors,
 }) => {
   const navigate = useNavigate();
   const [deleteP, setDeleteP] = useState(null);
@@ -49,8 +51,135 @@ const ModifyDelete = ({
   const [modify, setModify] = useState(null);
 
   const token = JSON.parse(localStorage.getItem("token"));
+  useEffect(() => {
+    if (!editAdress) {
+      if (!errors.some((element) => element === "Campo dirección vacío")) {
+        setErrors((errors) => [...errors, "Campo dirección vacío"]);
+      }
+    } else {
+      setErrors(
+        errors.filter((element) => element !== "Campo dirección vacío")
+      );
+    }
+  }, [editAdress]);
+
+  useEffect(() => {
+    if (!editDescription) {
+      if (!errors.some((element) => element === "Campo descripción vacío")) {
+        setErrors((errors) => [...errors, "Campo descripción vacío"]);
+      }
+    } else {
+      setErrors(
+        errors.filter((element) => element !== "Campo descripción vacío")
+      );
+    }
+  }, [editDescription]);
+  useEffect(() => {
+    if (!editLocation) {
+      if (!errors.some((element) => element === "Campo localidad vacío")) {
+        setErrors((errors) => [...errors, "Campo localidad vacío"]);
+      }
+    } else {
+      setErrors(
+        errors.filter((element) => element !== "Campo localidad vacío")
+      );
+    }
+  }, [editLocation]);
+  useEffect(() => {
+    if (!editName) {
+      if (!errors.some((element) => element === "Campo nombre vacío")) {
+        setErrors((errors) => [...errors, "Campo nombre vacío"]);
+      }
+    } else {
+      setErrors(errors.filter((element) => element !== "Campo nombre vacío"));
+    }
+  }, [editName]);
+  useEffect(() => {
+    if (!editPrice) {
+      if (!errors.some((element) => element === "Campo precio vacío")) {
+        setErrors((errors) => [...errors, "Campo precio vacío"]);
+      }
+    } else {
+      setErrors(errors.filter((element) => element !== "Campo precio vacío"));
+    }
+  }, [editPrice]);
+  useEffect(() => {
+    if (!editState) {
+      if (!errors.some((element) => element === "Campo estado vacío")) {
+        setErrors((errors) => [...errors, "Campo estado vacío"]);
+      }
+    } else {
+      setErrors(errors.filter((element) => element !== "Campo estado vacío"));
+    }
+  }, [editState]);
+  useEffect(() => {
+    if (!editType) {
+      if (!errors.some((element) => element === "Campo tipo vacío")) {
+        setErrors((errors) => [...errors, "Campo tipo vacío"]);
+      }
+    } else {
+      setErrors(errors.filter((element) => element !== "Campo tipo vacío"));
+    }
+  }, [editType]);
+  useEffect(() => {
+    console.log(editTotalSurface);
+    if (!editTotalSurface) {
+      if (
+        !errors.some((element) => element === "Campo superficie total vacío")
+      ) {
+        setErrors((errors) => [...errors, "Campo superficie total vacío"]);
+      }
+    } else {
+      setErrors(
+        errors.filter((element) => element !== "Campo superficie total vacío")
+      );
+    }
+  }, [editTotalSurface]);
+
+  useEffect(() => {
+    if (!editAntiquity) {
+      if (!errors.some((element) => element === "Campo antiguedad vacío")) {
+        setErrors((errors) => [...errors, "Campo antiguedad vacío"]);
+      }
+    } else {
+      setErrors(
+        errors.filter((element) => element !== "Campo antiguedad vacío")
+      );
+    }
+  }, [editAntiquity]);
+
   const handleModify = (e) => {
     e.preventDefault();
+    if (
+      !editAntiquity &&
+      !editDescription &&
+      !editTotalSurface &&
+      !editLocation &&
+      !editName &&
+      !editPrice &&
+      !editState &&
+      !editType &&
+      !editAdress
+    ) {
+      setLoaderLog(false);
+      return toastError(`Debe completar los campos obligatorios`);
+    }
+
+    if (
+      !editAntiquity ||
+      !editDescription ||
+      !editTotalSurface ||
+      !editLocation ||
+      !editName ||
+      !editPrice ||
+      !editState ||
+      !editType ||
+      !editAdress
+    ) {
+      setLoaderLog(false);
+
+      return alert(errors.join("\n"));
+    }
 
     if (
       highlight.length === 4 &&
@@ -101,6 +230,7 @@ const ModifyDelete = ({
         setModify(false);
       });
   };
+
   useEffect(() => {
     setEditHighlight(dataDetails.highlight);
     setEditType(dataDetails.type);
@@ -113,7 +243,9 @@ const ModifyDelete = ({
     setEditPrice(dataDetails.price);
     setEditState(dataDetails.state);
     setEditTotalSurface(dataDetails.totalSurface);
+    setErrors([]);
   }, []);
+
   useEffect(() => {
     if (modify) {
       toastSuccess("Se ha modificado la propiedad con exito");
@@ -241,6 +373,7 @@ const ModifyDelete = ({
               <Form.Label className="fs-6 style-crud">Antiguedad</Form.Label>
               <Form.Control
                 type="number"
+                min={0}
                 onInput={(e) => setEditAntiquity(e.target.value)}
                 name="antiquity"
                 className="input-post"
@@ -267,8 +400,11 @@ const ModifyDelete = ({
               </Form.Label>
               <Form.Control
                 type="number"
+                min={0}
                 placeholder=""
-                onInput={(e) => setEditTotalSurface(e.target.value)}
+                onInput={(e) => {
+                  setEditTotalSurface(e.target.value);
+                }}
                 name="totalSurface"
                 className="input-post"
                 value={editTotalSurface}
@@ -281,6 +417,7 @@ const ModifyDelete = ({
               </Form.Label>
               <Form.Control
                 type="number"
+                min={0}
                 placeholder=""
                 onInput={(e) => setEditLandSurface(e.target.value)}
                 name="landSurface"

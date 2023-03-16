@@ -72,18 +72,21 @@ const PropertyDetailOther = ({ dataDetails }) => {
             <h6 className="font-size-detail ">{dataDetails.antiquity} años</h6>
           </div>
         </Col>
-        <Col className="col-12  col-lg-6">
-          <div className="d-flex  grey">
-            <h6 className="font-size-detail gross-letter">
-              Superficie del terreno
-            </h6>
-            <div className="px-2 line-container">
-              <div className="line"></div>
-            </div>
 
-            <h6 className="font-size-detail">{dataDetails.landSurface} m²</h6>
-          </div>
-        </Col>
+        {dataDetails.landSurface && (
+          <Col className="col-12  col-lg-6">
+            <div className="d-flex  grey">
+              <h6 className="font-size-detail gross-letter">
+                Superficie del terreno
+              </h6>
+              <div className="px-2 line-container">
+                <div className="line"></div>
+              </div>
+
+              <h6 className="font-size-detail">{dataDetails.landSurface} m²</h6>
+            </div>
+          </Col>
+        )}
         <Col className="col-12  col-lg-6">
           <div className="d-flex  grey">
             <h6 className="font-size-detail gross-letter">Superficie total</h6>

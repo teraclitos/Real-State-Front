@@ -33,6 +33,7 @@ function App() {
   const [loader, setLoader] = useState(true);
   const [loaderMain, setLoaderMain] = useState(true);
   const [loaderLog, setLoaderLog] = useState(false);
+  const [errors, setErrors] = useState([]);
   useEffect(() => {
     fetch(
       `https://gori-inmobiliaria.vercel.app/properties/show?page=${page}&limit=9&location=${location}&type=${type}&inf=${inf}&sup=${sup}`
@@ -130,6 +131,8 @@ function App() {
         setLoaderMain={setLoaderMain}
         loaderLog={loaderLog}
         setLoaderLog={setLoaderLog}
+        errors={errors}
+        setErrors={setErrors}
       />
       <ToastContainer
         transition={Flip}

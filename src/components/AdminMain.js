@@ -47,6 +47,8 @@ const AdminMain = ({
   setLoaderLog,
   highlight,
   data,
+  errors,
+  setErrors,
 }) => {
   const token = JSON.parse(localStorage.getItem("token"));
   const navigate = useNavigate();
@@ -137,7 +139,6 @@ const AdminMain = ({
       navigate("/");
     }
   }, [changeLog]);
-  const [errors, setErrors] = useState([]);
 
   useEffect(() => {
     if (!editAdress) {
@@ -145,8 +146,6 @@ const AdminMain = ({
         setErrors((errors) => [...errors, "Campo dirección vacío"]);
       }
     } else {
-      errors.filter((element) => element !== "Campo dirección vacío");
-
       setErrors(
         errors.filter((element) => element !== "Campo dirección vacío")
       );
@@ -220,25 +219,18 @@ const AdminMain = ({
     }
   }, [editType]);
   useEffect(() => {
-    if (!editLandSurface) {
+    if (!editTotalSurface) {
       if (
-        !errors.some(
-          (element) => element === "Campo superficie del terreno vacío"
-        )
+        !errors.some((element) => element === "Campo superficie total vacío")
       ) {
-        setErrors((errors) => [
-          ...errors,
-          "Campo superficie del terreno vacío",
-        ]);
+        setErrors((errors) => [...errors, "Campo superficie total vacío"]);
       }
     } else {
       setErrors(
-        errors.filter(
-          (element) => element !== "Campo superficie del terreno vacío"
-        )
+        errors.filter((element) => element !== "Campo superficie total vacío")
       );
     }
-  }, [editLandSurface]);
+  }, [editTotalSurface]);
 
   useEffect(() => {
     if (!editAntiquity) {
@@ -257,7 +249,7 @@ const AdminMain = ({
       !editAntiquity &&
       !editDescription &&
       !editImages &&
-      !editLandSurface &&
+      !editTotalSurface &&
       !editLocation &&
       !editName &&
       !editPrice &&
@@ -273,7 +265,7 @@ const AdminMain = ({
       !editAntiquity ||
       !editDescription ||
       !editImages ||
-      !editLandSurface ||
+      !editTotalSurface ||
       !editLocation ||
       !editName ||
       !editPrice ||
