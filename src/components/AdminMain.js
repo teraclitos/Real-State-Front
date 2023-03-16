@@ -1,6 +1,14 @@
 import { React, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Button, Form, Row, Col, Container, Spinner } from "react-bootstrap";
+import {
+  Button,
+  Form,
+  Row,
+  Col,
+  Container,
+  Spinner,
+  Alert,
+} from "react-bootstrap";
 import "../styles/all.css";
 import axios, { Axios } from "axios";
 
@@ -38,6 +46,7 @@ const AdminMain = ({
   loaderLog,
   setLoaderLog,
   highlight,
+  data,
 }) => {
   const token = JSON.parse(localStorage.getItem("token"));
   const navigate = useNavigate();
@@ -46,6 +55,19 @@ const AdminMain = ({
     inputsPost.forEach((element) => {
       element.value = "";
     });
+  };
+
+  const resetStates = () => {
+    setEditAntiquity("");
+    setEditDescription("");
+    setEditImages("");
+    setEditLandSurface("");
+    setEditLocation("");
+    setEditName("");
+    setEditPrice("");
+    setEditState("");
+    setEditType("");
+    setEditAdress("");
   };
 
   const [post, setPost] = useState(null);
@@ -117,17 +139,7 @@ const AdminMain = ({
   }, [changeLog]);
   const [errors, setErrors] = useState([]);
 
-  const errorsFront = () => {
-    if (!editAntiquity) {
-      if (!errors.some((element) => element === "Campo antiguedad vacío")) {
-        setErrors((errors) => [...errors, "Campo antiguedad vacío"]);
-      }
-    } else {
-      setErrors(
-        errors.filter((element) => element !== "Campo antiguedad vacío")
-      );
-    }
-
+  useEffect(() => {
     if (!editAdress) {
       if (!errors.some((element) => element === "Campo dirección vacío")) {
         setErrors((errors) => [...errors, "Campo dirección vacío"]);
@@ -139,6 +151,8 @@ const AdminMain = ({
         errors.filter((element) => element !== "Campo dirección vacío")
       );
     }
+  }, [editAdress]);
+  useEffect(() => {
     if (!editImages) {
       if (!errors.some((element) => element === "Campo imagen vacío")) {
         setErrors((errors) => [...errors, "Campo imagen vacío"]);
@@ -146,6 +160,8 @@ const AdminMain = ({
     } else {
       setErrors(errors.filter((element) => element !== "Campo imagen vacío"));
     }
+  }, [editImages]);
+  useEffect(() => {
     if (!editDescription) {
       if (!errors.some((element) => element === "Campo descripción vacío")) {
         setErrors((errors) => [...errors, "Campo descripción vacío"]);
@@ -155,6 +171,55 @@ const AdminMain = ({
         errors.filter((element) => element !== "Campo descripción vacío")
       );
     }
+  }, [editDescription]);
+  useEffect(() => {
+    if (!editLocation) {
+      if (!errors.some((element) => element === "Campo localidad vacío")) {
+        setErrors((errors) => [...errors, "Campo localidad vacío"]);
+      }
+    } else {
+      setErrors(
+        errors.filter((element) => element !== "Campo localidad vacío")
+      );
+    }
+  }, [editLocation]);
+  useEffect(() => {
+    if (!editName) {
+      if (!errors.some((element) => element === "Campo nombre vacío")) {
+        setErrors((errors) => [...errors, "Campo nombre vacío"]);
+      }
+    } else {
+      setErrors(errors.filter((element) => element !== "Campo nombre vacío"));
+    }
+  }, [editName]);
+  useEffect(() => {
+    if (!editPrice) {
+      if (!errors.some((element) => element === "Campo precio vacío")) {
+        setErrors((errors) => [...errors, "Campo precio vacío"]);
+      }
+    } else {
+      setErrors(errors.filter((element) => element !== "Campo precio vacío"));
+    }
+  }, [editPrice]);
+  useEffect(() => {
+    if (!editState) {
+      if (!errors.some((element) => element === "Campo estado vacío")) {
+        setErrors((errors) => [...errors, "Campo estado vacío"]);
+      }
+    } else {
+      setErrors(errors.filter((element) => element !== "Campo estado vacío"));
+    }
+  }, [editState]);
+  useEffect(() => {
+    if (!editType) {
+      if (!errors.some((element) => element === "Campo tipo vacío")) {
+        setErrors((errors) => [...errors, "Campo tipo vacío"]);
+      }
+    } else {
+      setErrors(errors.filter((element) => element !== "Campo tipo vacío"));
+    }
+  }, [editType]);
+  useEffect(() => {
     if (!editLandSurface) {
       if (
         !errors.some(
@@ -173,59 +238,19 @@ const AdminMain = ({
         )
       );
     }
-    if (!editLocation) {
-      if (!errors.some((element) => element === "Campo localidad vacío")) {
-        setErrors((errors) => [...errors, "Campo localidad vacío"]);
+  }, [editLandSurface]);
+
+  useEffect(() => {
+    if (!editAntiquity) {
+      if (!errors.some((element) => element === "Campo antiguedad vacío")) {
+        setErrors((errors) => [...errors, "Campo antiguedad vacío"]);
       }
     } else {
       setErrors(
-        errors.filter((element) => element !== "Campo localidad vacío")
+        errors.filter((element) => element !== "Campo antiguedad vacío")
       );
     }
-    if (!editName) {
-      if (!errors.some((element) => element === "Campo nombre vacío")) {
-        setErrors((errors) => [...errors, "Campo nombre vacío"]);
-      }
-    } else {
-      setErrors(errors.filter((element) => element !== "Campo nombre vacío"));
-    }
-    if (!editPrice) {
-      if (!errors.some((element) => element === "Campo precio vacío")) {
-        setErrors((errors) => [...errors, "Campo precio vacío"]);
-      }
-    } else {
-      setErrors(errors.filter((element) => element !== "Campo precio vacío"));
-    }
-    if (!editState) {
-      if (!errors.some((element) => element === "Campo estado vacío")) {
-        setErrors((errors) => [...errors, "Campo estado vacío"]);
-      }
-    } else {
-      setErrors(errors.filter((element) => element !== "Campo estado vacío"));
-    }
-    if (!editType) {
-      if (!errors.some((element) => element === "Campo tipo vacío")) {
-        setErrors((errors) => [...errors, "Campo tipo vacío"]);
-      }
-    } else {
-      setErrors(errors.filter((element) => element !== "Campo tipo vacío"));
-    }
-  };
-
-  useEffect(() => {
-    errorsFront();
-  }, [
-    editAdress,
-    editAntiquity,
-    editImages,
-    editDescription,
-    editLandSurface,
-    editLocation,
-    editName,
-    editPrice,
-    editState,
-    editType,
-  ]);
+  }, [editAntiquity]);
 
   const handlePost = async () => {
     if (
@@ -264,6 +289,17 @@ const AdminMain = ({
       setLoaderLog(false);
 
       return toastError("Solo puede haber 4 propiedades destacadas");
+    }
+
+    if (
+      data.filter(
+        (element) => element.name.toLowerCase() === editName.toLowerCase()
+      ).length > 0
+    ) {
+      setLoaderLog(false);
+      return toastError(
+        "El nombre de esta propiedad ya existe. El nombre debe ser un dato ÚNICO"
+      );
     }
 
     const formData = new FormData();
@@ -310,6 +346,7 @@ const AdminMain = ({
       toastSuccess("propiedad creada correctamente");
       setPost(null);
       resetInputs();
+      resetStates();
     }
 
     if (post === false) {
@@ -373,6 +410,7 @@ const AdminMain = ({
               <Form.Label className="fs-6 style-crud">Antiguedad</Form.Label>
               <Form.Control
                 type="number"
+                min={0}
                 onInput={(e) => setEditAntiquity(e.target.value)}
                 name="antiquity"
                 className="input-post"
@@ -397,6 +435,7 @@ const AdminMain = ({
               </Form.Label>
               <Form.Control
                 type="number"
+                min={0}
                 placeholder=""
                 onInput={(e) => setEditTotalSurface(e.target.value)}
                 name="totalSurface"
@@ -410,6 +449,7 @@ const AdminMain = ({
               </Form.Label>
               <Form.Control
                 type="number"
+                min={0}
                 placeholder=""
                 onInput={(e) => setEditLandSurface(e.target.value)}
                 name="landSurface"
