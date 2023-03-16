@@ -146,11 +146,86 @@ const AdminMain = ({
     } else {
       setErrors(errors.filter((element) => element !== "Campo imagen vacío"));
     }
+    if (!editDescription) {
+      if (!errors.some((element) => element === "Campo descripción vacío")) {
+        setErrors((errors) => [...errors, "Campo descripción vacío"]);
+      }
+    } else {
+      setErrors(
+        errors.filter((element) => element !== "Campo descripción vacío")
+      );
+    }
+    if (!editLandSurface) {
+      if (
+        !errors.some(
+          (element) => element === "Campo superficie del terreno vacío"
+        )
+      ) {
+        setErrors((errors) => [
+          ...errors,
+          "Campo superficie del terreno vacío",
+        ]);
+      }
+    } else {
+      setErrors(
+        errors.filter(
+          (element) => element !== "Campo superficie del terreno vacío"
+        )
+      );
+    }
+    if (!editLocation) {
+      if (!errors.some((element) => element === "Campo localidad vacío")) {
+        setErrors((errors) => [...errors, "Campo localidad vacío"]);
+      }
+    } else {
+      setErrors(
+        errors.filter((element) => element !== "Campo localidad vacío")
+      );
+    }
+    if (!editName) {
+      if (!errors.some((element) => element === "Campo nombre vacío")) {
+        setErrors((errors) => [...errors, "Campo nombre vacío"]);
+      }
+    } else {
+      setErrors(errors.filter((element) => element !== "Campo nombre vacío"));
+    }
+    if (!editPrice) {
+      if (!errors.some((element) => element === "Campo precio vacío")) {
+        setErrors((errors) => [...errors, "Campo precio vacío"]);
+      }
+    } else {
+      setErrors(errors.filter((element) => element !== "Campo precio vacío"));
+    }
+    if (!editState) {
+      if (!errors.some((element) => element === "Campo estado vacío")) {
+        setErrors((errors) => [...errors, "Campo estado vacío"]);
+      }
+    } else {
+      setErrors(errors.filter((element) => element !== "Campo estado vacío"));
+    }
+    if (!editType) {
+      if (!errors.some((element) => element === "Campo tipo vacío")) {
+        setErrors((errors) => [...errors, "Campo tipo vacío"]);
+      }
+    } else {
+      setErrors(errors.filter((element) => element !== "Campo tipo vacío"));
+    }
   };
 
   useEffect(() => {
     errorsFront();
-  }, [editAdress, editAntiquity, editImages]);
+  }, [
+    editAdress,
+    editAntiquity,
+    editImages,
+    editDescription,
+    editLandSurface,
+    editLocation,
+    editName,
+    editPrice,
+    editState,
+    editType,
+  ]);
 
   const handlePost = async () => {
     if (
@@ -162,7 +237,8 @@ const AdminMain = ({
       !editName &&
       !editPrice &&
       !editState &&
-      !editType
+      !editType &&
+      !editAdress
     ) {
       setLoaderLog(false);
       return toastError(`Debe completar los campos obligatorios`);
@@ -177,7 +253,8 @@ const AdminMain = ({
       !editName ||
       !editPrice ||
       !editState ||
-      !editType
+      !editType ||
+      !editAdress
     ) {
       setLoaderLog(false);
 
