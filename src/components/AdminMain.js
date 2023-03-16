@@ -115,18 +115,78 @@ const AdminMain = ({
       navigate("/");
     }
   }, [changeLog]);
+  const [errors, setErrors] = useState([]);
 
-  const handlePost = async (e) => {
-    e.preventDefault();
+  const errorsFront = () => {
+    if (!editAntiquity) {
+      if (!errors.some((element) => element === "Campo antiguedad vacío")) {
+        setErrors((errors) => [...errors, "Campo antiguedad vacío"]);
+      }
+    } else {
+      setErrors(
+        errors.filter((element) => element !== "Campo antiguedad vacío")
+      );
+    }
+
+    if (!editAdress) {
+      if (!errors.some((element) => element === "Campo dirección vacío")) {
+        setErrors((errors) => [...errors, "Campo dirección vacío"]);
+      }
+    } else {
+      errors.filter((element) => element !== "Campo dirección vacío");
+
+      setErrors(
+        errors.filter((element) => element !== "Campo dirección vacío")
+      );
+    }
+    if (!editImages) {
+      if (!errors.some((element) => element === "Campo imagen vacío")) {
+        setErrors((errors) => [...errors, "Campo imagen vacío"]);
+      }
+    } else {
+      setErrors(errors.filter((element) => element !== "Campo imagen vacío"));
+    }
+  };
+
+  useEffect(() => {
+    errorsFront();
+  }, [editAdress, editAntiquity, editImages]);
+
+  const handlePost = async () => {
+    if (
+      !editAntiquity &&
+      !editDescription &&
+      !editImages &&
+      !editLandSurface &&
+      !editLocation &&
+      !editName &&
+      !editPrice &&
+      !editState &&
+      !editType
+    ) {
+      setLoaderLog(false);
+      return toastError(`Debe completar los campos obligatorios`);
+    }
+
+    if (
+      !editAntiquity ||
+      !editDescription ||
+      !editImages ||
+      !editLandSurface ||
+      !editLocation ||
+      !editName ||
+      !editPrice ||
+      !editState ||
+      !editType
+    ) {
+      setLoaderLog(false);
+
+      return alert(errors.join("\n"));
+    }
     if (highlight.length === 4 && editHighlight === "YES") {
       setLoaderLog(false);
 
       return toastError("Solo puede haber 4 propiedades destacadas");
-    }
-
-    if (!editImages) {
-      setLoaderLog(false);
-      return toastError(`Debe cargar al menos una imagen`);
     }
 
     const formData = new FormData();
@@ -322,9 +382,9 @@ const AdminMain = ({
               type="button"
               id="edit-Buttom"
               className="btn-g btn-black mt-3"
-              onClick={(e) => {
+              onClick={() => {
                 setLoaderLog(true);
-                handlePost(e);
+                handlePost();
               }}
             >
               {!loaderLog ? (
