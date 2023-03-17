@@ -330,8 +330,48 @@ const AdminMain = ({
 
     const formData = new FormData();
 
+    const arrayImg = [];
+    const arrayOrder = [];
+    const arrayOrderFilter = [];
+
     for (const e of editImages) {
-      formData.append(`images`, e, e.name);
+      arrayImg.push(e.name.split(".")[1].toLowerCase());
+    }
+    for (const e of editImages) {
+      arrayOrder.push(parseInt(e.name.split(".")[0].split("-")[1]));
+    }
+
+    arrayOrder.forEach((element1, i) => {
+      arrayOrder.forEach((element2) => {
+        if (element2 === i + 1) {
+          arrayOrderFilter.push(element2);
+        }
+      });
+    });
+    console.log(arrayOrderFilter);
+    console.log(arrayOrder);
+
+    if (
+      arrayImg.every(
+        (element) =>
+          element === "png" || element === "jpg" || element === "jpeg"
+      )
+    ) {
+      if (arrayOrderFilter.length === arrayImg.length) {
+        for (const e of editImages) {
+          formData.append(`images`, e, e.name);
+        }
+      } else {
+        setLoaderLog(false);
+
+        return toastError(
+          "El nombre de las imagenes debe tener al final un - seguido con el número de orden en el cual serán mostradas. No debe haber huecos en la numeración"
+        );
+      }
+    } else {
+      setLoaderLog(false);
+
+      return toastError("Sólo se admiten archivos png, jpg o jpeg");
     }
 
     formData.append(`description`, editDescription);

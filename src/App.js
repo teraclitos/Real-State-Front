@@ -138,8 +138,8 @@ function App() {
         transition={Flip}
         theme="colored"
         hideProgressBar={true}
-        autoClose={2000}
-        pauseOnFocusLoss={false}
+        autoClose={3000}
+        pauseOnFocusLoss={true}
         className="toasts-spaces"
       />
     </BrowserRouter>
