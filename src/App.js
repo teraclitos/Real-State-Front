@@ -140,6 +140,7 @@ function App() {
         hideProgressBar={true}
         autoClose={2000}
         pauseOnFocusLoss={false}
+        className="toasts-spaces"
       />
     </BrowserRouter>
   );

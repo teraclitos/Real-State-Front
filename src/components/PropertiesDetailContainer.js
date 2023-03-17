@@ -46,6 +46,7 @@ const PropertiesDetailContainer = ({
   highlight,
   errors,
   setErrors,
+  data,
 }) => {
   const params = useParams();
   const token = JSON.parse(localStorage.getItem("token"));
@@ -104,6 +105,7 @@ const PropertiesDetailContainer = ({
               highlight={highlight}
               errors={errors}
               setErrors={setErrors}
+              data={data}
             />
           ) : (
             <Container fluid className="color-detail pb-5  ">

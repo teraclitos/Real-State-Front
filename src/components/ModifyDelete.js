@@ -42,6 +42,7 @@ const ModifyDelete = ({
   highlight,
   errors,
   setErrors,
+  data,
 }) => {
   const navigate = useNavigate();
   const [deleteP, setDeleteP] = useState(null);
@@ -95,12 +96,16 @@ const ModifyDelete = ({
     }
   }, [editName]);
   useEffect(() => {
-    if (!editPrice) {
-      if (!errors.some((element) => element === "Campo precio vacío")) {
-        setErrors((errors) => [...errors, "Campo precio vacío"]);
+    if (!editPrice || editPrice < 1) {
+      if (
+        !errors.some((element) => element === "Campo precio vacío o menor a 1")
+      ) {
+        setErrors((errors) => [...errors, "Campo precio vacío o menor a 1"]);
       }
     } else {
-      setErrors(errors.filter((element) => element !== "Campo precio vacío"));
+      setErrors(
+        errors.filter((element) => element !== "Campo precio vacío o menor a 1")
+      );
     }
   }, [editPrice]);
   useEffect(() => {
@@ -122,28 +127,43 @@ const ModifyDelete = ({
     }
   }, [editType]);
   useEffect(() => {
-    console.log(editTotalSurface);
-    if (!editTotalSurface) {
+    if (!editTotalSurface || editTotalSurface < 1) {
       if (
-        !errors.some((element) => element === "Campo superficie total vacío")
+        !errors.some(
+          (element) => element === "Campo superficie total vacío o menor a 1"
+        )
       ) {
-        setErrors((errors) => [...errors, "Campo superficie total vacío"]);
+        setErrors((errors) => [
+          ...errors,
+          "Campo superficie total vacío o menor a 1",
+        ]);
       }
     } else {
       setErrors(
-        errors.filter((element) => element !== "Campo superficie total vacío")
+        errors.filter(
+          (element) => element !== "Campo superficie total vacío o menor a 1"
+        )
       );
     }
   }, [editTotalSurface]);
 
   useEffect(() => {
-    if (!editAntiquity) {
-      if (!errors.some((element) => element === "Campo antiguedad vacío")) {
-        setErrors((errors) => [...errors, "Campo antiguedad vacío"]);
+    if (!editAntiquity || editAntiquity < 1) {
+      if (
+        !errors.some(
+          (element) => element === "Campo antiguedad vacío o menor a 1"
+        )
+      ) {
+        setErrors((errors) => [
+          ...errors,
+          "Campo antiguedad vacío o menor a 1",
+        ]);
       }
     } else {
       setErrors(
-        errors.filter((element) => element !== "Campo antiguedad vacío")
+        errors.filter(
+          (element) => element !== "Campo antiguedad vacío o menor a 1"
+        )
       );
     }
   }, [editAntiquity]);
@@ -167,20 +187,28 @@ const ModifyDelete = ({
 
     if (
       !editAntiquity ||
+      editAntiquity < 1 ||
       !editDescription ||
       !editTotalSurface ||
+      editTotalSurface < 1 ||
       !editLocation ||
       !editName ||
       !editPrice ||
+      editPrice < 1 ||
       !editState ||
       !editType ||
       !editAdress
     ) {
       setLoaderLog(false);
 
-      return alert(errors.join("\n"));
+      return toastError(errors.join("\n"));
     }
-
+    if (editLandSurface && editLandSurface < 1) {
+      setLoaderLog(false);
+      return toastError(
+        "El valor de la superficie del terreno debe ser mayor a 0"
+      );
+    }
     if (
       highlight.length === 4 &&
       editHighlight === "YES" &&
@@ -189,6 +217,18 @@ const ModifyDelete = ({
       setLoaderLog(false);
 
       return toastError("Solo puede haber 4 propiedades destacadas");
+    }
+    if (
+      data
+        .filter((element) => element.name !== dataDetails.name)
+        .filter(
+          (element) => element.name.toLowerCase() === editName.toLowerCase()
+        ).length > 0
+    ) {
+      setLoaderLog(false);
+      return toastError(
+        "El nombre de esta propiedad ya existe. El nombre debe ser un dato ÚNICO"
+      );
     }
     fetch(
       `https://gori-inmobiliaria.vercel.app/properties/modify${dataDetails._id}`,
@@ -355,7 +395,7 @@ const ModifyDelete = ({
               <Form.Control
                 maxLength={31}
                 type="number"
-                min={0}
+                min={1}
                 onInput={(e) => setEditPrice(e.target.value)}
                 name="price"
                 className="input-post"
@@ -373,7 +413,7 @@ const ModifyDelete = ({
               <Form.Label className="fs-6 style-crud">Antiguedad</Form.Label>
               <Form.Control
                 type="number"
-                min={0}
+                min={1}
                 onInput={(e) => setEditAntiquity(e.target.value)}
                 name="antiquity"
                 className="input-post"
@@ -400,7 +440,7 @@ const ModifyDelete = ({
               </Form.Label>
               <Form.Control
                 type="number"
-                min={0}
+                min={1}
                 placeholder=""
                 onInput={(e) => {
                   setEditTotalSurface(e.target.value);
@@ -417,7 +457,7 @@ const ModifyDelete = ({
               </Form.Label>
               <Form.Control
                 type="number"
-                min={0}
+                min={1}
                 placeholder=""
                 onInput={(e) => setEditLandSurface(e.target.value)}
                 name="landSurface"

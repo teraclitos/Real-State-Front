@@ -68,6 +68,9 @@ dorado:#ffec00 */
 .icon-contact:hover {
   color: #ffffff;
 }
+.toasts-spaces {
+  white-space: pre-line;
+}
 /* .title-contact {
   font-size: 3.7em;
 } */
