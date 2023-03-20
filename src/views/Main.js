@@ -261,7 +261,16 @@ const Main = ({
               }
             />
             <Route path="/contacto" element={<Contact />} />
-            <Route path="*" element={<Error404 />} />
+            <Route
+              path="*"
+              element={
+                <Error404
+                  setLoader={setLoader}
+                  setChangeData={setChangeData}
+                  changeData={changeData}
+                />
+              }
+            />
           </Routes>
         </Container>
 
