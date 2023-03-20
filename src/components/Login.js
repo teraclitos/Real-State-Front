@@ -55,12 +55,12 @@ const Login = ({
     })
       .then((res) => res.json())
       .then((json) => {
-        if (!json.message && json.token) {
+        if (!json.msg && json.token) {
           setToken(json.token);
           setLoaderLog(false);
           setLogin(true);
         } else {
-          setErrorLoginMsg(json.message);
+          setErrorLoginMsg(json.msg);
           setLoaderLog(false);
           setLogin(false);
         }
