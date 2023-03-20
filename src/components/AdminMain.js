@@ -135,7 +135,7 @@ const AdminMain = ({
       </Form.Select>
     );
   };
-
+  const [errorPost, setErrorPost] = useState("");
   useEffect(() => {
     if (token) {
       if (login) {
@@ -405,6 +405,8 @@ const AdminMain = ({
       .catch((error) => {
         setLoaderLog(false);
         setPost(false);
+        console.log(error.response.data.msg);
+        setErrorPost(error.response.data.msg);
       });
   };
   useEffect(() => {
@@ -417,7 +419,7 @@ const AdminMain = ({
     }
 
     if (post === false) {
-      toastError("algo ha salido mal");
+      toastError(errorPost);
       setPost(null);
     }
   }, [post]);

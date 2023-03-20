@@ -26,6 +26,20 @@ const Login = ({
   const navigate = useNavigate();
 
   const handleLogin = (u, p) => {
+    if (username.trim() === "" && password.trim() === "") {
+      setLoaderLog(false);
+      return toastError("Complete los campos");
+    }
+
+    if (username.trim() === "") {
+      setLoaderLog(false);
+      return toastError("Campo usuario vacío");
+    }
+    if (password.trim() === "") {
+      setLoaderLog(false);
+      return toastError("Campo contraseña vacío");
+    }
+
     fetch("https://gori-inmobiliaria.vercel.app/user/login", {
       method: "POST",
       headers: {

@@ -50,6 +50,7 @@ const ModifyDelete = ({
   const handleCloseModalDelete = () => setShowModalDelete(false);
   const handleShowModalDelete = () => setShowModalDelete(true);
   const [modify, setModify] = useState(null);
+  const [responseModify, setResponseModify] = useState();
 
   const token = JSON.parse(localStorage.getItem("token"));
   useEffect(() => {
@@ -257,10 +258,12 @@ const ModifyDelete = ({
     )
       .then((res) => res.json())
       .then((json) => {
-        if (!json.errors) {
+        if (!json.msg && !json.errors) {
           setLoaderLog(false);
           setModify(true);
         } else {
+          setResponseModify(json.msg);
+
           setLoaderLog(false);
           setModify(false);
         }
@@ -293,7 +296,7 @@ const ModifyDelete = ({
       setChangeData(changeData + 1);
     }
     if (modify === false) {
-      toastError("Ha ocurrido un error");
+      toastError(responseModify);
       setModify(null);
     }
   }, [modify]);
