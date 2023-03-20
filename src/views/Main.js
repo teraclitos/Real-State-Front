@@ -10,6 +10,7 @@ import Hero from "../components/Hero";
 import Slider from "../components/Slider";
 import Loader from "../components/Loader";
 import Contact from "../components/Contact";
+import Error404 from "../components/Error404";
 
 import "../styles/all.css";
 import PropertiesDetailContainer from "../components/PropertiesDetailContainer";
@@ -260,6 +261,7 @@ const Main = ({
               }
             />
             <Route path="/contacto" element={<Contact />} />
+            <Route path="*" element={<Error404 />} />
           </Routes>
         </Container>
 

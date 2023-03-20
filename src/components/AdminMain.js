@@ -49,6 +49,8 @@ const AdminMain = ({
   data,
   errors,
   setErrors,
+  setChangeData,
+  changeData,
 }) => {
   const token = JSON.parse(localStorage.getItem("token"));
   const navigate = useNavigate();
@@ -317,16 +319,16 @@ const AdminMain = ({
       return toastError("Solo puede haber 4 propiedades destacadas");
     }
 
-    if (
-      data.filter(
-        (element) => element.name.toLowerCase() === editName.toLowerCase()
-      ).length > 0
-    ) {
-      setLoaderLog(false);
-      return toastError(
-        "El nombre de esta propiedad ya existe. El nombre debe ser un dato ÚNICO"
-      );
-    }
+    // if (
+    //   data.filter(
+    //     (element) => element.name.toLowerCase() === editName.toLowerCase()
+    //   ).length > 0
+    // ) {
+    //   setLoaderLog(false);
+    //   return toastError(
+    //     "El nombre de esta propiedad ya existe. El nombre debe ser un dato ÚNICO"
+    //   );
+    // }
 
     const formData = new FormData();
 
@@ -348,8 +350,6 @@ const AdminMain = ({
         }
       });
     });
-    console.log(arrayOrderFilter);
-    console.log(arrayOrder);
 
     if (
       arrayImg.every(
@@ -413,6 +413,7 @@ const AdminMain = ({
       setPost(null);
       resetInputs();
       resetStates();
+      setChangeData(changeData + 1);
     }
 
     if (post === false) {

@@ -41,6 +41,7 @@ function App() {
       .then((res) => res.json())
       .then((json) => {
         setData(json.docs);
+
         setTotalPages(json.totalPages);
       })
 

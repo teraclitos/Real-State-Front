@@ -71,9 +71,15 @@ dorado:#ffec00 */
 .toasts-spaces {
   white-space: pre-line;
 }
-/* .title-contact {
-  font-size: 3.7em;
-} */
+.warning {
+  border: 3px solid red;
+}
+.error404 {
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+}
 @keyframes slideleft {
   from {
     transform: translateX(-1000px);

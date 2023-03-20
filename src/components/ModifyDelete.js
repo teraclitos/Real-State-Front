@@ -218,18 +218,19 @@ const ModifyDelete = ({
 
       return toastError("Solo puede haber 4 propiedades destacadas");
     }
-    if (
-      data
-        .filter((element) => element.name !== dataDetails.name)
-        .filter(
-          (element) => element.name.toLowerCase() === editName.toLowerCase()
-        ).length > 0
-    ) {
-      setLoaderLog(false);
-      return toastError(
-        "El nombre de esta propiedad ya existe. El nombre debe ser un dato ÚNICO"
-      );
-    }
+
+    // if (
+    //   data
+    //     .filter((element) => element.name !== dataDetails.name)
+    //     .filter(
+    //       (element) => element.name.toLowerCase() === editName.toLowerCase()
+    //     ).length > 0
+    // ) {
+    //   setLoaderLog(false);
+    //   return toastError(
+    //     "El nombre de esta propiedad ya existe. El nombre debe ser un dato ÚNICO"
+    //   );
+    // }
     fetch(
       `https://gori-inmobiliaria.vercel.app/properties/modify${dataDetails._id}`,
       {
@@ -259,7 +260,6 @@ const ModifyDelete = ({
         if (!json.errors) {
           setLoaderLog(false);
           setModify(true);
-          setChangeData(changeData + 1);
         } else {
           setLoaderLog(false);
           setModify(false);
@@ -290,6 +290,7 @@ const ModifyDelete = ({
     if (modify) {
       toastSuccess("Se ha modificado la propiedad con exito");
       setModify(null);
+      setChangeData(changeData + 1);
     }
     if (modify === false) {
       toastError("Ha ocurrido un error");
