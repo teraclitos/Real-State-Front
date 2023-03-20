@@ -23,6 +23,8 @@ const Login = ({
 
   const [token, setToken] = useState("");
 
+  const [errorLoginMsg, setErrorLoginMsg] = useState("");
+
   const navigate = useNavigate();
 
   const handleLogin = (u, p) => {
@@ -53,11 +55,12 @@ const Login = ({
     })
       .then((res) => res.json())
       .then((json) => {
-        if (json.token) {
+        if (!json.message && json.token) {
           setToken(json.token);
           setLoaderLog(false);
           setLogin(true);
         } else {
+          setErrorLoginMsg(json.message);
           setLoaderLog(false);
           setLogin(false);
         }
@@ -77,7 +80,7 @@ const Login = ({
       localStorage.setItem("token", JSON.stringify(token));
       navigate("/admingori/main");
     } else if (login === false) {
-      toastError("no se pudo iniciar sesion");
+      toastError(errorLoginMsg);
       setLogin(null);
     }
   }, [changeLog]);

@@ -270,6 +270,7 @@ const ModifyDelete = ({
       })
       .catch((error) => {
         setLoaderLog(false);
+
         setModify(false);
       });
   };
