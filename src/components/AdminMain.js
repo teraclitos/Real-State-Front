@@ -565,10 +565,10 @@ const AdminMain = ({
         <Row>
           <Form.Group className="d-flex justify-content-center">
             <button
-              type="button"
               id="edit-Buttom"
               className="btn-g btn-black mt-3"
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
                 setLoaderLog(true);
                 handlePost();
               }}
