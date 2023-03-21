@@ -80,6 +80,7 @@ dorado:#ffec00 */
   top: 0;
   left: 0;
 }
+
 @keyframes slideleft {
   from {
     transform: translateX(-1000px);

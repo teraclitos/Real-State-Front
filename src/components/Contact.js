@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,9 +6,18 @@ import { faFacebook, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import "../styles/all.css";
 
 const Contact = () => {
+  const [titleContact, setTitleContact] = useState("0");
+  useEffect(() => {
+    setTimeout(() => {
+      setTitleContact("1");
+    }, 1200);
+  }, []);
   return (
     <Container className="py-5">
-      <h2 className="title fs-1 title-contact text-center light-grey">
+      <h2
+        style={{ opacity: titleContact, transition: "1s" }}
+        className="  title fs-1 title-contact text-center  light-grey"
+      >
         Contáctame
       </h2>
 
