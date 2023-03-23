@@ -68,7 +68,7 @@ const ProperttDetailSlider = ({ dataDetails }) => {
               style={{ height: sizeIMG, width: sizeIMG }}
               className="swiper-slide-img-normal"
               src={d.url}
-              alt=""
+              alt={`${d.name} detalle`}
             />
           </SwiperSlide>
         ))}

@@ -80,7 +80,10 @@ const Slider = ({ highlight, setLoader }) => {
               to={`/propiedades/${element._id}`}
               className="link   "
             >
-              <img src={element.images_URL[0].url} />
+              <img
+                alt={`${element.name} destacado`}
+                src={element.images_URL[0].url}
+              />
             </Link>
             <div className="overlayed-cube d-none d-md-block"></div>
             <div className="d-flex justify-content-center  ps-3 fs-5 flex-column overlayed-letter-cube d-none d-md-flex">

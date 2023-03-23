@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 
 import "../styles/all.css";
 import { Link } from "react-router-dom";
+
 const Hero = ({
   logout,
   setLogout,
@@ -10,6 +11,9 @@ const Hero = ({
   setLoader,
   setChangeData,
 }) => {
+  useEffect(() => {
+    document.title = "GV";
+  }, []);
   useEffect(() => {
     if (logout) {
       toastSuccess("sesion cerrada correctamente");

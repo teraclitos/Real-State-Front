@@ -52,6 +52,9 @@ const AdminMain = ({
   setChangeData,
   changeData,
 }) => {
+  useEffect(() => {
+    document.title = `GV | Crear propiedad`;
+  }, []);
   const token = JSON.parse(localStorage.getItem("token"));
   const navigate = useNavigate();
   const inputsPost = document.querySelectorAll(".input-post");

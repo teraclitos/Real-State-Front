@@ -51,7 +51,7 @@ const PropertiesDetailContainer = ({
   const params = useParams();
   const token = JSON.parse(localStorage.getItem("token"));
 
-  const [dataDetails, setDataDetails] = useState({ name: "hola" });
+  const [dataDetails, setDataDetails] = useState({ name: "Propiedad" });
 
   useEffect(() => {
     fetch(`https://gori-inmobiliaria.vercel.app/properties/show${params.id}`)
@@ -61,6 +61,9 @@ const PropertiesDetailContainer = ({
         setLoader(false);
       });
   }, [changeData]);
+  useEffect(() => {
+    document.title = `GV | ${dataDetails.name}`;
+  }, [dataDetails]);
 
   return (
     <>

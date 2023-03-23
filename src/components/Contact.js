@@ -6,6 +6,9 @@ import { faFacebook, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import "../styles/all.css";
 
 const Contact = () => {
+  useEffect(() => {
+    document.title = `GV | Contacto`;
+  }, []);
   const [titleContact, setTitleContact] = useState("0");
   useEffect(() => {
     setTimeout(() => {

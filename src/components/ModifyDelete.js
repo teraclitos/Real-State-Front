@@ -44,6 +44,7 @@ const ModifyDelete = ({
   setErrors,
   data,
 }) => {
+
   const navigate = useNavigate();
   const [deleteP, setDeleteP] = useState(null);
   const [showModalDelete, setShowModalDelete] = useState(false);

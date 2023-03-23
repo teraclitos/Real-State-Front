@@ -34,6 +34,7 @@ const MainCard = ({ d, i, setLoader }) => {
             className="img-card"
             variant="top"
             src={d.images_URL[0].url}
+            alt={`${d.name} principal`}
           />
         </Link>
         <Card.Body className="py-4 ps-2 fs-6 card-body">
