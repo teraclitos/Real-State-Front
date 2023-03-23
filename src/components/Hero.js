@@ -22,9 +22,9 @@ const Hero = ({
       <div className="hero-container ">
         <div className="slogan-container "></div>
         <div className="slogan-cube-container d-flex align-items-center justify-content-center ">
-          <h2 className="slogan px-3 px-sm-0 mb-5 ">
+          <h1 className="slogan px-3 px-sm-0 mb-5 ">
             Tenemos el inmueble que buscas, no pierdas tiempo
-          </h2>
+          </h1>
           <Link
             onClick={() => {
               setLoader(true);
