@@ -6,6 +6,10 @@
     width: 100%;
   }
 
+  .option-prices-container {
+    width: 100%;
+  }
+
   .prev-normal {
     font-size: 14px !important;
   }
