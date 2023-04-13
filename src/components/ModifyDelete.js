@@ -44,7 +44,6 @@ const ModifyDelete = ({
   setErrors,
   data,
 }) => {
-
   const navigate = useNavigate();
   const [deleteP, setDeleteP] = useState(null);
   const [showModalDelete, setShowModalDelete] = useState(false);
@@ -54,6 +53,7 @@ const ModifyDelete = ({
   const [responseModify, setResponseModify] = useState();
 
   const token = JSON.parse(localStorage.getItem("token"));
+
   useEffect(() => {
     if (!editAdress) {
       if (!errors.some((element) => element === "Campo dirección vacío")) {
