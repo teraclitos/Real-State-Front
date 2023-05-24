@@ -60,7 +60,7 @@ const NavbarC = ({
             <Navbar.Brand>
               <img
                 className="img-logo"
-                src="https://res.cloudinary.com/duuwqmpmn/image/upload/v1677695153/gori-inmobiliaria/logo-gori-removebg-preview_1_ulsalf.png"
+                src="https://res.cloudinary.com/duuwqmpmn/image/upload/v1684938525/logo-nuevo_1_xc1twr.jpg"
                 alt="logo"
               />
             </Navbar.Brand>
