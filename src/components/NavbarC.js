@@ -60,7 +60,7 @@ const NavbarC = ({
             <Navbar.Brand>
               <img
                 className="img-logo"
-                src="https://res.cloudinary.com/duuwqmpmn/image/upload/v1686080563/NEWTRYLOGO_pebvh2.png"
+                src="https://res.cloudinary.com/duuwqmpmn/image/upload/v1686081793/LOGOGORIDEFINITIVO_roext4.png"
                 alt="logo"
               />
             </Navbar.Brand>
