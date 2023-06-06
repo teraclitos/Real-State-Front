@@ -80,6 +80,11 @@ dorado:#ffec00 */
   top: 0;
   left: 0;
 }
+.title-contact {
+  position: relative;
+  top: 1.5em;
+  font-size: 3em;
+}
 
 @keyframes slideleft {
   from {
