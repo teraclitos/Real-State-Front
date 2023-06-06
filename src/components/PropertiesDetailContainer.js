@@ -61,9 +61,8 @@ const PropertiesDetailContainer = ({
         setLoader(false);
       });
   }, [changeData]);
-  useEffect(() => {
-    document.title = `GV | ${dataDetails.name}`;
-  }, [dataDetails]);
+
+  document.title = `GV | ${dataDetails.name}`;
 
   return (
     <>

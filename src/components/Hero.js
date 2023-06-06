@@ -11,9 +11,8 @@ const Hero = ({
   setLoader,
   setChangeData,
 }) => {
-  useEffect(() => {
-    document.title = "GV";
-  }, []);
+  document.title = "GV";
+
   useEffect(() => {
     if (logout) {
       toastSuccess("sesion cerrada correctamente");

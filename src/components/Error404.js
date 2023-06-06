@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../styles/all.css";
 
 const Error404 = ({ setChangeData, setLoader, changeData }) => {
+  document.title = "GV | Error 404";
   return (
     <div className="min-vh-100 d-flex justify-content-center align-items-center bg-black error404 w-100 light-grey  ">
       <div className="d-flex justify-content-center align-items-start flex-column ">

@@ -18,9 +18,8 @@ const Login = ({
   loaderLog,
   setLoaderLog,
 }) => {
-  useEffect(() => {
-    document.title = "GV | Login";
-  }, []);
+  document.title = "GV | Login";
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 

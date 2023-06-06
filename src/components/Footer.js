@@ -62,7 +62,7 @@ const Footer = ({ setLoader, setChangeData, changeData }) => {
           >
             <img
               className="img-logo-footer"
-              src="https://res.cloudinary.com/duuwqmpmn/image/upload/v1684938525/logo-nuevo_1_xc1twr.jpg"
+              src="https://res.cloudinary.com/duuwqmpmn/image/upload/v1686080563/NEWTRYLOGO_pebvh2.png"
               alt="logo"
             />
           </Link>

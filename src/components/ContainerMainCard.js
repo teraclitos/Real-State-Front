@@ -24,9 +24,8 @@ const ContainerMainCard = ({
   sup,
   setSup,
 }) => {
-  useEffect(() => {
-    document.title = "GV | Propiedades";
-  }, []);
+  document.title = "GV | Propiedades";
+
   return (
     <>
       <Searcher
