@@ -85,7 +85,7 @@ dorado:#ffec00 */
   top: 1.3em;
   font-size: 3em;
 }
-
+img{object-fit: contain !important;}
 @keyframes slideleft {
   from {
     transform: translateX(-1000px);
