@@ -356,7 +356,7 @@ const AdminMain = ({
     if (
       arrayImg.every(
         (element) =>
-          element === "png" || element === "jpg" || element === "jpeg"
+          element === "png" || element === "jpg" || element === "jpeg" || element === "jfif"
       )
     ) {
       if (arrayOrderFilter.length === arrayImg.length) {
