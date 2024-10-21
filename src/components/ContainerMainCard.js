@@ -28,6 +28,8 @@ const ContainerMainCard = ({
 
   return (
     <>
+    {!loader ? (
+    <>
       <Searcher
         location={location}
         setLocation={setLocation}
@@ -43,7 +45,7 @@ const ContainerMainCard = ({
         className="my-4"
         setPage={setPage}
       />
-      {!loader ? (
+      
         <Container className="pt-0  ">
           {data.length !== 0 ? (
             <Row className="g-5  m-0 ">
@@ -62,9 +64,12 @@ const ContainerMainCard = ({
             </div>
           )}
         </Container>
+        </>
+        
       ) : (
         <Loader />
       )}
+      
       {data.length !== 0 && (
         <Container className="mt-5 pb-5 d-flex justify-content-center">
           <PaginationC
