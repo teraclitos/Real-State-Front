@@ -116,6 +116,7 @@ img{object-fit: contain !important;}
 }
 .option-prices-container {
   position: relative;
+  z-index: 1000;
 }
 
 .option-price-item {
