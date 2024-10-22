@@ -30,7 +30,6 @@ const Hero = ({
           </h1>
           <Link
             onClick={() => {
-              setLoader(true);
               setChangeData(changeData + 1);
             }}
             to={`/propiedades`}

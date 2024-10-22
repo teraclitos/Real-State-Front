@@ -23,7 +23,6 @@ const MainCard = ({ d, i, setLoader }) => {
       <Card className="card-container border-0 w-100 ">
         <Link
           onClick={() => {
-            setLoader(true);
           }}
           to={`/propiedades/${d._id}`}
           className="link container-img   "

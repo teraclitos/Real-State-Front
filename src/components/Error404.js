@@ -13,7 +13,6 @@ const Error404 = ({ setChangeData, setLoader, changeData }) => {
         <ul className=" p-0 align-self-center text-center">
           <Link
             onClick={() => {
-              setLoader(true);
               setChangeData(changeData + 1);
             }}
             to="/"
@@ -22,8 +21,7 @@ const Error404 = ({ setChangeData, setLoader, changeData }) => {
             <li className=" light-grey">Inicio</li>
           </Link>
           <Link
-            onClick={() => {
-              setLoader(true);
+            onClick={() => {            
               setChangeData(changeData + 1);
             }}
             to="/propiedades"

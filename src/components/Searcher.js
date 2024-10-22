@@ -12,13 +12,17 @@ const Searcher = ({
   changeData,
   setChangeData,
   type,
+  location,
+  inf,
+  sup
 }) => {
+
   const [stateOptionPricesFirst, setStateOptionPricesFirst] = useState("none");
   const [stateOptionPricesSecond, setStateOptionPricesSecond] =
     useState("none");
-  const [optionPriceFirst, setOptionPriceFirst] = useState("");
+  const [optionPriceFirst, setOptionPriceFirst] = useState(inf);
 
-  const [optionPriceSecond, setOptionPriceSecond] = useState("");
+  const [optionPriceSecond, setOptionPriceSecond] = useState(sup);
 
   const optionPriceFirstFunction = (e) => {
     setOptionPriceFirst(e.target.innerText);
@@ -33,7 +37,7 @@ const Searcher = ({
   useEffect(() => {
     setSup(optionPriceSecond);
   }, [optionPriceSecond]);
-
+  
   return (
     <Container className="pt-5 searcher-container">
       <Form className="d-flex flex-column flex-lg-row justify-content-center  align-items-center ">
@@ -46,6 +50,7 @@ const Searcher = ({
             onInput={(e) => {
               setType(e.target.value);
             }}
+            value={type}
           >
             <option value=""></option>
             <option value="Casa">Casa</option>
@@ -66,6 +71,7 @@ const Searcher = ({
             onInput={(e) => {
               setLocation(e.target.value);
             }}
+            value={location}
           >
             <option value=""></option>
             <option value="Yerba Buena">Yerba Buena</option>
@@ -86,7 +92,7 @@ const Searcher = ({
               <Form.Control
                 className=""
                 type="number"
-                value={optionPriceFirst}
+                value={optionPriceFirst }
                 onClick={() => {
                   setStateOptionPricesFirst("flex");
                 }}
@@ -308,19 +314,35 @@ const Searcher = ({
           </div>
         </div>
 
-        <Form.Group className="d-flex justify-content-center align-self-center align-self-lg-end">
+        <Form.Group className="d-flex justify-content-center align-self-center align-self-lg-end gap-2">
           <button
             type="button"
             className="btn-g btn-black mt-3"
             onClick={(e) => {
-              setLoader(true);
+              e.preventDefault();
               setPage(1);
               setChangeData(changeData + 1);
             }}
           >
             Buscar
           </button>
+          <button
+            type="button"
+            className="btn-g btn-black mt-3"
+            onClick={(e) => {
+              e.preventDefault();
+              setType("");
+              setLocation("");
+              setInf("");
+              setSup("");
+              setOptionPriceFirst("")
+              setOptionPriceSecond("")
+            }}
+          >
+            Reset
+          </button>
         </Form.Group>
+       
       </Form>
     </Container>
   );

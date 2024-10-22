@@ -51,7 +51,6 @@ const NavbarC = ({
         <Container className="nav-bar-container">
           <Link
             onClick={() => {
-              setLoader(true);
               setChangeData(changeData + 1);
             }}
             to={`/`}
@@ -76,7 +75,6 @@ const NavbarC = ({
             <Nav className="d-flex ms-auto align-items-center link-nav-container  py-lg-0">
               <Link
                 onClick={() => {
-                  setLoader(true);
                   setChangeData(changeData + 1);
                 }}
                 to={`/`}
@@ -87,7 +85,6 @@ const NavbarC = ({
 
               <Link
                 onClick={() => {
-                  setLoader(true);
                   setChangeData(changeData + 1);
                 }}
                 to={`/propiedades`}
@@ -120,7 +117,6 @@ const NavbarC = ({
               ) : (
                 <Link
                   onClick={() => {
-                    setLoader(true);
                     setChangeData(changeData + 1);
                   }}
                   to={`/contacto`}

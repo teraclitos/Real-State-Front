@@ -12,7 +12,6 @@ const Footer = ({ setLoader, setChangeData, changeData }) => {
           <ul className="p-0">
             <Link
               onClick={() => {
-                setLoader(true);
                 setChangeData(changeData + 1);
               }}
               to="/"
@@ -22,7 +21,6 @@ const Footer = ({ setLoader, setChangeData, changeData }) => {
             </Link>
             <Link
               onClick={() => {
-                setLoader(true);
                 setChangeData(changeData + 1);
               }}
               to="/propiedades"
@@ -54,7 +52,6 @@ const Footer = ({ setLoader, setChangeData, changeData }) => {
         <Col className=" col-12 col-md-4 d-flex justify-content-center align-items-center">
           <Link
             onClick={() => {
-              setLoader(true);
               setChangeData(changeData + 1);
             }}
             to="/"

@@ -35,13 +35,13 @@ function App() {
   const [loaderLog, setLoaderLog] = useState(false);
   const [errors, setErrors] = useState([]);
   useEffect(() => {
+    setLoader(true);
     fetch(
       `https://gori-inmobiliaria.vercel.app/properties/show?page=${page}&limit=9&location=${location}&type=${type}&inf=${inf}&sup=${sup}`
     )
       .then((res) => res.json())
       .then((json) => {
         setData(json.docs);
-
         setTotalPages(json.totalPages);
       })
 
