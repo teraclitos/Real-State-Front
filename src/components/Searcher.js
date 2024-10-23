@@ -337,6 +337,8 @@ const Searcher = ({
               setSup("");
               setOptionPriceFirst("")
               setOptionPriceSecond("")
+              setPage(1);
+              setChangeData(changeData + 1);
             }}
           >
             Reset
