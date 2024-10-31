@@ -92,9 +92,7 @@ const Main = ({
               path="/"
               element={
                 <>
-                  {!loaderMain && !loaderLog ? (
-                    <>
-                      <Hero
+                   <Hero
                         toastError={toastError}
                         toastSuccess={toastSuccess}
                         changeData={changeData}
@@ -103,6 +101,9 @@ const Main = ({
                         setLogout={setLogout}
                         setLoader={setLoader}
                       />
+                  {!loaderMain && !loaderLog ? (
+                    <>
+                   
                       <Slider
                         highlight={highlight}
                         setHighlight={setHighlight}

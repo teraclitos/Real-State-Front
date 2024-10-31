@@ -27,6 +27,7 @@ const NavbarC = ({
   const handleTogler = () => {
     setOpen(!open);
   };
+ 
 
   useEffect(() => {
     if (logout) {
